@@ -1,0 +1,13 @@
+# Use with compose.yaml when an existing Caddy container owns ports 80/443.
+# Start only the app service; the existing proxy routes peopleos-app:3001.
+services:
+  app:
+    networks:
+      shared_proxy:
+        aliases:
+          - peopleos-app
+
+networks:
+  shared_proxy:
+    external: true
+    name: ${PROXY_NETWORK:-three-dollar-motel_default}

@@ -1,0 +1,228 @@
+{
+  "name": "PeopleOS \u00b7 Migration review with human handoff",
+  "nodes": [
+    {
+      "id": "10e2e4e8-f601-4212-934b-e7e4e8ce0701",
+      "name": "Run manually",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        240
+      ],
+      "parameters": {}
+    },
+    {
+      "id": "10e2e4e8-f601-4212-934b-e7e4e8ce0702",
+      "name": "Configure demo",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        220,
+        240
+      ],
+      "parameters": {
+        "jsCode": "// Set this to an address reachable from your n8n server.\n// For Docker, localhost is the n8n container, not the PeopleOS host.\nconst baseUrl = 'http://127.0.0.1:3001';\nreturn [{ json: { baseUrl: baseUrl.replace(/\\/$/, ''), scenario: 'migration' } }];"
+      }
+    },
+    {
+      "id": "10e2e4e8-f601-4212-934b-e7e4e8ce0703",
+      "name": "Check service",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        440,
+        240
+      ],
+      "parameters": {
+        "url": "={{ $json.baseUrl + '/api/health' }}",
+        "options": {
+          "timeout": 15000
+        }
+      }
+    },
+    {
+      "id": "10e2e4e8-f601-4212-934b-e7e4e8ce0704",
+      "name": "Initialize workspace",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        660,
+        240
+      ],
+      "parameters": {
+        "url": "={{ $('Configure demo').first().json.baseUrl + '/api/workspace' }}",
+        "options": {
+          "timeout": 15000,
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "responseFormat": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "10e2e4e8-f601-4212-934b-e7e4e8ce0705",
+      "name": "Preserve session",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        880,
+        240
+      ],
+      "parameters": {
+        "jsCode": "const response = $input.first().json;\nconst config = $('Configure demo').first().json;\nconst raw = response.headers?.['set-cookie'] ?? response.headers?.['Set-Cookie'];\nconst cookies = Array.isArray(raw) ? raw : raw ? [raw] : [];\nconst cookie = cookies.map(value => String(value).split(';')[0]).join('; ');\nif (!cookie) throw new Error('No session cookie received. Enable Include Response Headers and Status on Initialize workspace.');\nif (!response.body?.employees) throw new Error('Unexpected workspace response. Check the PeopleOS base URL.');\nreturn [{ json: { ...config, cookie, employeeCount: response.body.employees.length } }];"
+      }
+    },
+    {
+      "id": "10e2e4e8-f601-4212-934b-e7e4e8ce0706",
+      "name": "Analyze migration",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1100,
+        240
+      ],
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $json.baseUrl + '/api/runs' }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Cookie",
+              "value": "={{ $json.cookie }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ scenario: $json.scenario }) }}",
+        "options": {
+          "timeout": 30000
+        }
+      }
+    },
+    {
+      "id": "10e2e4e8-f601-4212-934b-e7e4e8ce0707",
+      "name": "Review proposal",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1320,
+        240
+      ],
+      "parameters": {
+        "jsCode": "const run = $input.first().json;\nconst session = $('Preserve session').first().json;\nif (run.status !== 'awaiting_approval') throw new Error('Expected a proposal awaiting human approval.');\nreturn [{ json: {\n  runId: run.id,\n  status: run.status,\n  summary: run.summary,\n  steps: run.steps,\n  proposal: run.proposal,\n  syntheticRecords: session.employeeCount,\n  recordsChangedByThisWorkflow: 0,\n  nextStep: 'Review the proposal. This workflow deliberately stops before approval. The session is separate from your browser workspace.',\n  manualApprovalRequest: {\n    method: 'POST',\n    url: `${session.baseUrl}/api/runs/${run.id}/approve`,\n    headers: { 'Content-Type': 'application/json', Cookie: session.cookie },\n    body: { decision: 'approve' }\n  }\n} }];"
+      }
+    },
+    {
+      "id": "10e2e4e8-f601-4212-934b-e7e4e8ce0708",
+      "name": "Read before running",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        180,
+        -80
+      ],
+      "parameters": {
+        "content": "## PeopleOS \u00b7 Migration review\nSet **Configure demo \u2192 baseUrl** to your running PeopleOS service.\n\nUses synthetic data. No credentials are bundled. A fresh session cookie is forwarded between API calls.\n\nThis workflow ends at an approval proposal. Its session is independent of the website browser.",
+        "height": 250,
+        "width": 540,
+        "color": 5
+      }
+    },
+    {
+      "id": "10e2e4e8-f601-4212-934b-e7e4e8ce0709",
+      "name": "Human decision",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1060,
+        -80
+      ],
+      "parameters": {
+        "content": "## A deliberate handoff\nThe backend executes deterministic data checks. Optional Groq explains their results.\n\nInspect the final output before choosing whether to send a separate approval request. No employee data changes in this workflow.",
+        "height": 230,
+        "width": 460,
+        "color": 4
+      }
+    }
+  ],
+  "connections": {
+    "Run manually": {
+      "main": [
+        [
+          {
+            "node": "Configure demo",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Configure demo": {
+      "main": [
+        [
+          {
+            "node": "Check service",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check service": {
+      "main": [
+        [
+          {
+            "node": "Initialize workspace",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Initialize workspace": {
+      "main": [
+        [
+          {
+            "node": "Preserve session",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Preserve session": {
+      "main": [
+        [
+          {
+            "node": "Analyze migration",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Analyze migration": {
+      "main": [
+        [
+          {
+            "node": "Review proposal",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "tags": []
+}

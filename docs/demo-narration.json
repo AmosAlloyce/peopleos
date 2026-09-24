@@ -1,0 +1,15 @@
+{
+  "duration": 90,
+  "segments": [
+    {"start": 0, "duration": 9, "text": "This is People O S. A working people operations system, designed and built by Alloyce Amos."},
+    {"start": 9, "duration": 9, "text": "The workspace connects forty eight fictional employees across thirteen countries. Every metric comes from the actual sample records."},
+    {"start": 18, "duration": 9, "text": "The migration hub makes data quality visible. Each exception shows the original value, validation rule, and proposed correction."},
+    {"start": 27, "duration": 9, "text": "Before data moves, the migration lab parses a C S V and checks its fields. This preview makes no employee changes."},
+    {"start": 36, "duration": 9, "text": "The agent studio coordinates specialist tools. Run validation to extract, map, check, and reconcile the source records."},
+    {"start": 45, "duration": 9, "text": "Every step has an inspectable result. These are executed checks, with optional A I explanations, and a clear human approval gate."},
+    {"start": 54, "duration": 9, "text": "Review the proposed changes, then approve. Sixteen corrections are applied, and data quality reaches one hundred percent."},
+    {"start": 63, "duration": 9, "text": "A separate service workflow classifies requests and proposes responsible teams. Onboarding and payroll readiness have their own coordinators."},
+    {"start": 72, "duration": 9, "text": "The people copilot offers text and browser voice, with English and French responses. Example policies and references stay visible."},
+    {"start": 81, "duration": 9, "text": "The audit trail records the result. Explore the live demo, inspect the workflow, and see the engineering behind the interface."}
+  ]
+}

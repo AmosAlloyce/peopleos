@@ -1,0 +1,69 @@
+name: peopleos
+
+services:
+  app:
+    build:
+      context: .
+      target: runtime
+    restart: unless-stopped
+    init: true
+    environment:
+      NODE_ENV: production
+      HOST: 0.0.0.0
+      PORT: 3001
+      TRUST_PROXY: "1"
+      DATA_DIR: /app/data
+      PUBLIC_ORIGIN: ${PUBLIC_ORIGIN:-}
+      GROQ_API_KEY: ${GROQ_API_KEY:-}
+      GROQ_MODEL: ${GROQ_MODEL:-openai/gpt-oss-20b}
+      N8N_API_TOKEN: ${N8N_API_TOKEN:-}
+    # Exactly one trusted proxy (Caddy); app access stays on host loopback.
+    ports:
+      - "127.0.0.1:${APP_PORT:-3001}:3001"
+    read_only: true
+    volumes:
+      - peopleos_data:/app/data
+    tmpfs:
+      - /tmp:size=32m,mode=1777
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    pids_limit: 128
+    mem_limit: 384m
+    logging:
+      driver: json-file
+      options:
+        max-size: 5m
+        max-file: "2"
+
+  caddy:
+    image: caddy:2-alpine
+    restart: unless-stopped
+    depends_on:
+      app:
+        condition: service_healthy
+    environment:
+      SITE_ADDRESS: ${SITE_ADDRESS:-http://localhost}
+    ports:
+      - "${HTTP_PORT:-8080}:80"
+      - "${HTTPS_PORT:-8443}:443"
+      - "${HTTPS_PORT:-8443}:443/udp"
+    volumes:
+      - ./deploy/Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    security_opt:
+      - no-new-privileges:true
+    mem_limit: 128m
+    logging:
+      driver: json-file
+      options:
+        max-size: 5m
+        max-file: "2"
+
+# Session TTL still applies. The app volume preserves unexpired sessions on restart.
+volumes:
+  peopleos_data:
+  caddy_data:
+  caddy_config:
