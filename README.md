@@ -1,6 +1,6 @@
-# Alloyce Amos · PeopleOS
+# PeopleOS
 
-A portfolio for **Alloyce Amos — Software Engineer & Data Engineer**, featuring PeopleOS: an interactive HR systems engineering case study inspired by a public Wave role.
+An interactive HR systems engineering case study inspired by a public Wave role.
 
 [Live portfolio](https://alloyce-amos.duckdns.org) · [Try PeopleOS](https://alloyce-amos.duckdns.org/app) · [Live deployment notes](docs/LIVE_DEPLOYMENT.md)
 
