@@ -1,44 +1,44 @@
 WEBVTT
 
 NOTE
-Generic offline synthetic narration. All employee data is fictional.
+AI-generated narration. Synthetic demonstration data.
 
 1
-00:00:00.000 --> 00:00:09.000
-This is People O S. A working people operations system, designed and built by Alloyce Amos.
+00:00:00.500 --> 00:00:12.110
+Meet People O S, a working people operations system built by Alloyce Amos. It brings migration checks, support workflows, and human approvals into one connected workspace.
 
 2
-00:00:09.000 --> 00:00:18.000
-The workspace connects forty eight fictional employees across thirteen countries. Every metric comes from the actual sample records.
+00:00:12.430 --> 00:00:24.040
+Forty-eight fictional employees span thirteen countries. The directory, quality metrics, and country views all read from the same records, so the numbers stay connected as the data changes.
 
 3
-00:00:18.000 --> 00:00:27.000
-The migration hub makes data quality visible. Each exception shows the original value, validation rule, and proposed correction.
+00:00:24.360 --> 00:00:33.787
+In the migration hub, every exception has a clear explanation. You can compare the original value with the proposed correction and see the rule that raised it.
 
 4
-00:00:27.000 --> 00:00:36.000
-Before data moves, the migration lab parses a C S V and checks its fields. This preview makes no employee changes.
+00:00:34.107 --> 00:00:46.367
+Before an import, the migration lab parses the C S V and validates its fields. It reports missing values, duplicate identifiers, and invalid references without changing an employee record.
 
 5
-00:00:36.000 --> 00:00:45.000
-The agent studio coordinates specialist tools. Run validation to extract, map, check, and reconcile the source records.
+00:00:46.687 --> 00:00:55.883
+The agent studio makes the work visible. Specialist tools extract the source, map its fields, check the records, and reconcile the proposed result.
 
 6
-00:00:45.000 --> 00:00:54.000
-Every step has an inspectable result. These are executed checks, with optional A I explanations, and a clear human approval gate.
+00:00:56.203 --> 00:01:07.069
+Each step has an inspectable output. These are real, deterministic checks. Optional A I helps explain the findings, while the decision to apply a change stays with the reviewer.
 
 7
-00:00:54.000 --> 00:01:03.000
-Review the proposed changes, then approve. Sixteen corrections are applied, and data quality reaches one hundred percent.
+00:01:07.389 --> 00:01:17.142
+After reviewing the proposal, approve the sixteen corrections. The sample records update, the open issues clear, and the data-quality measure reaches one hundred percent.
 
 8
-00:01:03.000 --> 00:01:12.000
-A separate service workflow classifies requests and proposes responsible teams. Onboarding and payroll readiness have their own coordinators.
+00:01:17.462 --> 00:01:28.561
+The same approach extends to service requests. Teams review proposed assignments before they are applied. Onboarding and payroll readiness each have their own workflow and approval boundary.
 
 9
-00:01:12.000 --> 00:01:21.000
-The people copilot offers text and browser voice, with English and French responses. Example policies and references stay visible.
+00:01:28.881 --> 00:01:41.095
+The people copilot answers in English or French, with visible references and optional browser voice. It can explain a migration or guide a new starter using clearly labeled example policies.
 
 10
-00:01:21.000 --> 00:01:30.000
-The audit trail records the result. Explore the live demo, inspect the workflow, and see the engineering behind the interface.
+00:01:41.415 --> 00:01:51.214
+Finally, the audit trail connects the decision to its result. Explore the live demo, inspect a workflow, or open the source to see the engineering behind the interface.

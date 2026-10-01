@@ -1,0 +1,56 @@
+{
+  "title": "FinPulse — from events to trusted data products",
+  "delivery": "Helpful, composed product narration. One consistent synthetic voice and natural full sentences. Record the interface to the resulting chapter times.",
+  "chapters": [
+    {
+      "id": "introduction",
+      "title": "Meet FinPulse",
+      "text": "Meet FinPulse, Alloyce Amos's credit data engineering project. This interactive demo follows synthetic events from their raw source to validated records and useful data products."
+    },
+    {
+      "id": "overview",
+      "title": "Read the operating picture",
+      "text": "The overview connects five markets in one operating picture. Counts and quality measures come from the same event pipeline, and each currency keeps its own totals."
+    },
+    {
+      "id": "events",
+      "title": "Inspect the raw event",
+      "text": "Open the event explorer to inspect the original envelope and the related customer events. The source remains visible, so an unexpected metric can be traced back to evidence."
+    },
+    {
+      "id": "simulate",
+      "title": "Introduce a controlled problem",
+      "text": "Choose the invalid scenario and simulate a new batch. These records enter the raw bronze layer first. The original input stays available before any validation or correction."
+    },
+    {
+      "id": "pipeline",
+      "title": "Run the processing stages",
+      "text": "In the pipeline studio, run the Python validation rules, dimensional loader, and SQL marts. Inspect the processing trace as raw events become validated silver records and gold aggregates."
+    },
+    {
+      "id": "quality",
+      "title": "Review an exception",
+      "text": "The quality lab explains each exception. Duplicates are suppressed, while late events can pass with a warning. Invalid records stay in quarantine until a reviewed correction is ready."
+    },
+    {
+      "id": "replay",
+      "title": "Approve and replay",
+      "text": "Review a proposed correction and approve its replay. The original raw event is preserved, and the corrected result follows the pipeline again. This makes remediation traceable."
+    },
+    {
+      "id": "markets",
+      "title": "Compare markets carefully",
+      "text": "Market insights show counts, ratios, and values by country. Kenyan shillings, Ugandan shillings, Ghanaian cedis, Tanzanian shillings, and Zambian kwacha are kept separate."
+    },
+    {
+      "id": "lineage",
+      "title": "Follow the data product",
+      "text": "The data product catalogue connects outputs to their lineage. Follow a product through the processing stages, inspect its schema, or export its records for further analysis."
+    },
+    {
+      "id": "closing",
+      "title": "Inspect the engineering",
+      "text": "FinPulse demonstrates validation, quality controls, replay, and reporting on synthetic credit data. Explore the working demo and source code; no new real credit decision is made here."
+    }
+  ]
+}

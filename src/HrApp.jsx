@@ -61,6 +61,7 @@ import AfricaMap from './components/AfricaMap.jsx';
 import VoiceAssistant from './components/VoiceAssistant.jsx';
 import WorkflowStudio from './components/WorkflowStudio.jsx';
 import ImportPreview from './components/ImportPreview.jsx';
+import ReadinessLens from './components/ReadinessLens.jsx';
 
 const navigation = [
   ['overview', 'Overview', LayoutDashboard],
@@ -383,26 +384,15 @@ export default function HrApp() {
                       Ask copilot
                     </button>
                   </PageHeader>
-                  <div className="overview-banner">
-                    <span className="banner-icon">
-                      <GitBranch size={19} />
-                    </span>
-                    <div>
-                      <strong>
-                        {openIssues.length
-                          ? 'Your next chapter starts with cleaner data.'
-                          : 'Your data is ready for its next chapter.'}
-                      </strong>
-                      <span>
-                        {openIssues.length
-                          ? `${openIssues.length} data exceptions to review before your next migration rehearsal.`
-                          : 'All configured checks are clear. Rehearse again whenever you need.'}
-                      </span>
-                    </div>
-                    <button onClick={() => navigate('migration')}>
-                      Open migration hub <ArrowRight size={16} />
-                    </button>
-                  </div>
+                  <ReadinessLens
+                    employees={scoped}
+                    issues={issues}
+                    runs={runs}
+                    country={country}
+                    onIssue={(issue) => setModal({ type: 'issue', data: issue })}
+                    onRehearse={() => runScenario('migration')}
+                    onMigration={() => navigate('migration')}
+                  />
                   <div className="stats-grid">
                     <Stat
                       label="People in your workspace"

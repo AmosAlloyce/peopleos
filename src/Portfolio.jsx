@@ -13,6 +13,28 @@ import {
   X,
 } from 'lucide-react';
 import './portfolio.css';
+import './finpulse-project.css';
+
+const walkthroughs = {
+  peopleos: {
+    title: 'PeopleOS, in motion.',
+    source: '/demo/peopleos-demo.mp4',
+    captions: '/demo/peopleos-demo.vtt',
+    poster: '/demo/poster.jpg',
+    description:
+      'Follow a migration from source data to validation, human review, and an auditable result.',
+    demo: '/app/migration',
+  },
+  finpulse: {
+    title: 'FinPulse, in motion.',
+    source: '/demo/finpulse-demo.mp4',
+    captions: '/demo/finpulse-demo.vtt',
+    poster: '/demo/finpulse-poster.jpg',
+    description:
+      'Follow synthetic events through validation, quarantine, and a traceable credit data pipeline.',
+    demo: '/finpulse/',
+  },
+};
 
 const departments = [
   {
@@ -177,7 +199,9 @@ function SystemVisual() {
   );
 }
 
-function VideoDialog({ open, onClose }) {
+function VideoDialog({ project, onClose }) {
+  const open = Boolean(project);
+  const walkthrough = walkthroughs[project] || walkthroughs.peopleos;
   const dialog = useRef(null);
   const video = useRef(null);
   useEffect(() => {
@@ -199,7 +223,7 @@ function VideoDialog({ open, onClose }) {
     >
       <div className="portfolio-video-heading">
         <div>
-          <h2 id="portfolio-video-title">PeopleOS, in motion.</h2>
+          <h2 id="portfolio-video-title">{walkthrough.title}</h2>
           <p>Recorded walkthrough · synthetic data</p>
         </div>
         <button
@@ -212,28 +236,23 @@ function VideoDialog({ open, onClose }) {
       </div>
       {open && (
         <video
+          key={project}
           ref={video}
           controls
           autoPlay
           playsInline
           preload="metadata"
-          poster="/demo/poster.jpg"
+          poster={walkthrough.poster}
         >
-          <source src="/demo/peopleos-demo.mp4" type="video/mp4" />
-          <track
-            default
-            kind="captions"
-            src="/demo/peopleos-demo.vtt"
-            srcLang="en"
-            label="English"
-          />
+          <source src={walkthrough.source} type="video/mp4" />
+          <track default kind="captions" src={walkthrough.captions} srcLang="en" label="English" />
           Your browser does not support embedded video.{' '}
-          <a href="/demo/peopleos-demo.mp4">Download the walkthrough.</a>
+          <a href={walkthrough.source}>Download the walkthrough.</a>
         </video>
       )}
       <p className="portfolio-video-note">
-        Follow a migration from source data to validation, human review, and an auditable result.{' '}
-        <a href="/app/migration">
+        {walkthrough.description}{' '}
+        <a href={walkthrough.demo}>
           Try it yourself <ArrowUpRight size={13} />
         </a>
       </p>
@@ -242,7 +261,7 @@ function VideoDialog({ open, onClose }) {
 }
 
 export default function Portfolio() {
-  const [videoOpen, setVideoOpen] = useState(false);
+  const [videoProject, setVideoProject] = useState(null);
   const [menuOpen, setMenuOpen] = useState(false);
   return (
     <div className="portfolio">
@@ -343,12 +362,13 @@ export default function Portfolio() {
             <div>
               <p className="portfolio-eyebrow">01 / SELECTED WORK</p>
               <h2 id="portfolio-work-title">
-                An idea, <em>made real.</em>
+                Ideas, <em>made real.</em>
               </h2>
             </div>
             <p>
-              One connected system.
-              <br />A lot of considered decisions.
+              Different challenges.
+              <br />
+              One considered approach.
             </p>
           </div>
           <article className="portfolio-project">
@@ -424,7 +444,18 @@ export default function Portfolio() {
                 Working prototype · Synthetic data · Optional live AI
               </p>
               <div>
-                <button className="portfolio-project-watch" onClick={() => setVideoOpen(true)}>
+                <a
+                  className="portfolio-project-source"
+                  href="https://github.com/AmosAlloyce/peopleos"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Github size={16} /> View source <ArrowUpRight size={14} />
+                </a>
+                <button
+                  className="portfolio-project-watch"
+                  onClick={() => setVideoProject('peopleos')}
+                >
                   <Play size={14} fill="currentColor" />
                   Watch the walkthrough
                 </button>
@@ -453,6 +484,118 @@ export default function Portfolio() {
               Explore the migration lab <ArrowUpRight size={17} />
             </a>
           </div>
+
+          <article className="portfolio-finpulse" aria-labelledby="portfolio-finpulse-title">
+            <div className="portfolio-finpulse-topline">
+              <span>
+                <i /> FEATURED PROJECT
+              </span>
+              <span>02 / CREDIT DATA ENGINEERING</span>
+            </div>
+            <div className="portfolio-finpulse-intro">
+              <div>
+                <div className="portfolio-finpulse-brand">
+                  <svg width="32" height="28" viewBox="0 0 32 28" fill="none" aria-hidden="true">
+                    <path
+                      d="M2 17h6l4-11 7 19 5-13 3 5h3"
+                      stroke="currentColor"
+                      strokeWidth="2.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                  <h3 id="portfolio-finpulse-title">FinPulse</h3>
+                </div>
+                <p>
+                  From raw events
+                  <br />
+                  <em>to trusted signals.</em>
+                </p>
+              </div>
+              <div className="portfolio-finpulse-description">
+                <p>
+                  Synthetic mobile-money, GSM, and loan events become traceable credit portfolio
+                  data. Run the pipeline, quarantine invalid events, and follow each result back to
+                  its source.
+                </p>
+                <div className="portfolio-finpulse-tags">
+                  <span>PYTHON & FASTAPI</span>
+                  <span>DATA QUALITY</span>
+                  <span>LINEAGE</span>
+                </div>
+              </div>
+            </div>
+            <a
+              className="portfolio-finpulse-preview"
+              href="/finpulse/"
+              aria-label="Open the interactive FinPulse data workspace"
+            >
+              <div className="portfolio-finpulse-browser">
+                <span>
+                  <i />
+                  <i />
+                  <i />
+                </span>
+                <span>finpulse / data workspace</span>
+                <span>LIVE SANDBOX</span>
+              </div>
+              <img
+                src="/demo/finpulse-workspace.jpg"
+                alt="FinPulse data workspace with pipeline status, quality checks, and credit portfolio insights"
+                loading="lazy"
+                width="1440"
+                height="960"
+              />
+              <span className="portfolio-finpulse-enter">
+                Explore the pipeline <ArrowUpRight size={19} />
+              </span>
+            </a>
+            <ol
+              className="portfolio-finpulse-pipeline"
+              aria-label="FinPulse data processing layers"
+            >
+              <li>
+                <span>01 / BRONZE</span>
+                <strong>Keep the source.</strong>
+                <p>Ingest synthetic events.</p>
+              </li>
+              <li>
+                <span>02 / SILVER</span>
+                <strong>Make quality visible.</strong>
+                <p>Validate. Normalize. Quarantine.</p>
+              </li>
+              <li>
+                <span>03 / GOLD</span>
+                <strong>Build a trusted view.</strong>
+                <p>Aggregate with traceable lineage.</p>
+              </li>
+            </ol>
+            <div className="portfolio-finpulse-bottom">
+              <p>
+                <i /> Synthetic sandbox · Real Python processing
+              </p>
+              <div>
+                <a
+                  className="portfolio-finpulse-source"
+                  href="https://github.com/AmosAlloyce/FinPulse"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Github size={16} /> View source <ArrowUpRight size={14} />
+                </a>
+                <button
+                  className="portfolio-finpulse-watch"
+                  onClick={() => setVideoProject('finpulse')}
+                >
+                  <Play size={14} fill="currentColor" />
+                  Watch FinPulse walkthrough
+                </button>
+                <a className="portfolio-finpulse-launch" href="/finpulse/">
+                  Launch FinPulse <ArrowUpRight size={18} />
+                </a>
+              </div>
+            </div>
+          </article>
         </section>
 
         <section
@@ -462,7 +605,7 @@ export default function Portfolio() {
         >
           <div className="portfolio-section-heading">
             <div>
-              <p className="portfolio-eyebrow">02 / UNDER THE SURFACE</p>
+              <p className="portfolio-eyebrow">02 / INSIDE PEOPLEOS</p>
               <h2 id="portfolio-approach-title">
                 Intelligence needs
                 <br />
@@ -585,7 +728,7 @@ export default function Portfolio() {
               <div className="portfolio-demo-actions">
                 <button
                   className="portfolio-button portfolio-button-dark"
-                  onClick={() => setVideoOpen(true)}
+                  onClick={() => setVideoProject('peopleos')}
                 >
                   <Play size={14} fill="currentColor" />
                   Play the walkthrough
@@ -598,7 +741,7 @@ export default function Portfolio() {
             </div>
             <button
               className="portfolio-film"
-              onClick={() => setVideoOpen(true)}
+              onClick={() => setVideoProject('peopleos')}
               aria-label="Play the PeopleOS recorded walkthrough"
             >
               <img
@@ -654,9 +797,9 @@ export default function Portfolio() {
               interface that makes sense to the person using it.
             </p>
             <p>
-              PeopleOS is an independent exploration of that approach, inspired by the operational
-              challenges of growing teams across Africa. It’s a working demonstration of how I
-              think, design, and build.
+              PeopleOS and FinPulse are independent explorations of that approach: one connects
+              people operations, the other makes credit data easier to trust. Both use synthetic
+              data to demonstrate how I think, design, and build.
             </p>
             <a
               className="portfolio-text-link"
@@ -699,7 +842,7 @@ export default function Portfolio() {
           Alloyce Amos<span>SOFTWARE ENGINEER & DATA ENGINEER</span>
         </a>
         <p>
-          Independent portfolio. PeopleOS uses synthetic data.
+          Independent portfolio. Project demos use synthetic data.
           <br />
           Not affiliated with Wave or any HRIS vendor.
         </p>
@@ -707,7 +850,7 @@ export default function Portfolio() {
           Back to top <ArrowUpRight size={15} />
         </a>
       </footer>
-      <VideoDialog open={videoOpen} onClose={() => setVideoOpen(false)} />
+      <VideoDialog project={videoProject} onClose={() => setVideoProject(null)} />
     </div>
   );
 }

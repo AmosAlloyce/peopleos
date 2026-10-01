@@ -1,16 +1,26 @@
 /**
- * Records actual browser interactions and muxes the offline narration/captions.
+ * Records actual browser interactions to the neural narration's measured timing.
  * Start the production app, then:
  * BASE_URL=http://127.0.0.1:3001 BROWSER_PATH=/path/to/chromium npm run record:demo
  * Requires ffmpeg/ffprobe, Playwright's ffmpeg (`npx playwright install ffmpeg`),
  * and a Chromium browser. PLAYWRIGHT_BROWSERS_PATH may point to a custom cache.
  */
-import { mkdir, readFile, writeFile, access } from 'node:fs/promises';
+import { mkdir, readFile, copyFile, access } from 'node:fs/promises';
 import { spawn } from 'node:child_process';
 import { chromium, expect } from '@playwright/test';
 
 const base = process.env.BASE_URL || 'http://127.0.0.1:3001';
-const schedule = JSON.parse(await readFile('docs/demo-narration.json', 'utf8'));
+const narration = process.env.NARRATION_PREFIX || 'output/speech/peopleos-neural';
+const schedule = JSON.parse(await readFile(`${narration}.json`, 'utf8'));
+const chapters = schedule.chapters;
+if (!Array.isArray(chapters) || chapters.length !== 10 || !Number.isFinite(schedule.duration))
+  throw new Error('Generate the ten-chapter neural narration and timing JSON before recording.');
+const chapterById = new Map(chapters.map((item) => [item.id, item]));
+const sectionTime = (id, progress = 0) => {
+  const item = chapterById.get(id);
+  if (!item || progress < 0 || progress > 1) throw new Error(`Invalid chapter position: ${id}`);
+  return item.start + item.duration * progress;
+};
 await mkdir('output/recording', { recursive: true });
 await mkdir('public/demo', { recursive: true });
 const runCommand = (command, args) =>
@@ -21,27 +31,8 @@ const runCommand = (command, args) =>
       code === 0 ? resolve() : reject(new Error(`${command} exited ${code}`)),
     );
   });
-try {
-  await access('output/demo-narration.wav');
-} catch {
-  await runCommand('python3', [
-    'scripts/generate-narration.py',
-    'docs/demo-narration.json',
-    'output/demo-narration.wav',
-  ]);
-}
-const timestamp = (seconds) =>
-  `${String(Math.floor(seconds / 3600)).padStart(2, '0')}:${String(Math.floor(seconds / 60) % 60).padStart(2, '0')}:${String(seconds % 60).padStart(2, '0')}.000`;
-await writeFile(
-  'public/demo/peopleos-demo.vtt',
-  'WEBVTT\n\nNOTE\nGeneric offline synthetic narration. All employee data is fictional.\n\n' +
-    schedule.segments
-      .map(
-        (s, i) =>
-          `${i + 1}\n${timestamp(s.start)} --> ${timestamp(s.start + s.duration)}\n${s.text}\n`,
-      )
-      .join('\n'),
-);
+await access(`${narration}.wav`);
+await access(`${narration}.vtt`);
 const browser = await chromium.launch({
   headless: true,
   ...(process.env.BROWSER_PATH ? { executablePath: process.env.BROWSER_PATH } : {}),
@@ -52,6 +43,7 @@ const context = await browser.newContext({
 });
 const page = await context.newPage();
 page.setDefaultTimeout(10000);
+page.setDefaultNavigationTimeout(45000);
 let start;
 async function at(seconds, action) {
   const delay = start + seconds * 1000 - Date.now();
@@ -66,116 +58,132 @@ async function nav(name) {
   await page.locator('.sidebar nav').getByRole('button', { name, exact: false }).click();
 }
 async function chapter(index, title) {
+  const displayDuration = chapters[index - 1].duration * 1000 - 100;
   await page.evaluate(
-    ({ index, title }) => {
+    ({ index, title, displayDuration }) => {
       document.getElementById('recording-chapter')?.remove();
       const badge = document.createElement('div');
       badge.id = 'recording-chapter';
       badge.style.cssText =
-        'position:fixed;right:22px;bottom:22px;padding:10px 15px;border:1px solid #cbded0;border-radius:7px;background:#f8fff9f5;box-shadow:0 3px 15px #162e1810;color:#54745b;font:500 12px Arial,sans-serif;letter-spacing:.4px;z-index:2147483647;pointer-events:none';
+        'position:fixed;right:22px;bottom:22px;padding:10px 15px;border:1px solid #cbded0;border-radius:7px;background:#f8fff9f5;box-shadow:0 3px 15px #162e1810;color:#54745b;font:500 12px "DM Sans",sans-serif;letter-spacing:.4px;z-index:2147483647;pointer-events:none';
       badge.textContent = `${String(index).padStart(2, '0')} / 10    ${title}`;
       (document.querySelector('dialog[open]') || document.body).appendChild(badge);
-      setTimeout(() => badge.remove(), 8500);
+      setTimeout(() => badge.remove(), displayDuration);
     },
-    { index, title },
+    { index, title, displayDuration },
   );
   console.log(`${index}/10 ${title}`);
 }
 try {
-  await page.goto(base, { waitUntil: 'networkidle' });
+  await page.goto(base, { waitUntil: 'domcontentloaded' });
+  await expect(page.locator('.portfolio-hero')).toBeVisible();
   await page.evaluate(() => document.fonts.ready);
   // Warm the app and its session before recording navigation into it.
   const warm = await context.newPage();
-  await warm.goto(`${base}/app`, { waitUntil: 'networkidle' });
+  await warm.goto(`${base}/app`, { waitUntil: 'domcontentloaded' });
   await expect(warm.locator('.stats-grid')).toBeVisible();
   await warm.close();
   await page.screencast.start({
-    path: 'output/recording/peopleos-browser.webm',
+    path: 'output/recording/peopleos-neural-browser.webm',
     size: { width: 1440, height: 1000 },
   });
   start = Date.now();
   await chapter(1, 'PeopleOS · An engineering case study');
-  await at(5, async () => {
+  await at(sectionTime('introduction', 0.44), async () => {
     await page.getByRole('button', { name: 'Explore People operations', exact: true }).click();
   });
-  await at(9, async () => {
+  await at(sectionTime('overview'), async () => {
     await page.goto(`${base}/app`, { waitUntil: 'domcontentloaded' });
     await expect(page.locator('.stats-grid')).toBeVisible();
     await chapter(2, 'A connected people workspace');
+    await page.screenshot({
+      path: 'public/demo/workspace.jpg',
+      type: 'jpeg',
+      quality: 90,
+      style: '#recording-chapter { visibility: hidden; }',
+    });
   });
-  await at(14, async () => {
+  await at(sectionTime('overview', 0.48), async () => {
     await page.locator('.select-control select').selectOption('Kenya');
   });
-  await at(16, async () => {
+  await at(sectionTime('overview', 0.76), async () => {
     await page.locator('.select-control select').selectOption('all');
   });
-  await at(18, async () => {
+  await at(sectionTime('migration'), async () => {
     await nav('Migration hub');
     await chapter(3, 'From data exceptions to clear next steps');
   });
-  await at(22, async () => {
+  await at(sectionTime('migration', 0.42), async () => {
     await page.locator('.table-link').first().click();
   });
-  await at(25, async () => {
+  await at(sectionTime('migration', 0.88), async () => {
     await page.keyboard.press('Escape');
   });
-  await at(27, async () => {
+  await at(sectionTime('csv-preview'), async () => {
     await page.getByRole('button', { name: 'CSV lab', exact: true }).click();
     await chapter(4, 'Inspect an import before it moves');
     await page.getByRole('button', { name: 'Validate preview', exact: true }).click();
     await expect(page.locator('.import-result')).toBeVisible();
   });
-  await at(31, async () => {
+  await at(sectionTime('csv-preview', 0.45), async () => {
     await page.locator('.import-result').scrollIntoViewIfNeeded();
   });
-  await at(35, async () => {
+  await at(sectionTime('csv-preview', 0.9), async () => {
     await page.keyboard.press('Escape');
   });
-  await at(36, async () => {
+  await at(sectionTime('agent-studio'), async () => {
     await page.getByRole('button', { name: 'Run validation', exact: true }).click();
     await chapter(5, 'Coordinated, inspectable execution');
     await page.getByRole('button', { name: 'Run workflow', exact: true }).click();
     await expect(page.locator('.run-result')).toBeVisible();
   });
-  await at(45, async () => {
+  await at(sectionTime('agent-studio', 0.65), async () => {
+    await page.screenshot({
+      path: 'public/demo/poster.jpg',
+      type: 'jpeg',
+      quality: 90,
+      style: '#recording-chapter { visibility: hidden; }',
+    });
+  });
+  await at(sectionTime('inspect-run'), async () => {
     await page.locator('.canvas-node').nth(3).click();
     await chapter(6, 'Real tool outputs · human review');
   });
-  await at(50, async () => {
+  await at(sectionTime('inspect-run', 0.54), async () => {
     await page.keyboard.press('Escape');
     await page.getByRole('button', { name: 'Execution log', exact: false }).click();
   });
-  await at(54, async () => {
+  await at(sectionTime('approve'), async () => {
     await page.locator('.run-result').scrollIntoViewIfNeeded();
     await chapter(7, 'Review, approve, and reconcile');
   });
-  await at(57, async () => {
+  await at(sectionTime('approve', 0.32), async () => {
     await page.getByRole('button', { name: 'Approve changes', exact: true }).click();
     await expect(page.locator('.decision-complete')).toBeVisible();
   });
-  await at(60, async () => {
+  await at(sectionTime('approve', 0.68), async () => {
     await nav('Overview');
     await expect(page.locator('.stats-grid')).toContainText('100%');
   });
-  await at(63, async () => {
+  await at(sectionTime('service-desk'), async () => {
     await nav('Service desk');
     await chapter(8, 'Specialized workflows for each department');
   });
-  await at(66, async () => {
+  await at(sectionTime('service-desk', 0.3), async () => {
     await page.getByRole('button', { name: 'Triage with agents', exact: true }).click();
     await page.getByRole('button', { name: 'Run workflow', exact: true }).click();
     await expect(page.locator('.run-result')).toBeVisible();
   });
-  await at(70, async () => {
+  await at(sectionTime('service-desk', 0.78), async () => {
     await page.getByRole('button', { name: /New joiner journey/ }).click();
   });
-  await at(72, async () => {
+  await at(sectionTime('copilot'), async () => {
     await page.getByRole('button', { name: /Meet your people copilot/ }).click();
     await chapter(9, 'An assistant you can talk to');
     await page.getByRole('button', { name: 'What is the leave policy?', exact: true }).click();
     await expect(page.locator('.chat-message.assistant')).toBeVisible();
   });
-  await at(76, async () => {
+  await at(sectionTime('copilot', 0.45), async () => {
     await page.getByLabel('Language', { exact: true }).selectOption('fr');
     await page
       .getByRole('textbox', { name: 'Your question' })
@@ -183,15 +191,15 @@ try {
     await page.getByRole('button', { name: 'Send question', exact: true }).click();
     await expect(page.locator('.chat-message.assistant')).toHaveCount(2);
   });
-  await at(81, async () => {
+  await at(sectionTime('audit'), async () => {
     await page.keyboard.press('Escape');
     await nav('Audit trail');
     await chapter(10, 'A decision you can trace');
   });
-  await at(87, async () => {
+  await at(sectionTime('audit', 0.65), async () => {
     await page.goto(base, { waitUntil: 'domcontentloaded' });
   });
-  await at(90);
+  await at(schedule.duration + 0.3);
   await page.screencast.stop();
 } finally {
   await page.screencast.stop().catch(() => {});
@@ -204,11 +212,11 @@ await runCommand('ffmpeg', [
   'warning',
   '-y',
   '-i',
-  'output/recording/peopleos-browser.webm',
+  'output/recording/peopleos-neural-browser.webm',
   '-i',
-  'output/demo-narration.wav',
+  `${narration}.wav`,
   '-i',
-  'public/demo/peopleos-demo.vtt',
+  `${narration}.vtt`,
   '-map',
   '0:v:0',
   '-map',
@@ -239,6 +247,8 @@ await runCommand('ffmpeg', [
   String(schedule.duration),
   '-movflags',
   '+faststart',
-  'public/demo/peopleos-demo.mp4',
+  'output/recording/peopleos-neural.mp4',
 ]);
+await copyFile('output/recording/peopleos-neural.mp4', 'public/demo/peopleos-demo.mp4');
+await copyFile(`${narration}.vtt`, 'public/demo/peopleos-demo.vtt');
 console.log('Recorded and packaged public/demo/peopleos-demo.mp4 with narration and captions.');

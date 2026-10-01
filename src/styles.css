@@ -131,7 +131,7 @@ button {
   --green: #247d70;
   --line: #e6eaed;
   --bg: #f7f9fa;
-  font-size: 13px;
+  font-size: 16px;
   line-height: 1.5;
   min-height: 100vh;
 }
@@ -158,21 +158,21 @@ button {
   font-weight: 600;
 }
 .hr-app h2 {
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 650;
   letter-spacing: -0.2px;
 }
 .hr-app h3 {
-  font-size: 17px;
+  font-size: 20px;
   font-weight: 600;
   line-height: 1.4;
 }
 .hr-app h4 {
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 600;
 }
 .hr-app small {
-  font-size: 11px;
+  font-size: 14px;
 }
 .mono,
 code,
@@ -180,15 +180,15 @@ kbd {
   font-family: 'SFMono-Regular', Consolas, monospace;
 }
 .small {
-  font-size: 11px;
+  font-size: 14px;
 }
 .muted,
 .small-meta {
   color: #7b8790;
-  font-size: 11px;
+  font-size: 14px;
 }
 .eyebrow {
-  font-size: 9px;
+  font-size: 13px;
   font-weight: 600;
   letter-spacing: 1.35px;
   color: #82908e;
@@ -248,7 +248,7 @@ kbd {
   gap: 8px;
   min-height: 36px;
   padding: 8px 13px;
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 600;
   border: 1px solid #dce3e5;
   border-radius: 6px;
@@ -275,7 +275,7 @@ kbd {
   background: #fff8f8;
 }
 .button-counter {
-  font-size: 9px;
+  font-size: 13px;
   background: #f2f4f5;
   padding: 1px 5px;
   border-radius: 4px;
@@ -286,7 +286,7 @@ kbd {
   align-items: center;
   gap: 5px;
   color: #578078;
-  font-size: 10px;
+  font-size: 13px;
   white-space: nowrap;
   padding: 3px 0;
 }
@@ -311,7 +311,7 @@ kbd {
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  font-size: 9px;
+  font-size: 13px;
   font-weight: 500;
   white-space: nowrap;
   padding: 3px 7px;
@@ -351,7 +351,7 @@ kbd {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 600;
   flex-shrink: 0;
 }
@@ -378,7 +378,7 @@ kbd {
 .avatar.small {
   height: 27px;
   width: 27px;
-  font-size: 9px;
+  font-size: 13px;
 }
 .avatar.large {
   height: 76px;
@@ -463,17 +463,17 @@ kbd {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 12px;
+  font-size: 15px;
   background: #f1f7f4;
 }
 .workspace-switch strong {
   display: block;
-  font-size: 10px;
+  font-size: 13px;
   font-weight: 600;
 }
 .workspace-switch small {
   display: block;
-  font-size: 9px;
+  font-size: 13px;
   color: #98a29f;
   margin-top: 2px;
 }
@@ -482,7 +482,7 @@ kbd {
   color: #9aa7a7;
 }
 .nav-label {
-  font-size: 8px;
+  font-size: 13px;
   font-weight: 600;
   letter-spacing: 1.3px;
   color: #a1abaa;
@@ -501,7 +501,7 @@ kbd {
   color: #7b8990;
   width: 100%;
   text-align: left;
-  font-size: 11px;
+  font-size: 14px;
   border-radius: 6px;
   min-height: 40px;
 }
@@ -518,14 +518,14 @@ kbd {
   flex: 1;
 }
 .nav-count {
-  font-size: 9px;
+  font-size: 13px;
   border: 1px solid #d9e5df;
   border-radius: 4px;
   padding: 0 5px;
   color: #6e9587;
 }
 .nav-new {
-  font-size: 7px;
+  font-size: 13px;
   letter-spacing: 0.5px;
   background: #edeefa;
   color: #9188b5;
@@ -550,7 +550,7 @@ kbd {
   align-items: center;
   gap: 5px;
   color: #97a092;
-  font-size: 7px;
+  font-size: 13px;
   margin-bottom: 10px;
 }
 .copilot-icon {
@@ -571,11 +571,11 @@ kbd {
   background: #91ad80;
 }
 .copilot-card strong {
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 600;
 }
 .copilot-card p {
-  font-size: 10px;
+  font-size: 13px;
   line-height: 1.7;
   margin: 5px 0 13px;
 }
@@ -584,7 +584,7 @@ kbd {
   align-items: center;
   justify-content: space-between;
   color: #7e9575;
-  font-size: 10px;
+  font-size: 13px;
   padding-top: 8px;
   border-top: 1px solid #e2e9dd;
 }
@@ -592,7 +592,7 @@ kbd {
   margin-bottom: 12px;
 }
 .sidebar-bottom > .nav-item {
-  font-size: 10px;
+  font-size: 13px;
   padding: 9px 10px;
   min-height: 33px;
 }
@@ -608,12 +608,12 @@ kbd {
   margin: 0 3px;
 }
 .profile strong {
-  font-size: 10px;
+  font-size: 13px;
   display: block;
   font-weight: 600;
 }
 .profile small {
-  font-size: 8px;
+  font-size: 13px;
   color: #9aa4a6;
   display: block;
   margin-top: 1px;
@@ -640,7 +640,7 @@ kbd {
   display: flex;
   align-items: center;
   gap: 12px;
-  font-size: 10px;
+  font-size: 13px;
   white-space: nowrap;
 }
 .breadcrumb > span {
@@ -659,7 +659,7 @@ kbd {
   gap: 16px;
 }
 .topbar .badge {
-  font-size: 8px;
+  font-size: 13px;
   background: #f3f8f4;
 }
 .global-search {
@@ -667,10 +667,10 @@ kbd {
   align-items: center;
   gap: 8px;
   color: #a2acb1;
-  font-size: 10px;
+  font-size: 13px;
 }
 .global-search kbd {
-  font-size: 9px;
+  font-size: 13px;
   border: 1px solid #e5e9ec;
   padding: 1px 5px;
   border-radius: 3px;
@@ -712,12 +712,12 @@ kbd {
   margin-bottom: 9px;
 }
 .page-heading p {
-  font-size: 11px;
+  font-size: 14px;
   color: #87949b;
 }
 .page-heading .eyebrow {
   margin-bottom: 10px;
-  font-size: 8px;
+  font-size: 13px;
 }
 .heading-actions {
   display: flex;
@@ -737,7 +737,7 @@ kbd {
   border-radius: 6px;
   background: white;
   color: #82928e;
-  font-size: 10px;
+  font-size: 13px;
   height: 36px;
 }
 .select-control select {
@@ -765,11 +765,11 @@ kbd {
   gap: 10px;
 }
 .panel-heading h2 {
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 600;
 }
 .panel-heading p {
-  font-size: 10px;
+  font-size: 13px;
   margin-top: 4px;
   color: #97a1a6;
 }
@@ -799,12 +799,12 @@ kbd {
   gap: 2px;
 }
 .overview-banner strong {
-  font-size: 10px;
+  font-size: 13px;
   color: #5d7769;
   font-weight: 600;
 }
 .overview-banner > div > span {
-  font-size: 9px;
+  font-size: 13px;
   color: #93a096;
 }
 .overview-banner > button {
@@ -813,7 +813,7 @@ kbd {
   gap: 8px;
   margin-left: auto;
   color: #769581;
-  font-size: 10px;
+  font-size: 13px;
   white-space: nowrap;
 }
 .stats-grid {
@@ -835,7 +835,7 @@ kbd {
   justify-content: space-between;
   gap: 8px;
   color: #7d8a91;
-  font-size: 10px;
+  font-size: 13px;
 }
 .stat-top svg {
   color: #9daea7;
@@ -873,7 +873,7 @@ kbd {
   stroke: #d4ba82;
 }
 .stat-note {
-  font-size: 8px;
+  font-size: 13px;
   color: #9aa5a6;
   display: flex;
   align-items: center;
@@ -906,7 +906,7 @@ kbd {
   flex-shrink: 0;
 }
 .country-legend .eyebrow {
-  font-size: 7px;
+  font-size: 13px;
   letter-spacing: 1px;
   margin-bottom: 9px;
 }
@@ -919,7 +919,7 @@ kbd {
   font-weight: 400;
 }
 .country-legend > p {
-  font-size: 9px;
+  font-size: 13px;
   color: #98a69d;
   line-height: 1.7;
   margin-top: 8px;
@@ -938,7 +938,7 @@ kbd {
   line-height: 1;
 }
 .country-total span {
-  font-size: 9px;
+  font-size: 13px;
   color: #96a59b;
   max-width: 70px;
   line-height: 1.4;
@@ -954,15 +954,15 @@ kbd {
   margin-left: -3px;
   width: 25px;
   height: 25px;
-  font-size: 8px;
+  font-size: 13px;
 }
 .avatar-stack > span:last-child:not(.avatar) {
-  font-size: 8px;
+  font-size: 13px;
   margin-left: 5px;
   color: #9aa69e;
 }
 .country-legend .text-button {
-  font-size: 9px;
+  font-size: 13px;
   gap: 6px;
 }
 .africa-map {
@@ -1017,12 +1017,12 @@ kbd {
   fill: #235f45;
 }
 .map-marker text {
-  font-size: 9px;
+  font-size: 13px;
   fill: #82a08e;
   font-family: 'DM Sans', sans-serif;
 }
 .map-ocean {
-  font-size: 5px;
+  font-size: 13px;
   fill: #b8c5c5;
   letter-spacing: 1.1px;
 }
@@ -1030,7 +1030,7 @@ kbd {
   position: absolute;
   bottom: 6px;
   right: 8px;
-  font-size: 7px;
+  font-size: 13px;
   color: #a5b3ad;
   display: flex;
   align-items: center;
@@ -1048,7 +1048,7 @@ kbd {
   display: flex;
   align-items: center;
   gap: 16px;
-  font-size: 8px;
+  font-size: 13px;
   color: #9ba9a2;
 }
 .footprint-footer > span {
@@ -1064,7 +1064,7 @@ kbd {
   display: flex;
   align-items: center;
   gap: 5px;
-  font-size: 8px;
+  font-size: 13px;
   color: #8caa98;
   margin-left: auto;
   white-space: nowrap;
@@ -1077,7 +1077,7 @@ kbd {
   border: 1px solid #ebe2ce;
   color: #b29b6b;
   border-radius: 5px;
-  font-size: 10px;
+  font-size: 13px;
   padding: 2px 6px;
 }
 .attention-item {
@@ -1102,16 +1102,16 @@ kbd {
 .attention-item strong {
   display: block;
   font-weight: 500;
-  font-size: 11px;
+  font-size: 14px;
 }
 .attention-item p {
-  font-size: 9px;
+  font-size: 13px;
   color: #929ea6;
   margin-top: 3px;
   margin-bottom: 5px;
 }
 .attention-item .badge {
-  font-size: 7px;
+  font-size: 13px;
   padding: 2px 5px;
 }
 .attention-item > .lucide {
@@ -1120,7 +1120,7 @@ kbd {
   color: #bac4c6;
 }
 .attention-item .small-meta {
-  font-size: 8px;
+  font-size: 13px;
   color: #a5adb3;
 }
 .attention-footer {
@@ -1131,7 +1131,7 @@ kbd {
   width: 100%;
   padding: 12px 18px;
   background: #fcfdfc;
-  font-size: 9px;
+  font-size: 13px;
   color: #8a9c91;
 }
 .attention-footer svg:last-child {
@@ -1177,13 +1177,13 @@ kbd {
 }
 .mini-node > strong {
   display: block;
-  font-size: 9px;
+  font-size: 13px;
   font-weight: 500;
   white-space: nowrap;
 }
 .mini-node > small {
   display: block;
-  font-size: 7px;
+  font-size: 13px;
   color: #a0abaa;
   margin-top: 4px;
   white-space: nowrap;
@@ -1246,7 +1246,7 @@ kbd {
   gap: 18px;
   padding: 12px 20px;
   border-top: 1px solid #edf1ef;
-  font-size: 8px;
+  font-size: 13px;
   color: #a0aba6;
 }
 .engine-footer > span {
@@ -1256,7 +1256,7 @@ kbd {
 }
 .engine-footer > span:last-child {
   margin-left: auto;
-  font-size: 7px;
+  font-size: 13px;
 }
 .engine-footer .green-dot {
   height: 4px;
@@ -1287,18 +1287,18 @@ kbd {
   margin-top: 1px;
 }
 .activity-item strong {
-  font-size: 10px;
+  font-size: 13px;
   font-weight: 500;
 }
 .activity-item p {
-  font-size: 9px;
+  font-size: 13px;
   color: #96a2a8;
   margin: 2px 0;
   line-height: 1.5;
   max-width: 250px;
 }
 .activity-item small {
-  font-size: 8px;
+  font-size: 13px;
   color: #acb5b8;
 }
 .workspace-footer {
@@ -1307,7 +1307,7 @@ kbd {
   justify-content: space-between;
   gap: 16px;
   padding: 20px 0 19px;
-  font-size: 8px;
+  font-size: 13px;
   color: #a7b0b0;
 }
 .workspace-footer > span {
@@ -1343,12 +1343,12 @@ kbd {
   display: flex;
 }
 .segmented button {
-  font-size: 12px;
+  font-size: 15px;
   padding: 8px 0;
   color: #607771;
 }
 .segmented button span {
-  font-size: 9px;
+  font-size: 13px;
   background: #e4ece7;
   padding: 2px 6px;
   margin-left: 5px;
@@ -1367,7 +1367,7 @@ kbd {
   padding: 8px 10px;
   color: #9aa8af;
   min-width: 240px;
-  font-size: 11px;
+  font-size: 14px;
 }
 .search-field input {
   border: 0;
@@ -1376,7 +1376,7 @@ kbd {
   width: 100%;
   color: #526771;
   min-width: 0;
-  font-size: 11px;
+  font-size: 14px;
 }
 .search-field input::placeholder {
   color: #a9b2b7;
@@ -1391,10 +1391,10 @@ kbd {
   text-align: left;
   width: 100%;
   white-space: nowrap;
-  font-size: 11px;
+  font-size: 14px;
 }
 .hr-app th {
-  font-size: 9px;
+  font-size: 13px;
   font-weight: 500;
   color: #8e9da4;
   padding: 14px 20px;
@@ -1405,18 +1405,18 @@ kbd {
   padding: 15px 20px;
   border-bottom: 1px solid #edf0f2;
   color: #667a84;
-  font-size: 10px;
+  font-size: 13px;
 }
 .hr-app td strong {
   display: block;
-  font-size: 10px;
+  font-size: 13px;
   font-weight: 500;
   color: #4c626d;
 }
 .hr-app td small {
   display: block;
   color: #a0acb3;
-  font-size: 9px;
+  font-size: 13px;
   margin-top: 3px;
 }
 .hr-app tbody tr:last-child td {
@@ -1436,12 +1436,12 @@ kbd {
   padding: 0;
 }
 .person-cell strong {
-  font-size: 11px !important;
+  font-size: 14px !important;
   font-weight: 550 !important;
   color: #435d65 !important;
 }
 .person-cell small {
-  font-size: 9px;
+  font-size: 13px;
   display: block;
   color: #95a4aa;
 }
@@ -1452,12 +1452,12 @@ kbd {
   white-space: nowrap;
 }
 .country > span {
-  font-size: 13px;
+  font-size: 16px;
 }
 .table-link {
   padding: 0;
   text-align: left;
-  font-size: 11px;
+  font-size: 14px;
   color: #536e77;
 }
 .table-link:hover {
@@ -1469,14 +1469,14 @@ kbd {
   text-overflow: ellipsis;
 }
 .source-value {
-  font-size: 9px;
+  font-size: 13px;
   color: #af8b77;
   background: #faf4ee;
   padding: 3px 6px;
   border-radius: 3px;
 }
 .target-value {
-  font-size: 9px;
+  font-size: 13px;
   color: #6d9685;
   background: #eff7f2;
   padding: 3px 6px;
@@ -1489,7 +1489,7 @@ kbd {
   gap: 7px;
   padding: 14px 20px;
   color: #94a6a0;
-  font-size: 9px;
+  font-size: 13px;
 }
 .table-footer a {
   display: flex;
@@ -1524,7 +1524,7 @@ kbd {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 10px;
+  font-size: 13px;
 }
 .migration-stage.done > span {
   background: #eef6f0;
@@ -1539,7 +1539,7 @@ kbd {
 }
 .migration-stage strong {
   display: block;
-  font-size: 10px;
+  font-size: 13px;
   font-weight: 550;
   color: #82908f;
 }
@@ -1548,7 +1548,7 @@ kbd {
 }
 .migration-stage small {
   display: block;
-  font-size: 8px;
+  font-size: 13px;
   color: #aab3b4;
   margin-top: 2px;
 }
@@ -1573,7 +1573,7 @@ kbd {
 }
 .migration-summary span {
   display: block;
-  font-size: 10px;
+  font-size: 13px;
   color: #92a0a7;
 }
 .migration-summary strong {
@@ -1586,7 +1586,7 @@ kbd {
   margin: 7px 0;
 }
 .migration-summary small {
-  font-size: 9px;
+  font-size: 13px;
   color: #a5b0b4;
 }
 .progress-track {
@@ -1614,18 +1614,18 @@ kbd {
 }
 .migration-note strong {
   font-weight: 500;
-  font-size: 11px;
+  font-size: 14px;
   color: #6e838a;
 }
 .migration-note p {
-  font-size: 10px;
+  font-size: 13px;
   max-width: 690px;
   line-height: 1.7;
   margin-top: 4px;
 }
 .migration-note a {
   margin-left: auto;
-  font-size: 10px;
+  font-size: 13px;
   color: #7f9890;
   display: flex;
   align-items: center;
@@ -1649,7 +1649,7 @@ kbd {
   color: #8ca99b;
 }
 .service-stats span {
-  font-size: 11px;
+  font-size: 14px;
   color: #8a9c9e;
 }
 .service-stats strong {
@@ -1689,13 +1689,13 @@ kbd {
 }
 .ticket-main > strong {
   display: block;
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 500;
   color: #526974;
   margin: 3px 0;
 }
 .ticket-main > span:last-child {
-  font-size: 9px;
+  font-size: 13px;
   color: #93a3aa;
 }
 .ticket-main > span:last-child i {
@@ -1704,11 +1704,11 @@ kbd {
   color: #b7c2c4;
 }
 .ticket-main .small-meta {
-  font-size: 8px;
+  font-size: 13px;
   color: #a0b0b5;
 }
 .ticket-assignee {
-  font-size: 10px;
+  font-size: 13px;
   color: #94a2a8;
   width: 120px;
 }
@@ -1735,7 +1735,7 @@ kbd {
   color: #658172;
 }
 .service-voice-banner p {
-  font-size: 10px;
+  font-size: 13px;
   margin-top: 4px;
 }
 .service-voice-banner > span {
@@ -1743,7 +1743,7 @@ kbd {
   align-items: center;
   gap: 8px;
   white-space: nowrap;
-  font-size: 11px;
+  font-size: 14px;
   margin-left: auto;
 }
 .insights-grid {
@@ -1759,12 +1759,12 @@ kbd {
 .distribution > div > div:first-child {
   display: flex;
   justify-content: space-between;
-  font-size: 10px;
+  font-size: 13px;
   color: #7a8b93;
   margin-bottom: 6px;
 }
 .distribution strong {
-  font-size: 10px;
+  font-size: 13px;
   font-weight: 500;
   color: #627c84;
 }
@@ -1774,7 +1774,7 @@ kbd {
   text-align: right;
   margin-left: 15px;
   color: #a5b0b5;
-  font-size: 9px;
+  font-size: 13px;
 }
 .distribution-track {
   height: 6px;
@@ -1819,14 +1819,14 @@ kbd {
   color: #6c897c;
 }
 .status-donut span {
-  font-size: 10px;
+  font-size: 13px;
   color: #a4b0ab;
 }
 .status-legend {
   display: flex;
   gap: 8px;
   align-items: center;
-  font-size: 11px;
+  font-size: 14px;
   color: #9aacac;
   margin: 14px 0;
 }
@@ -1836,7 +1836,7 @@ kbd {
   border-radius: 100%;
 }
 .status-legend strong {
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 500;
   margin-left: 16px;
   color: #738a85;
@@ -1860,17 +1860,17 @@ kbd {
   margin-left: 2px;
 }
 .quality-explainer strong {
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 550;
   color: #82988f;
 }
 .quality-explainer p {
-  font-size: 10px;
+  font-size: 13px;
   margin-top: 6px;
   line-height: 1.8;
 }
 .insight-footnote {
-  font-size: 10px;
+  font-size: 13px;
   padding: 0 25px 15px;
   line-height: 1.8;
 }
@@ -1889,12 +1889,12 @@ kbd {
   color: #93a3b1;
 }
 .insight-method strong {
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 550;
   color: #8499a4;
 }
 .insight-method p {
-  font-size: 10px;
+  font-size: 13px;
   line-height: 1.8;
   margin-top: 4px;
 }
@@ -1944,16 +1944,16 @@ kbd {
   margin-bottom: 5px;
 }
 .audit-title strong {
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 550;
   color: #617c72;
 }
 .audit-title time {
-  font-size: 9px;
+  font-size: 13px;
   color: #a5b0b3;
 }
 .audit-event p {
-  font-size: 11px;
+  font-size: 14px;
   margin-bottom: 9px;
   line-height: 1.7;
 }
@@ -1961,7 +1961,7 @@ kbd {
   display: flex;
   gap: 12px;
   align-items: center;
-  font-size: 8px;
+  font-size: 13px;
 }
 .audit-actor {
   color: #8ba097;
@@ -1989,11 +1989,11 @@ kbd {
   margin-bottom: 16px;
 }
 .library-heading .eyebrow {
-  font-size: 8px;
+  font-size: 13px;
   margin: 0;
 }
 .library-heading .badge {
-  font-size: 8px;
+  font-size: 13px;
 }
 .workflow-choice {
   display: flex;
@@ -2016,13 +2016,13 @@ kbd {
 }
 .workflow-choice strong {
   display: block;
-  font-size: 10px;
+  font-size: 13px;
   font-weight: 550;
   color: #6f828a;
 }
 .workflow-choice small {
   display: block;
-  font-size: 8px;
+  font-size: 13px;
   color: #a0aeb2;
   margin-top: 3px;
 }
@@ -2052,12 +2052,12 @@ kbd {
   color: #6b8c7b;
 }
 .library-note p {
-  font-size: 10px;
+  font-size: 13px;
   line-height: 1.8;
   color: #98a7a2;
 }
 .library-note > span {
-  font-size: 8px;
+  font-size: 13px;
   color: #a9b6af;
   display: block;
   margin-top: 10px;
@@ -2068,11 +2068,11 @@ kbd {
   margin: 23px 8px 0;
 }
 .recent-runs > .eyebrow {
-  font-size: 8px;
+  font-size: 13px;
   display: block;
 }
 .recent-runs > p {
-  font-size: 10px;
+  font-size: 13px;
   line-height: 1.8;
 }
 .recent-runs > button {
@@ -2093,7 +2093,7 @@ kbd {
   display: block;
 }
 .recent-runs small {
-  font-size: 8px;
+  font-size: 13px;
   color: #afbbb5;
   margin-top: 3px;
   display: block;
@@ -2142,11 +2142,11 @@ kbd {
   border-radius: 7px;
 }
 .studio-header h2 {
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 550;
 }
 .studio-header p {
-  font-size: 8px;
+  font-size: 13px;
   color: #a1aeb3;
   margin-top: 3px;
 }
@@ -2154,7 +2154,7 @@ kbd {
   margin: 0 4px;
 }
 .studio-header .button {
-  font-size: 10px;
+  font-size: 13px;
   min-height: 32px;
 }
 .studio-toolbar {
@@ -2173,7 +2173,7 @@ kbd {
   display: flex;
   align-items: center;
   gap: 6px;
-  font-size: 9px;
+  font-size: 13px;
   color: #95a3aa;
   padding: 11px 0;
   border-bottom: 2px solid transparent;
@@ -2183,13 +2183,13 @@ kbd {
   border-bottom-color: #739780;
 }
 .studio-tabs span {
-  font-size: 7px;
+  font-size: 13px;
   background: #f0f3f1;
   border-radius: 3px;
   padding: 0 4px;
 }
 .studio-toolbar .badge {
-  font-size: 7px;
+  font-size: 13px;
 }
 .workflow-canvas {
   background-color: #fafcfc;
@@ -2202,7 +2202,7 @@ kbd {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 8px;
+  font-size: 13px;
   color: #aab6b4;
   margin-bottom: 20px;
 }
@@ -2239,21 +2239,21 @@ kbd {
 }
 .canvas-start strong,
 .canvas-approval strong {
-  font-size: 10px;
+  font-size: 13px;
   font-weight: 550;
   color: #7e9086;
   display: block;
 }
 .canvas-start small,
 .canvas-approval small {
-  font-size: 8px;
+  font-size: 13px;
   color: #a7b3ab;
   display: block;
   margin-top: 2px;
 }
 .canvas-start .badge {
   margin-left: auto;
-  font-size: 7px;
+  font-size: 13px;
 }
 .canvas-spine {
   height: 26px;
@@ -2298,19 +2298,19 @@ kbd {
 }
 .canvas-orchestrator small {
   display: block;
-  font-size: 7px;
+  font-size: 13px;
   letter-spacing: 1px;
   color: #b7abc8;
 }
 .canvas-orchestrator strong {
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 550;
   color: #8d7c9f;
   display: block;
   margin-top: 3px;
 }
 .canvas-orchestrator .badge {
-  font-size: 7px;
+  font-size: 13px;
   margin-left: auto;
 }
 .canvas-nodes {
@@ -2360,12 +2360,12 @@ kbd {
 }
 .canvas-node small {
   display: block;
-  font-size: 6px;
+  font-size: 13px;
   letter-spacing: 0.55px;
   color: #a4afb5;
 }
 .canvas-node strong {
-  font-size: 9px;
+  font-size: 13px;
   font-weight: 500;
   color: #6e838d;
   display: block;
@@ -2385,7 +2385,7 @@ kbd {
   top: -6px;
   right: 13px;
   background: #fff;
-  font-size: 9px;
+  font-size: 13px;
 }
 .node-indicator.complete {
   background: #ecf4ed;
@@ -2408,12 +2408,12 @@ kbd {
   border-top: 1px solid #f0f3f3;
   background: #fdfefe;
   border-radius: 0 0 6px 6px;
-  font-size: 7px;
+  font-size: 13px;
   color: #acb7bb;
   white-space: nowrap;
 }
 .node-bottom small {
-  font-size: 7px;
+  font-size: 13px;
   letter-spacing: 0;
 }
 .canvas-approval {
@@ -2460,7 +2460,7 @@ kbd {
   align-items: center;
   gap: 15px;
   justify-content: center;
-  font-size: 7px;
+  font-size: 13px;
   color: #aab7b4;
   margin-top: 19px;
 }
@@ -2477,7 +2477,7 @@ kbd {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 7px;
+  font-size: 13px;
   color: #a3b1ab;
   background: #fff;
   border-top: 1px solid #e9eeee;
@@ -2495,7 +2495,7 @@ kbd {
   gap: 9px;
   padding: 24px;
   color: #a0aea5;
-  font-size: 10px;
+  font-size: 13px;
 }
 .run-result {
   background: #fff;
@@ -2520,16 +2520,16 @@ kbd {
   flex-shrink: 0;
 }
 .run-result-heading .eyebrow {
-  font-size: 8px;
+  font-size: 13px;
   margin-bottom: 5px;
 }
 .run-result-heading h2 {
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 550;
   color: #647d72;
 }
 .run-result-heading p {
-  font-size: 10px;
+  font-size: 13px;
   line-height: 1.7;
   margin-top: 6px;
 }
@@ -2538,7 +2538,7 @@ kbd {
   align-self: flex-start;
 }
 .proposal-description {
-  font-size: 10px;
+  font-size: 13px;
   padding: 0 25px 19px;
   line-height: 1.8;
 }
@@ -2548,7 +2548,7 @@ kbd {
 }
 .proposal-table td {
   padding: 10px 25px;
-  font-size: 10px;
+  font-size: 13px;
 }
 .proposal-table th {
   padding: 12px 25px;
@@ -2565,12 +2565,12 @@ kbd {
   display: flex;
   align-items: center;
   gap: 6px;
-  font-size: 9px;
+  font-size: 13px;
   color: #94a398;
   margin-right: auto;
 }
 .approval-actions .button {
-  font-size: 10px;
+  font-size: 13px;
   min-height: 33px;
 }
 .decision-complete {
@@ -2581,7 +2581,7 @@ kbd {
   border-top: 1px solid #e6ece7;
   background: #f6faf6;
   color: #7c9984;
-  font-size: 10px;
+  font-size: 13px;
 }
 .proposal-tasks {
   list-style: none;
@@ -2595,7 +2595,7 @@ kbd {
   display: flex;
   align-items: center;
   gap: 7px;
-  font-size: 10px;
+  font-size: 13px;
   color: #96a99d;
 }
 .proposal-routes {
@@ -2607,11 +2607,11 @@ kbd {
   gap: 12px;
   padding: 10px 0;
   border-bottom: 1px solid #eef2ef;
-  font-size: 9px;
+  font-size: 13px;
   color: #a7b3aa;
 }
 .proposal-routes strong {
-  font-size: 10px;
+  font-size: 13px;
   font-weight: 500;
   color: #80968c;
   flex: 1;
@@ -2620,7 +2620,7 @@ kbd {
   display: flex;
   gap: 30px;
   padding: 0 25px 25px;
-  font-size: 10px;
+  font-size: 13px;
   color: #98aaa0;
 }
 .report-summary strong {
@@ -2640,7 +2640,7 @@ kbd {
   display: flex;
   align-items: center;
   gap: 15px;
-  font-size: 8px;
+  font-size: 13px;
   color: #9baaa7;
   padding-bottom: 15px;
   border-bottom: 1px solid #eaf0ee;
@@ -2649,7 +2649,7 @@ kbd {
   margin-left: auto;
 }
 .log-meta > code {
-  font-size: 9px;
+  font-size: 13px;
   color: #82a18f;
 }
 .log-step {
@@ -2671,19 +2671,19 @@ kbd {
   justify-content: center;
   border-radius: 100%;
   flex-shrink: 0;
-  font-size: 10px;
+  font-size: 13px;
 }
 .log-check.warning {
   background: #fbf2df;
   color: #c5a059;
 }
 .log-step strong {
-  font-size: 10px;
+  font-size: 13px;
   font-weight: 550;
   color: #7f9589;
 }
 .log-step p {
-  font-size: 9px;
+  font-size: 13px;
   line-height: 1.8;
   margin-top: 5px;
   color: #9eafa6;
@@ -2692,7 +2692,7 @@ kbd {
   flex: 1;
 }
 .log-step > code {
-  font-size: 8px;
+  font-size: 13px;
   color: #afbbb5;
   white-space: nowrap;
 }
@@ -2702,7 +2702,7 @@ kbd {
 .studio-error {
   background: #fcf2ef;
   color: #b78172;
-  font-size: 11px;
+  font-size: 14px;
   padding: 14px 20px;
 }
 .agent-registry {
@@ -2730,18 +2730,18 @@ kbd {
 }
 .agent-registry strong {
   display: block;
-  font-size: 11px;
+  font-size: 14px;
   color: #71887d;
   font-weight: 550;
   margin-bottom: 5px;
 }
 .agent-registry p {
-  font-size: 10px;
+  font-size: 13px;
   line-height: 1.7;
   margin-top: 7px;
 }
 .agent-registry .badge {
-  font-size: 8px;
+  font-size: 13px;
 }
 .step-detail {
   padding: 17px;
@@ -2751,16 +2751,16 @@ kbd {
   color: #8ca494;
 }
 .step-detail strong {
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 550;
 }
 .step-detail p {
-  font-size: 12px;
+  font-size: 15px;
   margin: 7px 0 12px;
   line-height: 1.8;
 }
 .step-detail .small-meta {
-  font-size: 9px;
+  font-size: 13px;
 }
 .tool-output {
   background: #182c2c;
@@ -2768,7 +2768,7 @@ kbd {
   border: 1px solid #233a35;
   border-radius: 7px;
   padding: 17px;
-  font-size: 10px;
+  font-size: 13px;
   line-height: 1.8;
   max-height: 55vh;
   overflow: auto;
@@ -2815,7 +2815,7 @@ kbd {
   z-index: 2;
 }
 .modal-heading h2 {
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 550;
   color: #607b6c;
 }
@@ -2823,7 +2823,7 @@ kbd {
   padding: 24px;
 }
 .modal-body > p {
-  font-size: 12px;
+  font-size: 15px;
   line-height: 1.85;
   color: #93a49a;
   margin: 0 0 17px;
@@ -2836,7 +2836,7 @@ kbd {
 }
 .modal-body > h4 {
   margin: 20px 0 10px;
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 500;
 }
 .modal-body .detail-list {
@@ -2848,7 +2848,7 @@ kbd {
   gap: 20px;
   border-bottom: 1px solid #eef2ef;
   padding: 11px 0;
-  font-size: 11px;
+  font-size: 14px;
 }
 .detail-list dt {
   color: #a0afa5;
@@ -2861,7 +2861,7 @@ kbd {
   overflow-wrap: anywhere;
 }
 .detail-list code {
-  font-size: 10px;
+  font-size: 13px;
 }
 .workspace-modal-brand {
   display: flex;
@@ -2871,7 +2871,7 @@ kbd {
   margin-bottom: 20px;
 }
 .workspace-modal-brand h3 {
-  font-size: 17px;
+  font-size: 20px;
   font-weight: 500;
 }
 .notification-link {
@@ -2891,18 +2891,18 @@ kbd {
 }
 .notification-link strong {
   display: block;
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 500;
 }
 .notification-link small {
   display: block;
-  font-size: 10px;
+  font-size: 13px;
   color: #a5b4aa;
   margin-top: 4px;
 }
 .guide-steps {
   padding-left: 21px;
-  font-size: 12px;
+  font-size: 15px;
   color: #90a498;
   line-height: 1.9;
   margin: 25px 0;
@@ -2917,7 +2917,7 @@ kbd {
 }
 .modal-body > .button + p {
   margin: 20px 0 0;
-  font-size: 10px;
+  font-size: 13px;
 }
 .employee-detail-top {
   text-align: center;
@@ -2930,7 +2930,7 @@ kbd {
   margin-top: 14px;
 }
 .employee-detail-top p {
-  font-size: 12px;
+  font-size: 15px;
   margin: 4px 0 10px;
   color: #96a99b;
 }
@@ -2942,7 +2942,7 @@ kbd {
   background: #f4f8f4;
   border: 1px solid #e8eee7;
   border-radius: 6px;
-  font-size: 11px;
+  font-size: 14px;
   color: #8ca58e;
   margin: 18px 0;
 }
@@ -2951,10 +2951,10 @@ kbd {
   min-width: 0;
 }
 .command-input input {
-  font-size: 12px;
+  font-size: 15px;
 }
 .command-input kbd {
-  font-size: 9px;
+  font-size: 13px;
   color: #b0bdb5;
 }
 .command-results {
@@ -2966,7 +2966,7 @@ kbd {
   display: flex;
   align-items: center;
   gap: 12px;
-  font-size: 12px;
+  font-size: 15px;
   text-align: left;
   color: #839c89;
   border-radius: 5px;
@@ -2980,24 +2980,24 @@ kbd {
 }
 .command-results > button > small {
   margin-left: auto;
-  font-size: 9px;
+  font-size: 13px;
   color: #a8b8aa;
 }
 .mapping-table {
   margin-top: 22px;
 }
 .hr-app .mapping-table td {
-  font-size: 10px;
+  font-size: 13px;
   padding: 13px 10px;
   white-space: normal;
 }
 .mapping-table code {
-  font-size: 10px;
+  font-size: 13px;
   color: #769d84;
   overflow-wrap: anywhere;
 }
 .ticket-form > p {
-  font-size: 12px;
+  font-size: 15px;
   line-height: 1.8;
   margin-bottom: 20px;
   color: #9aae9f;
@@ -3005,7 +3005,7 @@ kbd {
 .ticket-form label {
   display: grid;
   gap: 7px;
-  font-size: 10px;
+  font-size: 13px;
   color: #8ca694;
   margin-bottom: 17px;
 }
@@ -3017,7 +3017,7 @@ kbd {
   background: #fdfefd;
   color: #6e907a;
   padding: 11px;
-  font-size: 12px;
+  font-size: 15px;
   width: 100%;
   min-width: 0;
 }
@@ -3036,7 +3036,7 @@ kbd {
   color: #b78576 !important;
   border: 1px solid #f2d9cf;
   border-radius: 6px;
-  font-size: 11px !important;
+  font-size: 14px !important;
   line-height: 1.6;
 }
 .ticket-form .button {
@@ -3059,12 +3059,12 @@ kbd {
   color: #a2c1a7;
 }
 .empty-state h3 {
-  font-size: 16px;
+  font-size: 20px;
   color: #8da491;
   font-weight: 500;
 }
 .empty-state p {
-  font-size: 11px;
+  font-size: 14px;
   line-height: 1.8;
   max-width: 350px;
   margin: 8px auto;
@@ -3081,7 +3081,7 @@ kbd {
   color: #88a591;
 }
 .connection-error p {
-  font-size: 12px;
+  font-size: 15px;
   text-align: center;
   max-width: 450px;
 }
@@ -3100,7 +3100,7 @@ kbd {
   align-items: center;
   gap: 10px;
   padding: 13px 16px;
-  font-size: 11px;
+  font-size: 14px;
   max-width: 80vw;
   width: max-content;
 }
@@ -3155,7 +3155,7 @@ kbd {
   }
 }
 .voice-intro .badge {
-  font-size: 8px;
+  font-size: 13px;
   margin-bottom: 11px;
 }
 .voice-intro h3 {
@@ -3166,7 +3166,7 @@ kbd {
   color: #678871;
 }
 .voice-intro p {
-  font-size: 11px;
+  font-size: 14px;
   line-height: 1.7;
   max-width: 270px;
   margin: 11px auto 0;
@@ -3179,7 +3179,7 @@ kbd {
   margin: 9px 0 13px;
 }
 .voice-selects label {
-  font-size: 9px;
+  font-size: 13px;
   color: #91a797;
   display: grid;
   gap: 5px;
@@ -3189,13 +3189,13 @@ kbd {
   border: 1px solid #dfe9e0;
   border-radius: 5px;
   background: #fdfefd;
-  font-size: 10px;
+  font-size: 13px;
   color: #7c9b84;
   width: 100%;
   min-width: 0;
 }
 .voice-disclosure {
-  font-size: 9px;
+  font-size: 13px;
   color: #a7b5a9;
   line-height: 1.8;
   background: #f6f9f5;
@@ -3208,7 +3208,7 @@ kbd {
   min-height: 190px;
 }
 .chat-suggestions > span {
-  font-size: 8px;
+  font-size: 13px;
   letter-spacing: 1px;
   color: #a6b6a5;
   display: block;
@@ -3219,7 +3219,7 @@ kbd {
   align-items: center;
   justify-content: space-between;
   gap: 15px;
-  font-size: 11px;
+  font-size: 14px;
   color: #8aa384;
   border: 1px solid #e3ecdf;
   border-radius: 6px;
@@ -3244,15 +3244,15 @@ kbd {
   display: flex;
   align-items: center;
   gap: 6px;
-  font-size: 9px;
+  font-size: 13px;
   color: #91a788;
 }
 .chat-role .badge {
   margin-left: auto;
-  font-size: 7px;
+  font-size: 13px;
 }
 .chat-message p {
-  font-size: 12px;
+  font-size: 15px;
   line-height: 1.9;
   color: #80967b;
   white-space: pre-wrap;
@@ -3264,11 +3264,11 @@ kbd {
 }
 .chat-message details {
   margin-top: 12px;
-  font-size: 9px;
+  font-size: 13px;
   color: #a4b497;
 }
 .chat-message details p {
-  font-size: 10px;
+  font-size: 13px;
 }
 .chat-message summary {
   cursor: pointer;
@@ -3277,7 +3277,7 @@ kbd {
   display: flex;
   align-items: center;
   gap: 5px;
-  font-size: 9px;
+  font-size: 13px;
   color: #9eae8e;
   padding: 0;
   margin-top: 12px;
@@ -3300,7 +3300,7 @@ kbd {
   max-height: 180px;
   padding: 13px;
   color: #75956f;
-  font-size: 12px;
+  font-size: 15px;
   outline: none;
   line-height: 1.7;
 }
@@ -3319,7 +3319,7 @@ kbd {
   display: flex;
   align-items: center;
   gap: 6px;
-  font-size: 10px;
+  font-size: 13px;
   color: #a6b59a;
   padding: 5px 2px;
 }
@@ -3337,7 +3337,7 @@ kbd {
   justify-content: center;
 }
 .chat-messages > .busy {
-  font-size: 11px;
+  font-size: 14px;
   color: #a0b48f;
   padding: 15px 0;
 }
@@ -3382,13 +3382,13 @@ kbd {
     padding: 33px 26px;
   }
   .mini-node > strong {
-    font-size: 10px;
+    font-size: 13px;
   }
   .mini-node > small {
-    font-size: 8px;
+    font-size: 13px;
   }
   .panel-heading h2 {
-    font-size: 14px;
+    font-size: 18px;
   }
   .activity-item {
     padding: 12px 0;
@@ -3425,7 +3425,7 @@ kbd {
   }
   .page-heading p {
     max-width: 400px;
-    font-size: 10px;
+    font-size: 13px;
   }
   .overview-middle,
   .overview-bottom {
@@ -3439,7 +3439,7 @@ kbd {
     padding: 14px 12px;
   }
   .stat-top {
-    font-size: 9px;
+    font-size: 13px;
   }
   .stat-spark {
     width: 60px;
@@ -3448,7 +3448,7 @@ kbd {
     font-size: 29px;
   }
   .stat-note {
-    font-size: 7px;
+    font-size: 13px;
   }
   .footprint-body {
     padding-left: 18px;
@@ -3462,16 +3462,16 @@ kbd {
     height: 248px;
   }
   .country-legend .eyebrow {
-    font-size: 6px;
+    font-size: 13px;
   }
   .panel-heading {
     padding: 17px 17px 0;
   }
   .panel-heading h2 {
-    font-size: 11px;
+    font-size: 14px;
   }
   .panel-heading p {
-    font-size: 9px;
+    font-size: 13px;
   }
   .attention-item {
     width: calc(100% - 34px);
@@ -3480,46 +3480,46 @@ kbd {
     gap: 8px;
   }
   .attention-item strong {
-    font-size: 10px;
+    font-size: 13px;
   }
   .attention-item p {
-    font-size: 8px;
+    font-size: 13px;
   }
   .attention-icon {
     width: 28px;
     height: 28px;
   }
   .attention-item .small-meta {
-    font-size: 7px;
+    font-size: 13px;
   }
   .attention-footer {
-    font-size: 8px;
+    font-size: 13px;
     padding: 12px 16px;
   }
   .footprint-footer {
     padding: 12px 15px;
     gap: 9px;
-    font-size: 7px;
+    font-size: 13px;
   }
   .footprint-footer button {
-    font-size: 7px;
+    font-size: 13px;
   }
   .engine-footer {
     gap: 12px;
     padding: 12px 15px;
-    font-size: 7px;
+    font-size: 13px;
   }
   .engine-footer > span:last-child {
-    font-size: 6px;
+    font-size: 13px;
   }
   .mini-agent-flow {
     padding: 24px 15px 21px;
   }
   .mini-node > strong {
-    font-size: 8px;
+    font-size: 13px;
   }
   .mini-node > small {
-    font-size: 6px;
+    font-size: 13px;
   }
   .flow-connector {
     width: 16px;
@@ -3534,31 +3534,31 @@ kbd {
     padding-inline: 17px;
   }
   .activity-item p {
-    font-size: 8px;
+    font-size: 13px;
   }
   .migration-stages {
     padding: 20px 15px;
   }
   .migration-stage small {
-    font-size: 7px;
+    font-size: 13px;
   }
   .migration-stage strong {
-    font-size: 9px;
+    font-size: 13px;
   }
   .migration-stage > span {
     width: 25px;
     height: 25px;
-    font-size: 9px;
+    font-size: 13px;
   }
   .migration-stage {
     gap: 6px;
   }
   .migration-note {
     padding: 16px;
-    font-size: 9px;
+    font-size: 13px;
   }
   .migration-note a {
-    font-size: 9px;
+    font-size: 13px;
   }
   .workflow-layout {
     grid-template-columns: 207px 1fr;
@@ -3572,10 +3572,10 @@ kbd {
     padding: 11px 5px;
   }
   .workflow-choice strong {
-    font-size: 9px;
+    font-size: 13px;
   }
   .workflow-choice small {
-    font-size: 7px;
+    font-size: 13px;
   }
   .workflow-canvas {
     padding-inline: 18px;
@@ -3595,22 +3595,22 @@ kbd {
     width: 16px;
   }
   .canvas-node strong {
-    font-size: 8px;
+    font-size: 13px;
   }
   .canvas-node small {
-    font-size: 5px;
+    font-size: 13px;
   }
   .node-bottom {
     margin-inline: -8px;
     width: calc(100% + 16px);
     padding: 6px 8px;
-    font-size: 6px;
+    font-size: 13px;
   }
   .node-bottom small {
-    font-size: 6px;
+    font-size: 13px;
   }
   .studio-header p {
-    font-size: 7px;
+    font-size: 13px;
   }
   .studio-header {
     padding: 15px;
@@ -3623,7 +3623,7 @@ kbd {
   }
   .ticket-assignee {
     width: 100px;
-    font-size: 9px;
+    font-size: 13px;
   }
   .toast {
     left: calc(50% + 102px);
@@ -3661,10 +3661,10 @@ kbd {
     font-size: 35px;
   }
   .country-legend .eyebrow {
-    font-size: 8px;
+    font-size: 13px;
   }
   .country-legend p {
-    font-size: 10px;
+    font-size: 13px;
   }
   .africa-map {
     height: 310px;
@@ -3674,11 +3674,11 @@ kbd {
   }
   .footprint-footer {
     padding: 14px 25px;
-    font-size: 9px;
+    font-size: 13px;
     gap: 20px;
   }
   .footprint-footer button {
-    font-size: 9px;
+    font-size: 13px;
   }
   .attention-panel .panel-heading {
     padding-bottom: 6px;
@@ -3688,35 +3688,35 @@ kbd {
     align-items: center;
   }
   .attention-item p {
-    font-size: 10px;
+    font-size: 13px;
   }
   .attention-item strong {
-    font-size: 12px;
+    font-size: 15px;
   }
   .attention-item .small-meta {
-    font-size: 9px;
+    font-size: 13px;
   }
   .attention-item .badge {
-    font-size: 8px;
+    font-size: 13px;
   }
   .attention-footer {
-    font-size: 10px;
+    font-size: 13px;
     justify-content: flex-start;
   }
   .overview-bottom {
     grid-template-columns: 1fr;
   }
   .mini-node > strong {
-    font-size: 10px;
+    font-size: 13px;
   }
   .mini-node > small {
-    font-size: 8px;
+    font-size: 13px;
   }
   .engine-footer {
-    font-size: 9px;
+    font-size: 13px;
   }
   .engine-footer > span:last-child {
-    font-size: 8px;
+    font-size: 13px;
   }
   .activity-list {
     display: grid;
@@ -3724,7 +3724,7 @@ kbd {
     gap: 16px;
   }
   .activity-item p {
-    font-size: 9px;
+    font-size: 13px;
   }
   .topbar .badge {
     display: none;
@@ -3733,13 +3733,13 @@ kbd {
     grid-template-columns: repeat(2, 1fr);
   }
   .stat-top {
-    font-size: 10px;
+    font-size: 13px;
   }
   .stat-value strong {
     font-size: 34px;
   }
   .stat-note {
-    font-size: 9px;
+    font-size: 13px;
   }
   .stat-spark {
     width: 80px;
@@ -3783,10 +3783,10 @@ kbd {
     padding: 9px;
   }
   .workflow-choice strong {
-    font-size: 11px;
+    font-size: 14px;
   }
   .workflow-choice small {
-    font-size: 9px;
+    font-size: 13px;
   }
   .library-note {
     display: none;
@@ -3804,31 +3804,31 @@ kbd {
     margin: 0;
   }
   .recent-runs > p {
-    font-size: 9px;
+    font-size: 13px;
   }
   .recent-runs > button {
     width: 130px;
   }
   .studio-header h2 {
-    font-size: 13px;
+    font-size: 16px;
   }
   .studio-header p {
-    font-size: 9px;
+    font-size: 13px;
   }
   .workflow-canvas {
     padding: 20px 28px;
   }
   .canvas-node strong {
-    font-size: 10px;
+    font-size: 13px;
   }
   .canvas-node small {
-    font-size: 6px;
+    font-size: 13px;
   }
   .node-bottom {
-    font-size: 8px;
+    font-size: 13px;
   }
   .node-bottom small {
-    font-size: 7px;
+    font-size: 13px;
   }
   .node-icon {
     width: 30px;
@@ -3841,7 +3841,7 @@ kbd {
     gap: 20px 15px;
   }
   .studio-empty-note {
-    font-size: 9px;
+    font-size: 13px;
     text-align: center;
   }
   .service-stats > div {
@@ -3849,7 +3849,7 @@ kbd {
     gap: 8px;
   }
   .service-stats span {
-    font-size: 9px;
+    font-size: 13px;
   }
   .service-stats svg {
     width: 17px;
@@ -3865,13 +3865,13 @@ kbd {
     padding: 20px;
   }
   .service-voice-banner > span {
-    font-size: 9px;
+    font-size: 13px;
   }
   .service-voice-banner strong {
     font-size: 23px;
   }
   .service-voice-banner p {
-    font-size: 9px;
+    font-size: 13px;
   }
   .insights-grid {
     gap: 16px;
@@ -3885,7 +3885,7 @@ kbd {
     gap: 10px;
   }
   .workspace-footer {
-    font-size: 7px;
+    font-size: 13px;
   }
   .approval-actions {
     flex-wrap: wrap;
@@ -3927,7 +3927,7 @@ kbd {
   }
   .breadcrumb {
     gap: 8px;
-    font-size: 10px;
+    font-size: 13px;
   }
   .breadcrumb > span {
     display: none;
@@ -3963,12 +3963,12 @@ kbd {
     letter-spacing: -1px;
   }
   .page-heading p {
-    font-size: 11px;
+    font-size: 14px;
     max-width: 100%;
     line-height: 1.8;
   }
   .page-heading .eyebrow {
-    font-size: 8px;
+    font-size: 13px;
     margin-bottom: 9px;
   }
   .heading-actions {
@@ -3978,7 +3978,7 @@ kbd {
   }
   .button,
   .hr-app .button {
-    font-size: 11px;
+    font-size: 14px;
   }
   .overview-banner {
     align-items: flex-start;
@@ -3987,17 +3987,17 @@ kbd {
     padding: 13px;
   }
   .overview-banner strong {
-    font-size: 10px;
+    font-size: 13px;
   }
   .overview-banner > div {
     flex: 1;
   }
   .overview-banner > div > span {
-    font-size: 9px;
+    font-size: 13px;
     line-height: 1.7;
   }
   .overview-banner > button {
-    font-size: 9px;
+    font-size: 13px;
     margin: 0 0 0 41px;
     width: 100%;
     padding: 0;
@@ -4014,7 +4014,7 @@ kbd {
     padding: 14px;
   }
   .stat-top {
-    font-size: 9px;
+    font-size: 13px;
     gap: 7px;
   }
   .stat-top svg {
@@ -4032,7 +4032,7 @@ kbd {
     height: 27px;
   }
   .stat-note {
-    font-size: 7px;
+    font-size: 13px;
   }
   .overview-middle {
     gap: 18px;
@@ -4043,14 +4043,14 @@ kbd {
     align-items: flex-start;
   }
   .panel-heading h2 {
-    font-size: 12px;
+    font-size: 15px;
   }
   .panel-heading p {
-    font-size: 9px;
+    font-size: 13px;
     line-height: 1.6;
   }
   .panel-heading > .badge {
-    font-size: 7px;
+    font-size: 13px;
   }
   .footprint-body {
     height: 266px;
@@ -4061,14 +4061,14 @@ kbd {
     width: 40%;
   }
   .country-legend .eyebrow {
-    font-size: 6px;
+    font-size: 13px;
     letter-spacing: 0.9px;
   }
   .country-legend h3 {
     font-size: 28px;
   }
   .country-legend > p {
-    font-size: 8px;
+    font-size: 13px;
   }
   .country-total {
     margin: 14px 0 11px;
@@ -4077,10 +4077,10 @@ kbd {
     font-size: 26px;
   }
   .country-total span {
-    font-size: 8px;
+    font-size: 13px;
   }
   .country-legend .text-button {
-    font-size: 8px;
+    font-size: 13px;
   }
   .africa-map {
     height: 255px;
@@ -4089,16 +4089,16 @@ kbd {
     margin-right: -6%;
   }
   .map-note {
-    font-size: 6px;
+    font-size: 13px;
     right: 5px;
   }
   .footprint-footer {
     gap: 12px;
     padding: 13px 18px;
-    font-size: 7px;
+    font-size: 13px;
   }
   .footprint-footer button {
-    font-size: 7px;
+    font-size: 13px;
     gap: 3px;
   }
   .footprint-footer .legend-dot {
@@ -4116,23 +4116,23 @@ kbd {
     height: 33px;
   }
   .attention-item strong {
-    font-size: 12px;
+    font-size: 15px;
   }
   .attention-item p {
-    font-size: 10px;
+    font-size: 13px;
   }
   .attention-footer {
     padding: 15px 18px;
-    font-size: 10px;
+    font-size: 13px;
   }
   .mini-agent-flow {
     padding: 28px 18px 25px;
   }
   .mini-node > strong {
-    font-size: 8px;
+    font-size: 13px;
   }
   .mini-node > small {
-    font-size: 6px;
+    font-size: 13px;
   }
   .flow-connector {
     width: 17px;
@@ -4143,11 +4143,11 @@ kbd {
   .engine-footer {
     padding: 13px 18px;
     gap: 12px;
-    font-size: 7px;
+    font-size: 13px;
     flex-wrap: wrap;
   }
   .engine-footer > span:last-child {
-    font-size: 6px;
+    font-size: 13px;
   }
   .overview-bottom {
     gap: 18px;
@@ -4160,20 +4160,20 @@ kbd {
     padding: 12px 0;
   }
   .activity-item strong {
-    font-size: 11px;
+    font-size: 14px;
   }
   .activity-item p {
-    font-size: 10px;
+    font-size: 13px;
     max-width: 100%;
     line-height: 1.7;
   }
   .activity-item small {
-    font-size: 9px;
+    font-size: 13px;
   }
   .workspace-footer {
     padding: 24px 0 20px;
     gap: 9px;
-    font-size: 7px;
+    font-size: 13px;
     flex-direction: column;
     align-items: flex-start;
   }
@@ -4182,7 +4182,7 @@ kbd {
   }
   .toast {
     left: 50%;
-    font-size: 10px;
+    font-size: 13px;
     max-width: calc(100% - 30px);
     bottom: 20px;
     line-height: 1.7;
@@ -4196,10 +4196,10 @@ kbd {
     max-width: 65%;
   }
   .search-field input {
-    font-size: 10px;
+    font-size: 13px;
   }
   .segmented button {
-    font-size: 10px;
+    font-size: 13px;
     white-space: nowrap;
   }
   .hr-app th {
@@ -4217,10 +4217,10 @@ kbd {
     min-width: 108px;
   }
   .migration-stage strong {
-    font-size: 10px;
+    font-size: 13px;
   }
   .migration-stage small {
-    font-size: 7px;
+    font-size: 13px;
   }
   .migration-summary {
     grid-template-columns: 1fr 1fr;
@@ -4240,16 +4240,16 @@ kbd {
     font-size: 32px;
   }
   .migration-summary span {
-    font-size: 9px;
+    font-size: 13px;
   }
   .migration-summary small {
-    font-size: 8px;
+    font-size: 13px;
   }
   .progress-track {
     margin-top: 15px;
   }
   .table-footer {
-    font-size: 8px;
+    font-size: 13px;
     flex-wrap: wrap;
     padding: 14px 16px;
     align-items: flex-start;
@@ -4268,13 +4268,13 @@ kbd {
     padding: 17px;
   }
   .migration-note p {
-    font-size: 10px;
+    font-size: 13px;
   }
   .migration-note strong {
-    font-size: 11px;
+    font-size: 14px;
   }
   .migration-note a {
-    font-size: 9px;
+    font-size: 13px;
   }
   .workflow-library {
     padding: 12px;
@@ -4285,10 +4285,10 @@ kbd {
     gap: 7px;
   }
   .workflow-choice strong {
-    font-size: 9px;
+    font-size: 13px;
   }
   .workflow-choice small {
-    font-size: 7px;
+    font-size: 13px;
   }
   .workflow-choice > span {
     width: 28px;
@@ -4319,15 +4319,15 @@ kbd {
     height: 29px;
   }
   .studio-header h2 {
-    font-size: 11px;
+    font-size: 14px;
   }
   .studio-header p {
-    font-size: 7px;
+    font-size: 13px;
     line-height: 1.7;
     max-width: 160px;
   }
   .studio-header .button {
-    font-size: 9px;
+    font-size: 13px;
     padding: 7px 9px;
     gap: 5px;
   }
@@ -4342,11 +4342,11 @@ kbd {
     gap: 13px;
   }
   .studio-tabs > button {
-    font-size: 8px;
+    font-size: 13px;
     gap: 5px;
   }
   .studio-toolbar .badge {
-    font-size: 6px;
+    font-size: 13px;
     padding: 3px 5px;
   }
   .studio-tabs svg {
@@ -4356,7 +4356,7 @@ kbd {
     padding: 16px 15px 17px;
   }
   .canvas-context {
-    font-size: 7px;
+    font-size: 13px;
     margin-bottom: 18px;
   }
   .canvas-start {
@@ -4368,23 +4368,23 @@ kbd {
     padding: 12px;
   }
   .canvas-orchestrator strong {
-    font-size: 10px;
+    font-size: 13px;
   }
   .canvas-orchestrator small {
-    font-size: 6px;
+    font-size: 13px;
   }
   .canvas-orchestrator .badge {
-    font-size: 6px;
+    font-size: 13px;
   }
   .canvas-nodes {
     grid-template-columns: repeat(2, 1fr);
     gap: 15px 12px;
   }
   .canvas-node strong {
-    font-size: 9px;
+    font-size: 13px;
   }
   .canvas-node small {
-    font-size: 5px;
+    font-size: 13px;
     letter-spacing: 0.4px;
   }
   .node-icon {
@@ -4395,29 +4395,29 @@ kbd {
     width: 16px;
   }
   .node-bottom {
-    font-size: 7px;
+    font-size: 13px;
     white-space: normal;
   }
   .node-bottom small {
-    font-size: 6px;
+    font-size: 13px;
     white-space: nowrap;
   }
   .canvas-approval {
     width: 265px;
   }
   .canvas-approval strong {
-    font-size: 10px;
+    font-size: 13px;
   }
   .canvas-legend {
-    font-size: 6px;
+    font-size: 13px;
     gap: 12px;
   }
   .studio-bottom {
-    font-size: 6px;
+    font-size: 13px;
     padding: 11px 12px;
   }
   .studio-empty-note {
-    font-size: 9px;
+    font-size: 13px;
     line-height: 1.8;
     padding: 19px 12px;
     align-items: flex-start;
@@ -4438,17 +4438,17 @@ kbd {
     width: 38px;
   }
   .run-result-heading h2 {
-    font-size: 13px;
+    font-size: 16px;
   }
   .run-result-heading p {
-    font-size: 9px;
+    font-size: 13px;
   }
   .run-result-heading .eyebrow {
-    font-size: 7px;
+    font-size: 13px;
   }
   .proposal-description {
     padding: 0 17px 17px;
-    font-size: 9px;
+    font-size: 13px;
   }
   .approval-actions {
     padding: 17px;
@@ -4456,14 +4456,14 @@ kbd {
     justify-content: flex-end;
   }
   .approval-actions > span {
-    font-size: 8px;
+    font-size: 13px;
   }
   .approval-actions .button {
-    font-size: 9px;
+    font-size: 13px;
     min-height: 32px;
   }
   .decision-complete {
-    font-size: 10px;
+    font-size: 13px;
     line-height: 1.8;
     align-items: flex-start;
     padding: 17px;
@@ -4478,20 +4478,20 @@ kbd {
   .proposal-routes > div {
     flex-wrap: wrap;
     gap: 7px;
-    font-size: 8px;
+    font-size: 13px;
   }
   .proposal-routes strong {
     min-width: 180px;
-    font-size: 9px;
+    font-size: 13px;
   }
   .proposal-routes .badge {
     margin-left: auto;
-    font-size: 8px;
+    font-size: 13px;
   }
   .report-summary {
     padding: 0 17px 20px;
     gap: 20px;
-    font-size: 8px;
+    font-size: 13px;
   }
   .report-summary strong {
     font-size: 26px;
@@ -4501,24 +4501,24 @@ kbd {
     min-height: 400px;
   }
   .log-meta {
-    font-size: 7px;
+    font-size: 13px;
     gap: 8px;
     flex-wrap: wrap;
   }
   .log-meta .badge {
-    font-size: 7px;
+    font-size: 13px;
   }
   .log-step {
     gap: 8px;
   }
   .log-step strong {
-    font-size: 9px;
+    font-size: 13px;
   }
   .log-step p {
-    font-size: 8px;
+    font-size: 13px;
   }
   .log-step > code {
-    font-size: 7px;
+    font-size: 13px;
   }
   .service-stats {
     gap: 9px;
@@ -4538,7 +4538,7 @@ kbd {
     margin: 3px 0 0;
   }
   .service-stats span {
-    font-size: 8px;
+    font-size: 13px;
   }
   .ticket-row {
     gap: 11px;
@@ -4549,10 +4549,10 @@ kbd {
     min-width: 200px;
   }
   .ticket-main > strong {
-    font-size: 11px;
+    font-size: 14px;
   }
   .ticket-row > .badge {
-    font-size: 8px;
+    font-size: 13px;
   }
   .ticket-row > .badge:nth-of-type(1) {
     margin-left: 46px;
@@ -4578,10 +4578,10 @@ kbd {
   .service-voice-banner > span {
     width: 100%;
     margin: 0 0 0 42px;
-    font-size: 10px;
+    font-size: 13px;
   }
   .service-voice-banner p {
-    font-size: 10px;
+    font-size: 13px;
     line-height: 1.8;
   }
   .insights-grid {
@@ -4592,10 +4592,10 @@ kbd {
     padding: 22px;
   }
   .distribution > div > div:first-child {
-    font-size: 11px;
+    font-size: 14px;
   }
   .distribution strong {
-    font-size: 11px;
+    font-size: 14px;
   }
   .status-chart {
     gap: 37px;
@@ -4608,7 +4608,7 @@ kbd {
   }
   .insight-footnote {
     padding: 0 22px 15px;
-    font-size: 10px;
+    font-size: 13px;
   }
   .insight-method {
     padding: 19px;
@@ -4616,7 +4616,7 @@ kbd {
     gap: 13px;
   }
   .insight-method p {
-    font-size: 10px;
+    font-size: 13px;
   }
   .audit-list {
     padding: 25px 18px 15px;
@@ -4632,16 +4632,16 @@ kbd {
     margin-bottom: 7px;
   }
   .audit-title strong {
-    font-size: 12px;
+    font-size: 15px;
   }
   .audit-title time {
-    font-size: 8px;
+    font-size: 13px;
   }
   .audit-event p {
-    font-size: 10px;
+    font-size: 13px;
   }
   .audit-event .small-meta {
-    font-size: 7px;
+    font-size: 13px;
     flex-wrap: wrap;
     gap: 5px;
   }
@@ -4658,54 +4658,54 @@ kbd {
     grid-template-columns: 1fr;
   }
   .agent-registry p {
-    font-size: 11px;
+    font-size: 14px;
   }
   .modal-body .detail-list > div {
-    font-size: 10px;
+    font-size: 13px;
   }
   .hr-app .mapping-table td {
-    font-size: 9px;
+    font-size: 13px;
     padding: 12px 7px;
   }
   .mapping-table code {
-    font-size: 8px;
+    font-size: 13px;
   }
   .modal-body > p {
-    font-size: 11px;
+    font-size: 14px;
   }
   .voice-intro h3 {
     font-size: 33px;
   }
   .voice-disclosure {
-    font-size: 9px;
+    font-size: 13px;
   }
   .chat-message p {
-    font-size: 12px;
+    font-size: 15px;
   }
   .sidebar .nav-item {
-    font-size: 12px;
+    font-size: 15px;
     min-height: 42px;
   }
   .sidebar .nav-label {
-    font-size: 9px;
+    font-size: 13px;
   }
   .sidebar .workspace-switch strong {
-    font-size: 11px;
+    font-size: 14px;
   }
   .sidebar .workspace-switch small {
-    font-size: 9px;
+    font-size: 13px;
   }
   .sidebar .copilot-card strong {
-    font-size: 12px;
+    font-size: 15px;
   }
   .sidebar .copilot-card p {
-    font-size: 11px;
+    font-size: 14px;
   }
   .sidebar .profile strong {
-    font-size: 11px;
+    font-size: 14px;
   }
   .sidebar .profile small {
-    font-size: 9px;
+    font-size: 13px;
   }
 }
 .import-intro {
@@ -4726,12 +4726,12 @@ kbd {
   flex-shrink: 0;
 }
 .import-intro h3 {
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 550;
   color: #668872;
 }
 .import-intro p {
-  font-size: 11px;
+  font-size: 14px;
   margin-top: 5px;
   line-height: 1.8;
 }
@@ -4750,7 +4750,7 @@ kbd {
   color: #8ca487;
 }
 .import-notice p {
-  font-size: 10px;
+  font-size: 13px;
   line-height: 1.8;
 }
 .import-toolbar {
@@ -4758,7 +4758,7 @@ kbd {
   align-items: center;
   justify-content: space-between;
   gap: 15px;
-  font-size: 10px;
+  font-size: 13px;
   color: #9aac9c;
   margin-bottom: 10px;
 }
@@ -4771,12 +4771,12 @@ kbd {
   display: none;
 }
 .import-toolbar .button {
-  font-size: 9px;
+  font-size: 13px;
   min-height: 30px;
   cursor: pointer;
 }
 .import-toolbar button {
-  font-size: 9px;
+  font-size: 13px;
   color: #90a786;
 }
 .csv-editor {
@@ -4790,7 +4790,7 @@ kbd {
   border-radius: 7px;
   padding: 16px;
   font-family: Consolas, monospace;
-  font-size: 10px;
+  font-size: 13px;
   line-height: 2;
   white-space: pre;
   overflow: auto;
@@ -4804,7 +4804,7 @@ kbd {
   margin: 13px 0 20px;
 }
 .import-controls > span {
-  font-size: 9px;
+  font-size: 13px;
   color: #a4b49f;
 }
 .import-result {
@@ -4817,7 +4817,7 @@ kbd {
   gap: 10px;
 }
 .import-result-stats > span {
-  font-size: 9px;
+  font-size: 13px;
   color: #9db09a;
   background: #f6f9f3;
   border: 1px solid #e8eee1;
@@ -4832,24 +4832,24 @@ kbd {
   line-height: 1.3;
 }
 .import-result > p {
-  font-size: 11px;
+  font-size: 14px;
   line-height: 1.8;
   margin: 17px 0;
 }
 .import-result h4 {
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 550;
   color: #7a9972;
   margin-bottom: 10px;
 }
 .import-result table {
-  font-size: 10px;
+  font-size: 13px;
 }
 .hr-app td.import-error-message {
   white-space: normal;
   min-width: 190px;
   max-width: 350px;
-  font-size: 10px;
+  font-size: 13px;
   line-height: 1.8;
 }
 .import-result th {
@@ -4861,7 +4861,7 @@ kbd {
 .import-mappings {
   margin-top: 18px;
   color: #8ea385;
-  font-size: 11px;
+  font-size: 14px;
 }
 .import-mappings summary {
   cursor: pointer;
@@ -4880,10 +4880,10 @@ kbd {
   padding: 10px;
   background: #f6f8f3;
   border-radius: 5px;
-  font-size: 9px;
+  font-size: 13px;
 }
 .import-mappings code {
-  font-size: 9px;
+  font-size: 13px;
 }
 .hr-app .page-heading p,
 .hr-app .stat-top,
@@ -4927,13 +4927,13 @@ kbd {
     flex: 1;
   }
   .import-intro h3 {
-    font-size: 14px;
+    font-size: 18px;
   }
   .import-intro > .badge {
     margin-left: 62px;
   }
   .import-notice {
-    font-size: 9px;
+    font-size: 13px;
   }
   .import-toolbar {
     flex-wrap: wrap;
@@ -4979,5 +4979,546 @@ kbd {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+}
+
+/* Readability refinements reviewed in Figma: nLV1ERYhMlA8zazfGYpc9h / 2:2.
+   Preserve the product palette while allowing controls and content to reflow. */
+.hr-app {
+  --muted: #5c716b;
+  --read-body: 16px;
+  --read-control: 15px;
+  --read-label: 13px;
+  font-size: var(--read-body);
+  line-height: 1.6;
+}
+.hr-app .sidebar {
+  overflow-y: auto;
+}
+.hr-app .sidebar > * {
+  flex-shrink: 0;
+}
+.hr-app .sidebar .nav-item {
+  font-size: var(--read-control);
+  min-height: 44px;
+}
+.hr-app .sidebar .workspace-switch strong,
+.hr-app .sidebar .profile strong {
+  font-size: 14px;
+}
+.hr-app .button,
+.hr-app .text-button,
+.hr-app .select-control select,
+.hr-app .search-field input,
+.hr-app .voice-selects select {
+  font-size: var(--read-control);
+  min-height: 44px;
+}
+.hr-app .icon-button,
+.hr-app .profile-settings {
+  min-width: 44px;
+  min-height: 44px;
+}
+.hr-app .text-button {
+  white-space: normal;
+  text-align: left;
+}
+.hr-app .page-heading {
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 20px;
+}
+.hr-app .page-heading > div:first-child {
+  flex: 1 1 360px;
+  min-width: 0;
+}
+.hr-app .page-heading p,
+.hr-app .panel-heading p,
+.hr-app .attention-item p,
+.hr-app .activity-item p,
+.hr-app .country-legend > p,
+.hr-app .modal-body > p,
+.hr-app .migration-note p,
+.hr-app .insight-method p,
+.hr-app .quality-explainer p,
+.hr-app .insight-footnote,
+.hr-app .audit-event p,
+.hr-app .voice-intro p,
+.hr-app .chat-message p,
+.hr-app .proposal-description,
+.hr-app .studio-empty-note,
+.hr-app .import-notice p,
+.hr-app .import-result > p {
+  font-size: var(--read-body);
+  color: #566d64;
+  line-height: 1.7;
+}
+.hr-app .heading-actions {
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  padding-top: 0;
+}
+.hr-app .panel-heading {
+  gap: 16px;
+  align-items: flex-start;
+}
+.hr-app .panel-heading > div {
+  min-width: 0;
+}
+.hr-app .panel-heading h2 {
+  font-size: 18px;
+  line-height: 1.4;
+}
+.hr-app .stat-top,
+.hr-app .stat-note,
+.hr-app .workspace-footer,
+.hr-app .small-meta,
+.hr-app .table-footer,
+.hr-app .voice-disclosure,
+.hr-app .breadcrumb,
+.hr-app .migration-summary small,
+.hr-app .migration-summary span,
+.hr-app .canvas-context,
+.hr-app .node-bottom,
+.hr-app .canvas-node small,
+.hr-app .studio-header p,
+.hr-app .country-total span,
+.hr-app .audit-title time {
+  color: #61786d;
+}
+.hr-app .hr-table th,
+.hr-app th {
+  font-size: 13px;
+}
+.hr-app .hr-table td,
+.hr-app td {
+  font-size: 15px;
+  padding-block: 17px;
+}
+.hr-app .table-toolbar,
+.hr-app .table-footer {
+  flex-wrap: wrap;
+  gap: 15px;
+}
+.hr-app .search-field {
+  min-height: 44px;
+}
+.hr-app .select-control {
+  min-height: 44px;
+  height: auto;
+  padding-block: 0;
+}
+.hr-app .select-control select {
+  min-height: 42px;
+}
+.hr-app .stat-top {
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 14px;
+}
+.hr-app .stat-note {
+  font-size: 13px;
+  white-space: normal;
+}
+.hr-app .footprint-body {
+  height: auto;
+  min-height: 310px;
+}
+.hr-app .country-legend {
+  min-width: 145px;
+}
+.hr-app .country-total span {
+  max-width: 100px;
+}
+.hr-app .footprint-footer {
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.hr-app .map-marker text {
+  font-size: 9px;
+}
+.hr-app .map-ocean {
+  font-size: 5px;
+}
+.hr-app .overview-grid > *,
+.hr-app .overview-bottom > *,
+.hr-app .stats-grid > *,
+.hr-app .insights-grid > * {
+  min-width: 0;
+}
+.hr-app .workflow-layout {
+  grid-template-columns: 265px minmax(0, 1fr);
+}
+.hr-app .workflow-choice {
+  min-height: 62px;
+}
+.hr-app .workflow-choice > div {
+  min-width: 0;
+}
+.hr-app .workflow-choice strong {
+  font-size: 15px;
+}
+.hr-app .workflow-choice small {
+  font-size: 13px;
+  white-space: normal;
+}
+.hr-app .studio-header {
+  flex-wrap: wrap;
+  gap: 18px;
+}
+.hr-app .studio-header h2 {
+  font-size: 18px;
+}
+.hr-app .studio-header p {
+  font-size: 14px;
+  max-width: 460px;
+}
+.hr-app .studio-toolbar {
+  flex-wrap: wrap;
+  height: auto;
+  min-height: 58px;
+  gap: 12px;
+  padding-block: 10px;
+}
+.hr-app .studio-tabs > button {
+  font-size: 14px;
+  min-height: 40px;
+}
+.hr-app .canvas-context {
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.hr-app .canvas-nodes {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.hr-app .canvas-node {
+  min-width: 0;
+}
+.hr-app .canvas-node strong {
+  font-size: 15px;
+  line-height: 1.5;
+}
+.hr-app .canvas-node small {
+  font-size: 12px;
+  letter-spacing: 0.3px;
+}
+.hr-app .node-bottom {
+  white-space: normal;
+  font-size: 13px;
+  flex-wrap: wrap;
+}
+.hr-app .canvas-start,
+.hr-app .canvas-orchestrator,
+.hr-app .canvas-approval {
+  width: min(360px, 100%);
+}
+.hr-app .canvas-orchestrator strong,
+.hr-app .canvas-start strong,
+.hr-app .canvas-approval strong {
+  font-size: 16px;
+}
+.hr-app .canvas-orchestrator small,
+.hr-app .canvas-start small,
+.hr-app .canvas-approval small {
+  font-size: 13px;
+  white-space: normal;
+}
+.hr-app .canvas-orchestrator > div {
+  flex: 1;
+  min-width: 0;
+}
+.hr-app .canvas-orchestrator .badge {
+  margin-left: auto;
+  width: auto;
+  height: auto;
+  flex-shrink: 0;
+  padding: 3px 7px;
+}
+.hr-app .mini-node > strong,
+.hr-app .mini-node > small {
+  white-space: normal;
+}
+.hr-app .canvas-legend,
+.hr-app .studio-bottom {
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.hr-app .log-step p {
+  font-size: 15px;
+  line-height: 1.7;
+}
+.hr-app .log-step strong {
+  font-size: 15px;
+}
+.hr-app .log-step > code {
+  font-size: 13px;
+}
+.hr-app .approval-actions {
+  flex-wrap: wrap;
+  gap: 14px;
+}
+.hr-app .approval-actions > span {
+  flex: 1 1 220px;
+  font-size: 14px;
+}
+.hr-app .form-grid input,
+.hr-app .form-grid select,
+.hr-app .form-grid textarea,
+.hr-app .chat-input textarea {
+  font-size: 16px;
+}
+.hr-app .chat-suggestions > button {
+  font-size: 15px;
+  min-height: 48px;
+}
+.hr-app .voice-disclosure {
+  font-size: 14px;
+}
+.hr-app .workspace-footer {
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 13px;
+}
+@media (min-width: 1201px) {
+  .hr-app .sidebar {
+    width: 256px;
+  }
+  .hr-app .main-shell {
+    margin-left: 256px;
+  }
+}
+@media (max-width: 1200px) {
+  .hr-app .overview-grid,
+  .hr-app .overview-bottom {
+    grid-template-columns: 1fr;
+  }
+  .hr-app .workflow-layout {
+    grid-template-columns: 1fr;
+  }
+  .hr-app .workflow-library {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+  .hr-app .library-heading,
+  .hr-app .library-footer,
+  .hr-app .recent-runs {
+    grid-column: 1 / -1;
+  }
+  .hr-app .topbar-actions {
+    gap: 8px;
+  }
+  .hr-app .global-search kbd {
+    display: none;
+  }
+}
+@media (max-width: 760px) {
+  .hr-app .topbar {
+    gap: 8px;
+    padding-inline: 16px;
+  }
+  .hr-app .topbar-actions {
+    gap: 0;
+  }
+  .hr-app .topbar .badge {
+    display: none;
+  }
+  .hr-app .breadcrumb {
+    font-size: 13px;
+    gap: 7px;
+  }
+  .hr-app .page-heading h1 {
+    font-size: 30px;
+  }
+  .hr-app .heading-actions {
+    width: 100%;
+    gap: 10px;
+  }
+  .hr-app .heading-actions .button {
+    white-space: normal;
+  }
+  .hr-app .stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .hr-app .stat-card {
+    padding: 18px 14px;
+  }
+  .hr-app .stat-top {
+    font-size: 13px;
+  }
+  .hr-app .panel-heading {
+    flex-wrap: wrap;
+  }
+  .hr-app .panel-heading .text-button {
+    min-height: 32px;
+  }
+  .hr-app .country-legend {
+    min-width: 125px;
+  }
+  .hr-app .country-legend > p {
+    font-size: 14px;
+  }
+  .hr-app .map-note {
+    max-width: 145px;
+    font-size: 11px;
+    line-height: 1.5;
+  }
+  .hr-app .service-stats {
+    grid-template-columns: 1fr;
+  }
+  .hr-app .service-stats > div {
+    flex-wrap: nowrap;
+  }
+  .hr-app .service-stats strong {
+    margin: 0 0 0 auto;
+    width: auto;
+  }
+  .hr-app .service-stats span {
+    font-size: 15px;
+  }
+  .hr-app .migration-summary > div {
+    padding: 18px 14px;
+  }
+  .hr-app .migration-note {
+    flex-wrap: wrap;
+  }
+  .hr-app .migration-note a {
+    margin-left: 0;
+    font-size: 15px;
+    min-height: 44px;
+  }
+  .hr-app .workflow-library {
+    padding: 16px;
+  }
+  .hr-app .workflow-choice {
+    padding: 12px 8px;
+  }
+  .hr-app .workflow-choice > span {
+    display: none;
+  }
+  .hr-app .studio-header {
+    padding: 18px 16px;
+  }
+  .hr-app .studio-header > div {
+    min-width: 0;
+  }
+  .hr-app .studio-header p {
+    max-width: 240px;
+  }
+  .hr-app .studio-toolbar {
+    padding-inline: 16px;
+  }
+  .hr-app .studio-tabs {
+    gap: 16px;
+  }
+  .hr-app .workflow-canvas {
+    padding: 20px 16px;
+  }
+  .hr-app .canvas-nodes {
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+  .hr-app .canvas-orchestrator {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .hr-app .canvas-orchestrator .badge {
+    margin-left: 0;
+  }
+  .hr-app .canvas-start,
+  .hr-app .canvas-approval {
+    padding: 14px 12px;
+  }
+  .hr-app .canvas-legend {
+    font-size: 12px;
+  }
+  .hr-app .log-step {
+    flex-wrap: wrap;
+  }
+  .hr-app .log-step > code {
+    margin-left: 32px;
+  }
+  .hr-app .ticket-row {
+    align-items: flex-start;
+  }
+  .hr-app .ticket-main {
+    min-width: 0;
+    flex: 1 1 170px;
+  }
+  .hr-app .ticket-main > strong {
+    font-size: 16px;
+  }
+  .hr-app .ticket-row .small-meta {
+    flex-wrap: wrap;
+  }
+  .hr-app .service-voice-banner > span {
+    margin: 0;
+  }
+  .hr-app .quality-explainer {
+    flex-wrap: wrap;
+  }
+  .hr-app .status-chart {
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+  .hr-app .modal-body {
+    padding: 20px 16px;
+  }
+  .hr-app .voice-selects {
+    grid-template-columns: 1fr;
+  }
+  .hr-app .chat-role {
+    flex-wrap: wrap;
+  }
+  .hr-app .chat-role .badge {
+    margin-left: 0;
+  }
+  .hr-app .form-grid {
+    grid-template-columns: 1fr;
+  }
+  .hr-app .mini-agent-flow {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px 18px;
+  }
+  .hr-app .mini-agent-flow .flow-connector {
+    display: none;
+  }
+  .hr-app .mini-node > strong {
+    font-size: 15px;
+  }
+  .hr-app .mini-node > small {
+    font-size: 13px;
+  }
+  .hr-app .import-toolbar > div {
+    flex-wrap: wrap;
+  }
+  .hr-app .import-result-stats > span {
+    font-size: 13px;
+  }
+}
+@media (max-width: 480px) {
+  .hr-app .footprint-body {
+    display: flex;
+    flex-direction: column;
+    padding: 24px 20px 12px;
+  }
+  .hr-app .country-legend {
+    width: 100%;
+    min-width: 0;
+  }
+  .hr-app .country-legend h3 {
+    max-width: 240px;
+  }
+  .hr-app .country-legend .text-button {
+    margin-top: 8px;
+  }
+  .hr-app .africa-map {
+    width: 100%;
+    height: 255px;
+    margin: 0;
+  }
+  .hr-app .map-note {
+    max-width: none;
   }
 }

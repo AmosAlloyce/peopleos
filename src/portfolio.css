@@ -17,7 +17,7 @@
   background: var(--portfolio-paper);
   -webkit-font-smoothing: antialiased;
   overflow: clip;
-  font-size: 15px;
+  font-size: 18px;
   line-height: 1.55;
   isolation: isolate;
 }
@@ -96,7 +96,7 @@
   color: #899b58;
 }
 .portfolio-wordmark-name {
-  font-size: 10px;
+  font-size: 13px;
   line-height: 1.6;
   font-weight: 650;
   letter-spacing: 1.3px;
@@ -104,7 +104,7 @@
 }
 .portfolio-wordmark-name > span {
   display: block;
-  font-size: 8px;
+  font-size: 11px;
   color: var(--portfolio-muted);
   letter-spacing: 1.4px;
   font-weight: 400;
@@ -113,7 +113,7 @@
   display: flex;
   gap: 34px;
   align-items: center;
-  font-size: 12px;
+  font-size: 16px;
 }
 .portfolio-nav > a {
   transition: color 160ms;
@@ -160,7 +160,7 @@
   display: flex;
   align-items: center;
   gap: 9px;
-  font-size: 9px;
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 1.65px;
   line-height: 1.5;
@@ -187,7 +187,7 @@
   letter-spacing: -3.9px;
 }
 .portfolio-hero-description {
-  font-size: 15px;
+  font-size: 18px;
   color: #74776e;
   max-width: 383px;
   line-height: 1.9;
@@ -205,7 +205,7 @@
   gap: 22px;
   min-height: 48px;
   padding: 14px 20px;
-  font-size: 11px;
+  font-size: 15px;
   font-weight: 550;
   border: 1px solid transparent;
   border-radius: 3px;
@@ -235,7 +235,7 @@
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  font-size: 11px;
+  font-size: 15px;
   font-weight: 550;
 }
 .portfolio-text-link svg {
@@ -248,7 +248,7 @@
   display: flex;
   gap: 15px;
   color: #999b90;
-  font-size: 7px;
+  font-size: 11px;
   letter-spacing: 1.5px;
   margin-top: 53px;
 }
@@ -268,7 +268,7 @@
   justify-content: space-between;
   padding: 0 5px 16px;
   border-bottom: 1px solid var(--portfolio-line);
-  font-size: 8px;
+  font-size: 11px;
   letter-spacing: 1.15px;
   color: #7e8277;
 }
@@ -362,7 +362,7 @@
   align-self: flex-start;
 }
 .portfolio-network-core strong {
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 550;
   letter-spacing: -1px;
 }
@@ -370,7 +370,7 @@
   font-weight: 400;
 }
 .portfolio-core-caption {
-  font-size: 4.9px;
+  font-size: 11px;
   font-weight: 650;
   letter-spacing: 0.72px;
   margin-top: 5px;
@@ -417,7 +417,7 @@
   background: #ddebca;
 }
 .portfolio-node-title {
-  font-size: 10px;
+  font-size: 13px;
   font-weight: 600;
 }
 .portfolio-node-status {
@@ -425,7 +425,7 @@
   align-items: center;
   gap: 4px;
   color: #9a9f90;
-  font-size: 7px;
+  font-size: 11px;
   margin-top: 3px;
 }
 .portfolio-node-status i {
@@ -439,7 +439,7 @@
   left: 50%;
   bottom: 3px;
   transform: translateX(-50%);
-  font-size: 6px;
+  font-size: 11px;
   letter-spacing: 1.4px;
   display: flex;
   align-items: center;
@@ -463,17 +463,17 @@
 .portfolio-detail-number {
   font-family: monospace;
   color: #8c967f;
-  font-size: 10px;
+  font-size: 13px;
   padding-top: 1px;
 }
 .portfolio-system-detail strong {
   display: block;
-  font-size: 11px;
+  font-size: 15px;
   font-weight: 500;
   margin-bottom: 5px;
 }
 .portfolio-system-detail p {
-  font-size: 10px;
+  font-size: 13px;
   line-height: 1.7;
   color: #858a7c;
   max-width: 330px;
@@ -487,7 +487,7 @@
   display: block;
   padding-left: 26px;
   color: #92988a;
-  font-size: 8px;
+  font-size: 11px;
   margin-top: 7px;
 }
 .portfolio-practice-strip {
@@ -500,7 +500,7 @@
   border-bottom: 1px solid var(--portfolio-line);
 }
 .portfolio-practice-strip > span {
-  font-size: 8px;
+  font-size: 11px;
   letter-spacing: 1.6px;
   color: #8e9284;
   white-space: nowrap;
@@ -509,7 +509,7 @@
   display: flex;
   align-items: center;
   gap: 32px;
-  font-size: 12px;
+  font-size: 16px;
   color: #646b59;
 }
 .portfolio-practice-strip i {
@@ -543,7 +543,7 @@
   font-size: 1.2em;
 }
 .portfolio-section-heading > p {
-  font-size: 11px;
+  font-size: 15px;
   color: #8b8e81;
   line-height: 1.8;
   padding-bottom: 5px;
@@ -559,7 +559,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 7px;
+  font-size: 11px;
   letter-spacing: 1.5px;
   color: #afbdab;
   border-bottom: 1px solid #ffffff18;
@@ -597,7 +597,7 @@
   letter-spacing: -0.9px;
 }
 .portfolio-project-title h3 > span {
-  font-size: 9px;
+  font-size: 12px;
   vertical-align: top;
   margin-left: 3px;
   font-weight: 400;
@@ -627,7 +627,7 @@
   color: #d3e3b6;
 }
 .portfolio-project-summary > p {
-  font-size: 12px;
+  font-size: 16px;
   line-height: 1.85;
   color: #bac8b9;
   max-width: 365px;
@@ -642,7 +642,7 @@
   border: 1px solid #b5c2aa40;
   color: #b7c4af;
   border-radius: 3px;
-  font-size: 6px;
+  font-size: 11px;
   font-weight: 500;
   letter-spacing: 0.75px;
   padding: 5px 8px;
@@ -665,7 +665,7 @@
   color: #919888;
   padding: 12px 16px;
   border-bottom: 1px solid #dfe1d7;
-  font-size: 7px;
+  font-size: 11px;
 }
 .portfolio-browser-bar > span:nth-child(2) {
   display: flex;
@@ -688,7 +688,7 @@
   display: flex;
   align-items: center;
   gap: 5px;
-  font-size: 5px;
+  font-size: 11px;
   letter-spacing: 1px;
 }
 .portfolio-preview-live i {
@@ -720,7 +720,7 @@
   display: flex;
   align-items: center;
   gap: 24px;
-  font-size: 11px;
+  font-size: 15px;
   box-shadow: 0 4px 24px #0000000a;
   transition: background 160ms;
 }
@@ -738,7 +738,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 8px;
+  font-size: 11px;
   color: #a3b39f;
 }
 .portfolio-project-bottom .portfolio-live-dot {
@@ -754,7 +754,7 @@
 .portfolio-project-bottom .portfolio-button {
   min-height: 40px;
   padding: 10px 15px;
-  font-size: 10px;
+  font-size: 13px;
 }
 .portfolio-project-watch {
   display: inline-flex;
@@ -763,7 +763,7 @@
   background: transparent;
   color: #dbe4d5;
   border: 0;
-  font-size: 9px !important;
+  font-size: 12px !important;
   padding: 9px 0;
 }
 .portfolio-project-watch:hover {
@@ -782,25 +782,25 @@
 .portfolio-small-index {
   display: block;
   color: #8c9383;
-  font-size: 7px;
+  font-size: 11px;
   letter-spacing: 1.5px;
   margin-bottom: 14px;
 }
 .portfolio-case-notes h3 {
-  font-size: 16px;
+  font-size: 20px;
   line-height: 1.5;
   font-weight: 500;
   letter-spacing: -0.3px;
 }
 .portfolio-case-notes > p {
   color: #7f8677;
-  font-size: 11px;
+  font-size: 15px;
   line-height: 1.95;
 }
 .portfolio-case-notes > a {
   align-self: center;
   justify-self: end;
-  font-size: 9px;
+  font-size: 12px;
   white-space: nowrap;
 }
 .portfolio-approach {
@@ -817,7 +817,7 @@
   align-items: center;
   justify-content: space-between;
   color: #929b87;
-  font-size: 7px;
+  font-size: 11px;
   letter-spacing: 1.2px;
   margin-bottom: 25px;
 }
@@ -827,7 +827,7 @@
   gap: 8px;
 }
 .portfolio-architecture-header > span:last-child {
-  font-size: 6px;
+  font-size: 11px;
 }
 .portfolio-human {
   position: relative;
@@ -854,16 +854,16 @@
   border-radius: 5px;
 }
 .portfolio-human strong {
-  font-size: 12px;
+  font-size: 16px;
   font-weight: 500;
 }
 .portfolio-human p {
-  font-size: 8px;
+  font-size: 11px;
   color: #909783;
   margin-top: 3px;
 }
 .portfolio-human > span {
-  font-size: 5px;
+  font-size: 11px;
   letter-spacing: 0.8px;
   padding: 5px 7px;
   color: #73875b;
@@ -928,7 +928,7 @@
   display: flex;
   justify-content: space-between;
   color: #9ca58e;
-  font-size: 8px;
+  font-size: 11px;
   font-family: monospace;
   margin-bottom: 22px;
 }
@@ -940,14 +940,14 @@
   margin-bottom: 16px;
 }
 .portfolio-department h3 {
-  font-size: 12px;
+  font-size: 16px;
   font-weight: 500;
   letter-spacing: -0.2px;
   margin-bottom: 6px;
 }
 .portfolio-department p {
   min-height: 28px;
-  font-size: 8px;
+  font-size: 11px;
   color: #87927a;
   line-height: 1.7;
 }
@@ -959,7 +959,7 @@
   padding-top: 12px;
   margin-top: 20px;
   color: #96a084;
-  font-size: 5px;
+  font-size: 11px;
   letter-spacing: 0.8px;
 }
 .portfolio-department-footer i {
@@ -980,14 +980,14 @@
   display: inline-flex;
   align-items: center;
   gap: 7px;
-  font-size: 6px;
+  font-size: 11px;
   letter-spacing: 0.9px;
 }
 .portfolio-shared-layer > p {
   display: flex;
   align-items: center;
   gap: 14px;
-  font-size: 7px;
+  font-size: 11px;
 }
 .portfolio-shared-layer p span {
   color: #c1cbb3;
@@ -1004,7 +1004,7 @@
   gap: 12px;
   font-family: monospace;
   color: #9da58f;
-  font-size: 8px;
+  font-size: 11px;
   margin-bottom: 16px;
 }
 .portfolio-principle-index > span {
@@ -1014,13 +1014,13 @@
   background: #e0e3d8;
 }
 .portfolio-principles h3 {
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 500;
   letter-spacing: -0.3px;
   margin-bottom: 10px;
 }
 .portfolio-principles p {
-  font-size: 11px;
+  font-size: 15px;
   color: #858d7a;
   line-height: 1.9;
   max-width: 320px;
@@ -1048,7 +1048,7 @@
   font-size: 1.16em;
 }
 .portfolio-demo-copy > p:not(.portfolio-eyebrow) {
-  font-size: 11px;
+  font-size: 15px;
   line-height: 1.9;
   color: #7d8870;
   max-width: 315px;
@@ -1060,18 +1060,18 @@
   margin-top: 24px;
 }
 .portfolio-demo-actions .portfolio-button {
-  font-size: 9px;
+  font-size: 12px;
   padding: 11px 14px;
   min-height: 43px;
   gap: 9px;
 }
 .portfolio-demo-actions .portfolio-text-link {
-  font-size: 9px;
+  font-size: 12px;
   gap: 7px;
 }
 .portfolio-demo-caption {
   display: block;
-  font-size: 6px;
+  font-size: 11px;
   letter-spacing: 1.1px;
   color: #94a082;
   margin-top: 22px;
@@ -1117,7 +1117,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 6px;
+  font-size: 11px;
   letter-spacing: 1.5px;
   color: #d5dfc6;
 }
@@ -1196,13 +1196,13 @@
   padding-top: 37px;
 }
 .portfolio-about-copy > p {
-  font-size: 12px;
+  font-size: 16px;
   line-height: 1.95;
   color: #7e8673;
   margin-bottom: 16px;
 }
 .portfolio-about-copy > p.portfolio-about-lead {
-  font-size: 17px;
+  font-size: 20px;
   line-height: 1.7;
   color: #48523e;
   margin-bottom: 21px;
@@ -1210,7 +1210,7 @@
 }
 .portfolio-about-copy > a {
   margin-top: 7px;
-  font-size: 10px;
+  font-size: 13px;
 }
 .portfolio-about-copy > a svg:first-child {
   color: #697b55;
@@ -1223,7 +1223,7 @@
   margin-top: 28px;
   border-top: 1px solid var(--portfolio-line);
   color: #9da58f;
-  font-size: 6px;
+  font-size: 11px;
   letter-spacing: 1px;
 }
 .portfolio-contact {
@@ -1236,7 +1236,7 @@
 }
 .portfolio-contact .portfolio-eyebrow {
   color: #8a937d;
-  font-size: 7px;
+  font-size: 11px;
 }
 .portfolio-contact h2 {
   font-size: 47px;
@@ -1275,20 +1275,20 @@
   padding: 29px 0 35px;
 }
 .portfolio-footer-name {
-  font-size: 12px;
+  font-size: 16px;
   font-weight: 550;
   letter-spacing: -0.2px;
 }
 .portfolio-footer-name > span {
   display: block;
-  font-size: 5.5px;
+  font-size: 11px;
   letter-spacing: 1.1px;
   font-weight: 400;
   color: #979f8b;
   margin-top: 5px;
 }
 .portfolio-footer > p {
-  font-size: 7px;
+  font-size: 11px;
   line-height: 1.8;
   color: #959d8a;
 }
@@ -1296,7 +1296,7 @@
   display: inline-flex;
   align-items: center;
   gap: 15px;
-  font-size: 8px;
+  font-size: 11px;
   color: #7c8970 !important;
 }
 .portfolio-video-dialog {
@@ -1327,7 +1327,7 @@
 }
 .portfolio-video-heading p {
   color: #89937d;
-  font-size: 10px;
+  font-size: 13px;
   margin-top: 4px;
 }
 .portfolio-dialog-close {
@@ -1350,6 +1350,16 @@
   max-height: calc(100dvh - 230px);
   background: #19251d;
 }
+.portfolio-video-dialog video::cue {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 18px;
+  color: #fff;
+  background-color: rgb(20 27 21 / 90%);
+  text-shadow: 0 1px 2px #0004;
+}
+.portfolio-video-dialog video:fullscreen::cue {
+  font-size: clamp(18px, 2vw, 32px);
+}
 .portfolio-video-note {
   display: flex;
   gap: 25px;
@@ -1357,7 +1367,7 @@
   justify-content: space-between;
   padding: 20px 26px;
   color: #829074;
-  font-size: 9px;
+  font-size: 12px;
 }
 .portfolio-video-note > a {
   display: inline-flex;
@@ -1368,94 +1378,94 @@
 }
 /* Functional descriptions stay readable; only diagram annotations use microtype. */
 .portfolio-system-detail strong {
-  font-size: 12px;
+  font-size: 16px;
 }
 .portfolio-system-detail p {
-  font-size: 11px;
+  font-size: 15px;
 }
 .portfolio-diagram-hint {
-  font-size: 9px;
-}
-.portfolio-project-topline {
-  font-size: 8px;
-}
-.portfolio-project-tags > span {
-  font-size: 8px;
-}
-.portfolio-project-bottom > p {
-  font-size: 10px;
-}
-.portfolio-project-watch {
-  font-size: 11px !important;
-}
-.portfolio-small-index {
-  font-size: 9px;
-}
-.portfolio-case-notes > p {
   font-size: 12px;
 }
+.portfolio-project-topline {
+  font-size: 11px;
+}
+.portfolio-project-tags > span {
+  font-size: 11px;
+}
+.portfolio-project-bottom > p {
+  font-size: 13px;
+}
+.portfolio-project-watch {
+  font-size: 15px !important;
+}
+.portfolio-small-index {
+  font-size: 12px;
+}
+.portfolio-case-notes > p {
+  font-size: 16px;
+}
 .portfolio-case-notes > a {
-  font-size: 10px;
+  font-size: 13px;
 }
 .portfolio-architecture-header {
-  font-size: 9px;
+  font-size: 12px;
 }
 .portfolio-architecture-header > span:last-child {
-  font-size: 8px;
+  font-size: 11px;
 }
 .portfolio-human strong {
-  font-size: 13px;
+  font-size: 17px;
 }
 .portfolio-human p {
-  font-size: 10px;
-}
-.portfolio-human > span {
-  font-size: 7px;
-}
-.portfolio-department h3 {
   font-size: 13px;
 }
+.portfolio-human > span {
+  font-size: 11px;
+}
+.portfolio-department h3 {
+  font-size: 17px;
+}
 .portfolio-department p {
-  font-size: 10px;
+  font-size: 13px;
   min-height: 34px;
 }
 .portfolio-department-footer {
-  font-size: 7px;
+  font-size: 11px;
   letter-spacing: 0.35px;
 }
 .portfolio-shared-layer > span {
-  font-size: 8px;
+  font-size: 11px;
 }
 .portfolio-shared-layer > p {
-  font-size: 9px;
+  font-size: 12px;
 }
 .portfolio-principles p {
-  font-size: 12px;
+  font-size: 16px;
 }
 .portfolio-demo-copy > p:not(.portfolio-eyebrow) {
-  font-size: 12px;
+  font-size: 16px;
 }
 .portfolio-demo-actions .portfolio-button,
 .portfolio-demo-actions .portfolio-text-link {
-  font-size: 10px;
+  font-size: 13px;
 }
 .portfolio-demo-caption {
-  font-size: 8px;
+  font-size: 11px;
 }
 .portfolio-film-topline {
-  font-size: 8px;
+  font-size: 11px;
 }
 .portfolio-about-details {
-  font-size: 8px;
+  font-size: 11px;
 }
 .portfolio-footer-name > span {
-  font-size: 7px;
+  font-size: 11px;
 }
 .portfolio-footer > p {
-  font-size: 9px;
+  font-size: 12px;
 }
 .portfolio-footer-top {
-  font-size: 10px;
+  font-size: 13px;
 }
 @media (min-width: 1550px) {
   .portfolio-hero {
@@ -1490,7 +1500,7 @@
     letter-spacing: -2.5px;
   }
   .portfolio-hero-description {
-    font-size: 13px;
+    font-size: 17px;
     max-width: 335px;
   }
   .portfolio-network-node {
@@ -1509,16 +1519,16 @@
     gap: 20px;
   }
   .portfolio-hero-actions .portfolio-button {
-    font-size: 10px;
+    font-size: 13px;
     gap: 15px;
     padding: 13px 16px;
   }
   .portfolio-hero-actions .portfolio-text-link {
-    font-size: 10px;
+    font-size: 13px;
   }
   .portfolio-practice-strip > p {
     gap: 21px;
-    font-size: 10px;
+    font-size: 13px;
   }
   .portfolio-project {
     padding-inline: 28px;
@@ -1530,7 +1540,7 @@
     height: 430px;
   }
   .portfolio-project-bottom > p {
-    font-size: 9px;
+    font-size: 12px;
   }
   .portfolio-project-bottom > div {
     gap: 15px;
@@ -1548,10 +1558,10 @@
     padding-inline: 12px;
   }
   .portfolio-department h3 {
-    font-size: 12px;
+    font-size: 16px;
   }
   .portfolio-department-footer {
-    font-size: 6px;
+    font-size: 11px;
     letter-spacing: 0.1px;
   }
   .portfolio-demo-inner {
@@ -1583,7 +1593,7 @@
   }
   .portfolio-nav {
     gap: 23px;
-    font-size: 10px;
+    font-size: 13px;
   }
   .portfolio-nav-github {
     padding-left: 22px;
@@ -1604,11 +1614,11 @@
     letter-spacing: -2.1px;
   }
   .portfolio-hero .portfolio-eyebrow {
-    font-size: 6px;
+    font-size: 11px;
     letter-spacing: 1px;
   }
   .portfolio-hero-description {
-    font-size: 11px;
+    font-size: 15px;
     max-width: 290px;
   }
   .portfolio-hero-actions {
@@ -1617,7 +1627,7 @@
     margin-top: 25px;
   }
   .portfolio-hero-footnote {
-    font-size: 5px;
+    font-size: 11px;
     gap: 9px;
     margin-top: 36px;
     letter-spacing: 1px;
@@ -1629,7 +1639,7 @@
     padding-left: 4px;
   }
   .portfolio-system-caption {
-    font-size: 5.5px;
+    font-size: 11px;
     letter-spacing: 0.8px;
   }
   .portfolio-network-node {
@@ -1647,10 +1657,10 @@
     height: 16px;
   }
   .portfolio-node-title {
-    font-size: 8px;
+    font-size: 11px;
   }
   .portfolio-node-status {
-    font-size: 5.5px;
+    font-size: 11px;
   }
   .portfolio-network-core {
     width: 86px;
@@ -1661,17 +1671,17 @@
       0 0 0 6px #dce1d2;
   }
   .portfolio-network-core strong {
-    font-size: 15px;
+    font-size: 18px;
   }
   .portfolio-core-caption {
-    font-size: 3.8px;
+    font-size: 11px;
   }
   .portfolio-core-mark {
     transform: scale(0.8);
     margin-bottom: 3px;
   }
   .portfolio-network-tag {
-    font-size: 4.5px;
+    font-size: 11px;
     letter-spacing: 1px;
   }
   .portfolio-system-detail {
@@ -1680,25 +1690,25 @@
     min-height: 100px;
   }
   .portfolio-system-detail strong {
-    font-size: 11px;
+    font-size: 15px;
   }
   .portfolio-system-detail p {
-    font-size: 10px;
+    font-size: 13px;
   }
   .portfolio-detail-number {
-    font-size: 8px;
+    font-size: 11px;
   }
   .portfolio-diagram-hint {
     padding-left: 20px;
-    font-size: 8px;
+    font-size: 11px;
     margin-top: 3px;
   }
   .portfolio-practice-strip > span {
-    font-size: 6px;
+    font-size: 11px;
     letter-spacing: 1px;
   }
   .portfolio-practice-strip > p {
-    font-size: 8px;
+    font-size: 11px;
     gap: 13px;
   }
   .portfolio-practice-strip > svg {
@@ -1711,7 +1721,7 @@
     font-size: 36px;
   }
   .portfolio-section-heading > p {
-    font-size: 9px;
+    font-size: 12px;
   }
   .portfolio-project-intro {
     gap: 28px;
@@ -1720,10 +1730,10 @@
     font-size: 26px;
   }
   .portfolio-project-summary > p {
-    font-size: 12px;
+    font-size: 16px;
   }
   .portfolio-project-tags > span {
-    font-size: 7px;
+    font-size: 11px;
     padding: 4px 6px;
   }
   .portfolio-project-preview {
@@ -1734,16 +1744,16 @@
     gap: 16px;
   }
   .portfolio-project-bottom > p {
-    font-size: 9px;
+    font-size: 12px;
   }
   .portfolio-project-bottom > div {
     gap: 24px;
   }
   .portfolio-case-notes h3 {
-    font-size: 14px;
+    font-size: 18px;
   }
   .portfolio-case-notes > p {
-    font-size: 12px;
+    font-size: 16px;
   }
   .portfolio-architecture {
     padding-inline: 18px;
@@ -1755,13 +1765,13 @@
     padding: 12px 10px;
   }
   .portfolio-department h3 {
-    font-size: 11px;
+    font-size: 15px;
   }
   .portfolio-department p {
-    font-size: 9px;
+    font-size: 12px;
   }
   .portfolio-department-footer {
-    font-size: 5px;
+    font-size: 11px;
     letter-spacing: 0.1px;
   }
   .portfolio-shared-layer {
@@ -1769,46 +1779,46 @@
   }
   .portfolio-shared-layer > p {
     gap: 7px;
-    font-size: 8px;
+    font-size: 11px;
   }
   .portfolio-shared-layer > span {
-    font-size: 7px;
+    font-size: 11px;
   }
   .portfolio-principles {
     gap: 25px;
     padding-bottom: 65px;
   }
   .portfolio-principles h3 {
-    font-size: 12px;
+    font-size: 16px;
   }
   .portfolio-principles p {
-    font-size: 12px;
+    font-size: 16px;
   }
   .portfolio-demo-inner {
     gap: 29px;
     grid-template-columns: 1fr 1.3fr;
   }
   .portfolio-demo-copy > .portfolio-eyebrow {
-    font-size: 6px;
+    font-size: 11px;
   }
   .portfolio-demo-copy h2 {
     font-size: 48px;
   }
   .portfolio-demo-copy > p:not(.portfolio-eyebrow) {
-    font-size: 12px;
+    font-size: 16px;
   }
   .portfolio-film {
     min-height: 305px;
   }
   .portfolio-film-topline {
     inset: 18px 18px auto;
-    font-size: 6px;
+    font-size: 11px;
   }
   .portfolio-film-bottom {
     inset: auto 20px 20px;
   }
   .portfolio-film-bottom > span {
-    font-size: 17px;
+    font-size: 20px;
   }
   .portfolio-film-play {
     width: 56px;
@@ -1826,16 +1836,16 @@
     letter-spacing: -1px;
   }
   .portfolio-about .portfolio-eyebrow {
-    font-size: 7px;
+    font-size: 11px;
   }
   .portfolio-about-copy {
     padding-top: 25px;
   }
   .portfolio-about-copy > p {
-    font-size: 12px;
+    font-size: 16px;
   }
   .portfolio-about-copy > p.portfolio-about-lead {
-    font-size: 14px;
+    font-size: 18px;
   }
   .portfolio-contact h2 {
     font-size: 41px;
@@ -1868,10 +1878,10 @@
     gap: 14px;
   }
   .portfolio-wordmark-name {
-    font-size: 8px;
+    font-size: 11px;
   }
   .portfolio-wordmark-name > span {
-    font-size: 6px;
+    font-size: 11px;
   }
   .portfolio-menu-toggle {
     display: flex;
@@ -1882,10 +1892,10 @@
     background: transparent;
     padding: 7px 10px;
     color: #566449;
-    font-size: 9px !important;
+    font-size: 12px !important;
   }
   .portfolio-menu-toggle > span {
-    font-size: 16px;
+    font-size: 20px;
     line-height: 1;
   }
   .portfolio-nav {
@@ -1901,7 +1911,7 @@
     flex-direction: column;
     align-items: stretch;
     gap: 0;
-    font-size: 12px;
+    font-size: 16px;
   }
   .portfolio-nav.is-open {
     display: flex;
@@ -1922,7 +1932,7 @@
     padding: 0;
   }
   .portfolio-hero .portfolio-eyebrow {
-    font-size: 7px;
+    font-size: 11px;
     letter-spacing: 1.1px;
   }
   .portfolio-hero h1 {
@@ -1936,7 +1946,7 @@
     letter-spacing: -2px;
   }
   .portfolio-hero-description {
-    font-size: 12px;
+    font-size: 16px;
     line-height: 1.85;
     max-width: 355px;
   }
@@ -1947,10 +1957,10 @@
   .portfolio-hero-actions .portfolio-button {
     min-height: 44px;
     padding-inline: 17px;
-    font-size: 10px;
+    font-size: 13px;
   }
   .portfolio-hero-actions .portfolio-text-link {
-    font-size: 10px;
+    font-size: 13px;
   }
   .portfolio-hero-footnote {
     display: none;
@@ -1961,7 +1971,7 @@
     margin-inline: auto;
   }
   .portfolio-system-caption {
-    font-size: 6px;
+    font-size: 11px;
     padding-bottom: 12px;
   }
   .portfolio-network {
@@ -1972,10 +1982,10 @@
     height: 80px;
   }
   .portfolio-node-title {
-    font-size: 9px;
+    font-size: 12px;
   }
   .portfolio-node-status {
-    font-size: 6px;
+    font-size: 11px;
   }
   .portfolio-network-core {
     width: 97px;
@@ -1983,34 +1993,34 @@
     border-radius: 20px;
   }
   .portfolio-network-core strong {
-    font-size: 17px;
+    font-size: 20px;
   }
   .portfolio-core-mark {
     transform: scale(0.85);
     margin-bottom: 5px;
   }
   .portfolio-core-caption {
-    font-size: 4px;
+    font-size: 11px;
   }
   .portfolio-network-tag {
-    font-size: 5px;
+    font-size: 11px;
   }
   .portfolio-system-detail {
     min-height: 83px;
     margin-top: 9px;
   }
   .portfolio-system-detail strong {
-    font-size: 12px;
+    font-size: 16px;
   }
   .portfolio-system-detail p {
-    font-size: 11px;
+    font-size: 15px;
     line-height: 1.8;
   }
   .portfolio-detail-number {
-    font-size: 9px;
+    font-size: 12px;
   }
   .portfolio-diagram-hint {
-    font-size: 9px;
+    font-size: 12px;
     margin-top: 8px;
   }
   .portfolio-practice-strip {
@@ -2024,7 +2034,7 @@
     width: 100%;
     justify-content: space-between;
     gap: 7px;
-    font-size: 7px;
+    font-size: 11px;
   }
   .portfolio-practice-strip > p > i {
     width: 2px;
@@ -2037,7 +2047,7 @@
     padding-top: 61px;
   }
   .portfolio-eyebrow {
-    font-size: 7px;
+    font-size: 11px;
     letter-spacing: 1.3px;
   }
   .portfolio-section-heading {
@@ -2057,7 +2067,7 @@
     border-radius: 4px;
   }
   .portfolio-project-topline {
-    font-size: 7px;
+    font-size: 11px;
     letter-spacing: 0.7px;
     padding-bottom: 15px;
   }
@@ -2077,7 +2087,7 @@
     font-size: 27px;
   }
   .portfolio-project-summary > p {
-    font-size: 12px;
+    font-size: 16px;
     line-height: 1.9;
     max-width: 330px;
   }
@@ -2086,7 +2096,7 @@
     margin-top: 13px;
   }
   .portfolio-project-tags > span {
-    font-size: 7px;
+    font-size: 11px;
     padding: 4px 6px;
     letter-spacing: 0.4px;
   }
@@ -2096,7 +2106,7 @@
   }
   .portfolio-browser-bar {
     padding: 9px 10px;
-    font-size: 5px;
+    font-size: 11px;
   }
   .portfolio-browser-dots {
     gap: 3px;
@@ -2106,14 +2116,14 @@
     width: 4px;
   }
   .portfolio-browser-bar > span:nth-child(2) {
-    font-size: 5px;
+    font-size: 11px;
     letter-spacing: 0.1px;
   }
   .portfolio-browser-bar > span:nth-child(2) > svg {
     width: 8px;
   }
   .portfolio-preview-live {
-    font-size: 3.5px;
+    font-size: 11px;
     letter-spacing: 0.4px;
   }
   .portfolio-project-preview > img {
@@ -2127,7 +2137,7 @@
     bottom: 12px;
     right: 12px;
     padding: 10px 12px;
-    font-size: 8px;
+    font-size: 11px;
     gap: 14px;
   }
   .portfolio-preview-cta > svg {
@@ -2139,7 +2149,7 @@
     gap: 15px;
   }
   .portfolio-project-bottom > p {
-    font-size: 8px;
+    font-size: 11px;
     gap: 5px;
   }
   .portfolio-project-bottom > div {
@@ -2150,11 +2160,11 @@
   .portfolio-project-bottom .portfolio-button {
     min-height: 40px;
     padding: 9px 11px;
-    font-size: 9px;
+    font-size: 12px;
     gap: 9px;
   }
   .portfolio-project-watch {
-    font-size: 9px !important;
+    font-size: 12px !important;
     gap: 5px;
   }
   .portfolio-project-watch svg {
@@ -2166,22 +2176,22 @@
     padding-top: 25px;
   }
   .portfolio-small-index {
-    font-size: 8px;
+    font-size: 11px;
     margin-bottom: 10px;
   }
   .portfolio-case-notes h3 {
-    font-size: 15px;
+    font-size: 18px;
   }
   .portfolio-case-notes h3 br {
     display: none;
   }
   .portfolio-case-notes > p {
-    font-size: 12px;
+    font-size: 16px;
   }
   .portfolio-case-notes > a {
     grid-column: auto;
     margin-top: 0;
-    font-size: 11px;
+    font-size: 15px;
   }
   .portfolio-approach {
     padding-top: 64px;
@@ -2191,7 +2201,7 @@
   }
   .portfolio-architecture-header {
     margin-bottom: 19px;
-    font-size: 6px;
+    font-size: 11px;
     letter-spacing: 0.5px;
   }
   .portfolio-architecture-header > span {
@@ -2201,7 +2211,7 @@
     width: 13px;
   }
   .portfolio-architecture-header > span:last-child {
-    font-size: 5px;
+    font-size: 11px;
   }
   .portfolio-human {
     width: 100%;
@@ -2216,10 +2226,10 @@
     width: 17px;
   }
   .portfolio-human strong {
-    font-size: 11px;
+    font-size: 15px;
   }
   .portfolio-human p {
-    font-size: 8px;
+    font-size: 11px;
   }
   .portfolio-human > span {
     display: none;
@@ -2250,7 +2260,7 @@
     padding: 12px 10px;
   }
   .portfolio-department-number {
-    font-size: 7px;
+    font-size: 11px;
     margin-bottom: 14px;
   }
   .portfolio-department-number svg {
@@ -2261,15 +2271,15 @@
     margin-bottom: 11px;
   }
   .portfolio-department h3 {
-    font-size: 12px;
+    font-size: 16px;
     margin-bottom: 6px;
   }
   .portfolio-department p {
-    font-size: 9px;
+    font-size: 12px;
     min-height: 32px;
   }
   .portfolio-department-footer {
-    font-size: 5px;
+    font-size: 11px;
     letter-spacing: 0.15px;
     margin-top: 15px;
     padding-top: 10px;
@@ -2281,13 +2291,13 @@
     padding-block: 15px;
   }
   .portfolio-shared-layer > span {
-    font-size: 7px;
+    font-size: 11px;
   }
   .portfolio-shared-layer > span svg {
     width: 12px;
   }
   .portfolio-shared-layer > p {
-    font-size: 8px;
+    font-size: 11px;
     gap: 6px;
     flex-wrap: wrap;
   }
@@ -2297,15 +2307,15 @@
     padding: 26px 0 51px;
   }
   .portfolio-principle-index {
-    font-size: 7px;
+    font-size: 11px;
     margin-bottom: 13px;
   }
   .portfolio-principles h3 {
-    font-size: 14px;
+    font-size: 18px;
     margin-bottom: 7px;
   }
   .portfolio-principles p {
-    font-size: 12px;
+    font-size: 16px;
     max-width: 100%;
   }
   .portfolio-demo-section {
@@ -2320,7 +2330,7 @@
     margin-block: 20px;
   }
   .portfolio-demo-copy > p:not(.portfolio-eyebrow) {
-    font-size: 12px;
+    font-size: 16px;
     max-width: 100%;
   }
   .portfolio-demo-actions {
@@ -2328,13 +2338,13 @@
     gap: 22px;
   }
   .portfolio-demo-actions .portfolio-button {
-    font-size: 9px;
+    font-size: 12px;
   }
   .portfolio-demo-actions .portfolio-text-link {
-    font-size: 9px;
+    font-size: 12px;
   }
   .portfolio-demo-caption {
-    font-size: 7px;
+    font-size: 11px;
     margin-top: 17px;
   }
   .portfolio-film {
@@ -2342,7 +2352,7 @@
     aspect-ratio: 1.45;
   }
   .portfolio-film-topline {
-    font-size: 6px;
+    font-size: 11px;
   }
   .portfolio-film-bottom > span {
     font-size: 20px;
@@ -2365,10 +2375,10 @@
     padding-top: 23px;
   }
   .portfolio-about-copy > p {
-    font-size: 12px;
+    font-size: 16px;
   }
   .portfolio-about-copy > p.portfolio-about-lead {
-    font-size: 16px;
+    font-size: 20px;
     line-height: 1.6;
   }
   .portfolio-about-copy > a {
@@ -2376,7 +2386,7 @@
   }
   .portfolio-about-details {
     gap: 12px;
-    font-size: 7px;
+    font-size: 11px;
     margin-top: 24px;
     padding-top: 20px;
   }
@@ -2385,7 +2395,7 @@
     gap: 15px;
   }
   .portfolio-contact .portfolio-eyebrow {
-    font-size: 5px;
+    font-size: 11px;
     letter-spacing: 0.75px;
   }
   .portfolio-contact h2 {
@@ -2408,25 +2418,31 @@
     padding: 25px 0 30px;
   }
   .portfolio-footer-name {
-    font-size: 11px;
+    font-size: 15px;
   }
   .portfolio-footer-name > span {
-    font-size: 6px;
+    font-size: 11px;
   }
   .portfolio-footer > p {
     order: 3;
-    font-size: 9px;
+    font-size: 12px;
     width: 100%;
   }
   .portfolio-footer-top {
     margin-left: auto;
-    font-size: 9px;
+    font-size: 12px;
     gap: 8px;
   }
   .portfolio-video-dialog {
     width: calc(100vw - 24px);
     max-height: calc(100dvh - 24px);
     border-radius: 5px;
+  }
+  .portfolio-video-dialog video::cue {
+    font-size: 14px;
+  }
+  .portfolio-video-dialog video:fullscreen::cue {
+    font-size: clamp(18px, 2vw, 32px);
   }
   .portfolio-video-heading {
     padding: 17px;
@@ -2435,7 +2451,7 @@
     font-size: 22px;
   }
   .portfolio-video-heading p {
-    font-size: 8px;
+    font-size: 11px;
   }
   .portfolio-dialog-close {
     width: 30px;
@@ -2447,7 +2463,7 @@
   .portfolio-video-note {
     display: block;
     padding: 16px;
-    font-size: 8px;
+    font-size: 11px;
     line-height: 1.8;
   }
   .portfolio-video-note > a {
@@ -2468,7 +2484,7 @@
     font-size: 42px;
   }
   .portfolio-hero .portfolio-eyebrow {
-    font-size: 6px;
+    font-size: 11px;
   }
   .portfolio-network-node {
     width: 74px;
@@ -2480,10 +2496,10 @@
     border-radius: 17px;
   }
   .portfolio-network-core strong {
-    font-size: 15px;
+    font-size: 18px;
   }
   .portfolio-core-caption {
-    font-size: 3.5px;
+    font-size: 11px;
   }
   .portfolio-contact h2 {
     font-size: 27px;
@@ -2496,5 +2512,461 @@
     animation: none !important;
     transition: none !important;
     scroll-behavior: auto !important;
+  }
+}
+
+/* Readable editorial scale, reviewed in Figma / Readable Systems (node 2:2). */
+.portfolio {
+  --portfolio-muted: #616d58;
+  --portfolio-body: 18px;
+  --portfolio-control: 15px;
+}
+.portfolio .portfolio-hero-description,
+.portfolio .portfolio-project-summary > p,
+.portfolio .portfolio-case-notes > p,
+.portfolio .portfolio-principles p,
+.portfolio .portfolio-demo-copy > p:not(.portfolio-eyebrow),
+.portfolio .portfolio-about-copy > p {
+  font-size: var(--portfolio-body);
+  line-height: 1.75;
+  color: #596952;
+}
+.portfolio .portfolio-hero-description {
+  max-width: 465px;
+}
+.portfolio .portfolio-project-summary > p {
+  color: #d1ddca;
+  max-width: 460px;
+}
+.portfolio .portfolio-button,
+.portfolio .portfolio-text-link,
+.portfolio .portfolio-project-watch {
+  font-size: var(--portfolio-control) !important;
+  min-height: 46px;
+}
+.portfolio .portfolio-eyebrow {
+  font-size: 12px;
+  letter-spacing: 1.15px;
+}
+.portfolio .portfolio-hero-footnote {
+  font-size: 10px;
+}
+.portfolio .portfolio-section-heading > p {
+  font-size: 15px;
+  color: #64715c;
+}
+.portfolio .portfolio-case-notes {
+  grid-template-columns: 1fr 1.55fr;
+}
+.portfolio .portfolio-case-notes > a {
+  grid-column: 2;
+  justify-self: start;
+  margin-top: -15px;
+}
+.portfolio .portfolio-case-notes h3 {
+  font-size: 22px;
+}
+.portfolio .portfolio-project-intro {
+  gap: 48px;
+}
+.portfolio .portfolio-project-tags {
+  gap: 8px;
+}
+.portfolio .portfolio-project-tags > span {
+  font-size: 11px;
+}
+.portfolio .portfolio-project-topline,
+.portfolio .portfolio-project-bottom,
+.portfolio .portfolio-project-bottom > div {
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.portfolio .portfolio-project-bottom > p {
+  font-size: 13px;
+  flex-wrap: wrap;
+}
+.portfolio .portfolio-project-preview {
+  margin-top: 4px;
+}
+.portfolio .portfolio-preview-cta {
+  font-size: 15px;
+}
+.portfolio .portfolio-system-detail {
+  min-height: 110px;
+}
+.portfolio .portfolio-system-detail strong {
+  font-size: 16px;
+}
+.portfolio .portfolio-system-detail p {
+  font-size: 14px;
+  color: #67755e;
+  max-width: 450px;
+}
+.portfolio .portfolio-diagram-hint {
+  font-size: 12px;
+  color: #67755e;
+}
+.portfolio .portfolio-node-status {
+  font-size: 10px;
+  color: #68785a;
+}
+.portfolio .portfolio-node-title {
+  font-size: 13px;
+}
+.portfolio .portfolio-core-caption {
+  font-size: 6px;
+}
+.portfolio .portfolio-network-tag {
+  font-size: 8px;
+}
+.portfolio .portfolio-human {
+  width: min(100%, 730px);
+}
+.portfolio .portfolio-human strong {
+  font-size: 17px;
+}
+.portfolio .portfolio-human p {
+  font-size: 14px;
+  color: #617453;
+}
+.portfolio .portfolio-human > span {
+  font-size: 10px;
+}
+.portfolio .portfolio-department h3 {
+  font-size: 17px;
+}
+.portfolio .portfolio-department p {
+  font-size: 14px;
+  color: #647454;
+  min-height: 48px;
+}
+.portfolio .portfolio-department-footer {
+  font-size: 10px;
+  letter-spacing: 0.3px;
+  line-height: 1.7;
+}
+.portfolio .portfolio-shared-layer {
+  flex-wrap: wrap;
+}
+.portfolio .portfolio-shared-layer > p {
+  font-size: 13px;
+  flex-wrap: wrap;
+}
+.portfolio .portfolio-principles h3 {
+  font-size: 21px;
+}
+.portfolio .portfolio-principles p {
+  max-width: none;
+}
+.portfolio .portfolio-demo-copy > p:not(.portfolio-eyebrow) {
+  max-width: 400px;
+}
+.portfolio .portfolio-demo-actions {
+  flex-wrap: wrap;
+}
+.portfolio .portfolio-demo-caption {
+  font-size: 11px;
+}
+.portfolio .portfolio-about-copy > p.portfolio-about-lead {
+  font-size: 23px;
+}
+.portfolio .portfolio-about-details {
+  font-size: 11px;
+}
+.portfolio .portfolio-footer > p {
+  font-size: 12px;
+  color: #67745e;
+}
+.portfolio .portfolio-footer-top {
+  font-size: 14px;
+}
+.portfolio .portfolio-video-note {
+  font-size: 14px;
+}
+.portfolio .portfolio-video-heading p {
+  font-size: 14px;
+}
+.portfolio .portfolio-dialog-close {
+  min-width: 44px;
+  min-height: 44px;
+}
+@media (max-width: 1000px) {
+  .portfolio .portfolio-hero {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  .portfolio .portfolio-hero-copy {
+    max-width: 720px;
+  }
+  .portfolio .portfolio-hero h1 {
+    font-size: clamp(52px, 8vw, 80px);
+  }
+  .portfolio .portfolio-hero-description {
+    max-width: 570px;
+  }
+  .portfolio .portfolio-system {
+    max-width: 580px;
+    margin-inline: auto;
+    padding-left: 0;
+  }
+  .portfolio .portfolio-network-node {
+    width: 108px;
+    height: 100px;
+  }
+  .portfolio .portfolio-network-core {
+    width: 116px;
+    height: 116px;
+  }
+  .portfolio .portfolio-practice-strip > p {
+    font-size: 13px;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+  .portfolio .portfolio-practice-strip > span {
+    display: none;
+  }
+  .portfolio .portfolio-project-intro {
+    gap: 30px;
+  }
+  .portfolio .portfolio-project-bottom > div {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .portfolio .portfolio-departments {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .portfolio .portfolio-architecture-branches {
+    display: none;
+  }
+  .portfolio .portfolio-human {
+    margin-bottom: 24px;
+  }
+  .portfolio .portfolio-principles {
+    gap: 30px;
+  }
+  .portfolio .portfolio-demo-inner {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .portfolio .portfolio-demo-copy > p:not(.portfolio-eyebrow) {
+    max-width: 620px;
+  }
+  .portfolio .portfolio-film {
+    min-height: 360px;
+  }
+}
+@media (max-width: 760px) {
+  .portfolio .portfolio-section-heading {
+    align-items: flex-start;
+  }
+  .portfolio .portfolio-section-heading > p {
+    display: none;
+  }
+  .portfolio .portfolio-project-intro {
+    grid-template-columns: 1fr;
+  }
+  .portfolio .portfolio-case-notes {
+    grid-template-columns: 1fr;
+  }
+  .portfolio .portfolio-case-notes > a {
+    grid-column: auto;
+    margin-top: 0;
+  }
+  .portfolio .portfolio-principles {
+    grid-template-columns: 1fr;
+  }
+  .portfolio .portfolio-about {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .portfolio .portfolio-about-copy {
+    padding-top: 0;
+  }
+}
+@media (max-width: 600px) {
+  .portfolio {
+    --portfolio-body: 17px;
+  }
+  .portfolio .portfolio-hero {
+    padding-top: 38px;
+    gap: 40px;
+  }
+  .portfolio .portfolio-hero h1 {
+    font-size: clamp(43px, 11vw, 64px);
+  }
+  .portfolio .portfolio-eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.8px;
+  }
+  .portfolio .portfolio-hero .portfolio-eyebrow {
+    font-size: 10px;
+  }
+  .portfolio .portfolio-wordmark-name {
+    font-size: 11px;
+  }
+  .portfolio .portfolio-wordmark-name > span {
+    font-size: 8px;
+  }
+  .portfolio .portfolio-menu-toggle {
+    font-size: 13px !important;
+    min-height: 44px;
+  }
+  .portfolio .portfolio-hero-actions {
+    gap: 18px;
+  }
+  .portfolio .portfolio-hero-actions .portfolio-button {
+    padding-inline: 14px;
+    gap: 12px;
+  }
+  .portfolio .portfolio-hero-actions .portfolio-text-link {
+    gap: 7px;
+  }
+  .portfolio .portfolio-system-caption {
+    font-size: 9px;
+  }
+  .portfolio .portfolio-network-node {
+    width: 85px;
+    height: 86px;
+  }
+  .portfolio .portfolio-network-core {
+    width: 95px;
+    height: 95px;
+  }
+  .portfolio .portfolio-network-core strong {
+    font-size: 18px;
+  }
+  .portfolio .portfolio-node-title {
+    font-size: 12px;
+  }
+  .portfolio .portfolio-node-status {
+    font-size: 8px;
+  }
+  .portfolio .portfolio-core-caption {
+    font-size: 5px;
+  }
+  .portfolio .portfolio-network-tag {
+    font-size: 7px;
+    letter-spacing: 0.8px;
+  }
+  .portfolio .portfolio-system-detail {
+    min-height: 130px;
+  }
+  .portfolio .portfolio-practice-strip > p {
+    justify-content: flex-start;
+    font-size: 12px;
+    gap: 11px;
+    line-height: 1.8;
+  }
+  .portfolio .portfolio-project-topline {
+    align-items: flex-start;
+    font-size: 10px;
+    gap: 10px;
+  }
+  .portfolio .portfolio-project-intro > div:first-child > p {
+    font-size: 32px;
+  }
+  .portfolio .portfolio-project-tags > span {
+    font-size: 10px;
+  }
+  .portfolio .portfolio-project-bottom > p {
+    font-size: 12px;
+    line-height: 1.7;
+  }
+  .portfolio .portfolio-project-bottom > div {
+    align-items: flex-start;
+  }
+  .portfolio .portfolio-project-watch {
+    text-align: left;
+  }
+  .portfolio .portfolio-browser-bar > span:nth-child(2) {
+    font-size: 9px;
+  }
+  .portfolio .portfolio-preview-live {
+    display: none;
+  }
+  .portfolio .portfolio-preview-cta {
+    font-size: 13px;
+  }
+  .portfolio .portfolio-architecture-header {
+    font-size: 10px;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .portfolio .portfolio-architecture-header > span:last-child {
+    font-size: 9px;
+  }
+  .portfolio .portfolio-human {
+    align-items: flex-start;
+    padding: 14px 10px;
+  }
+  .portfolio .portfolio-human strong {
+    font-size: 15px;
+  }
+  .portfolio .portfolio-human p {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+  .portfolio .portfolio-human > div:last-of-type {
+    min-width: 0;
+  }
+  .portfolio .portfolio-department {
+    padding: 15px 12px;
+  }
+  .portfolio .portfolio-department h3 {
+    font-size: 16px;
+  }
+  .portfolio .portfolio-department p {
+    font-size: 13px;
+  }
+  .portfolio .portfolio-department-footer {
+    font-size: 8px;
+    letter-spacing: 0.1px;
+  }
+  .portfolio .portfolio-shared-layer > p {
+    font-size: 12px;
+  }
+  .portfolio .portfolio-film {
+    min-height: 270px;
+  }
+  .portfolio .portfolio-footer {
+    align-items: flex-start;
+  }
+  .portfolio .portfolio-footer-name > span {
+    font-size: 8px;
+  }
+  .portfolio .portfolio-footer > p {
+    font-size: 12px;
+  }
+  .portfolio .portfolio-footer-top {
+    font-size: 13px;
+  }
+  .portfolio .portfolio-video-note {
+    font-size: 14px;
+  }
+}
+@media (max-width: 370px) {
+  .portfolio .portfolio-hero h1 {
+    font-size: 41px;
+  }
+  .portfolio .portfolio-hero-actions {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .portfolio .portfolio-network-node {
+    width: 74px;
+  }
+  .portfolio .portfolio-network-core {
+    width: 80px;
+    height: 86px;
+  }
+  .portfolio .portfolio-network-core strong {
+    font-size: 16px;
+  }
+  .portfolio .portfolio-departments {
+    grid-template-columns: 1fr;
+  }
+  .portfolio .portfolio-department p {
+    min-height: 0;
   }
 }

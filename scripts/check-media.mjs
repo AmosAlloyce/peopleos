@@ -1,6 +1,17 @@
 import assert from 'node:assert/strict';
+import { readFile, mkdir } from 'node:fs/promises';
 import { chromium, expect } from '@playwright/test';
 const base = process.env.BASE_URL || 'http://127.0.0.1:3001';
+const narration = process.env.NARRATION_PREFIX || 'output/speech/peopleos-neural';
+const schedule = JSON.parse(await readFile(`${narration}.json`, 'utf8'));
+const utterances = schedule.chapters.flatMap((chapter) => chapter.passages);
+assert.ok(schedule.duration > 0 && utterances.length > 0, 'Narration has a measured schedule');
+for (const [index, utterance] of utterances.entries()) {
+  assert.ok(utterance.start >= 0 && utterance.end > utterance.start);
+  assert.ok(utterance.end <= schedule.duration, 'Captions end within the recording');
+  if (index) assert.ok(utterance.start >= utterances[index - 1].end, 'Captions do not overlap');
+}
+await mkdir('output/review', { recursive: true });
 const browser = await chromium.launch({
   headless: true,
   ...(process.env.BROWSER_PATH ? { executablePath: process.env.BROWSER_PATH } : {}),
@@ -20,7 +31,10 @@ try {
       await Promise.race([
         v.play(),
         new Promise((_, reject) => {
-          timer = setTimeout(() => reject(new Error('Video did not start within 30 seconds')), 30000);
+          timer = setTimeout(
+            () => reject(new Error('Video did not start within 30 seconds')),
+            30000,
+          );
         }),
       ]);
     } finally {
@@ -31,28 +45,45 @@ try {
     .poll(() => video.evaluate((v) => v.readyState), { timeout: 20000 })
     .toBeGreaterThanOrEqual(2);
   assert.ok(
-    Math.abs((await video.evaluate((v) => v.duration)) - 90) < 0.2,
-    'Video lasts 90 seconds',
+    Math.abs((await video.evaluate((v) => v.duration)) - schedule.duration) < 0.2,
+    'Video matches the natural narration duration',
   );
   await expect.poll(() => video.evaluate((v) => v.currentTime)).toBeGreaterThan(1);
-  await video.evaluate((v) => {
+  await video.evaluate((v, target) => {
     v.pause();
-    v.currentTime = 61;
-  });
+    v.currentTime = target;
+  }, schedule.chapters[6].start + 1);
   await expect.poll(() => video.evaluate((v) => v.seeking), { timeout: 20000 }).toBe(false);
   assert.equal(
     await video.evaluate((v) => v.videoWidth),
     1440,
     'Decoded video has expected resolution',
   );
-  await expect.poll(() => video.evaluate((v) => v.textTracks[0]?.cues?.length || 0)).toBe(10);
+  await expect
+    .poll(() => video.evaluate((v) => v.textTracks[0]?.cues?.length || 0))
+    .toBe(utterances.length);
+  const cues = await video.evaluate((v) =>
+    Array.from(v.textTracks[0].cues, (cue) => ({
+      start: cue.startTime,
+      end: cue.endTime,
+      text: cue.text,
+    })),
+  );
+  for (const [index, cue] of cues.entries()) {
+    assert.ok(
+      Math.abs(cue.start - utterances[index].start) < 0.002,
+      'Caption starts align to speech',
+    );
+    assert.ok(Math.abs(cue.end - utterances[index].end) < 0.002, 'Caption ends align to speech');
+    assert.equal(cue.text, utterances[index].text, 'Caption text matches the narrated script');
+  }
   await page.screenshot({ path: 'output/review/video-playback.png' });
   const range = await page.request.get(`${base}/demo/peopleos-demo.mp4`, {
     headers: { Range: 'bytes=0-1023' },
   });
   assert.equal(range.status(), 206, 'Video supports byte ranges for seeking');
   console.log(
-    'Passed: embedded video decodes, plays, seeks, loads all 10 caption cues, and supports HTTP byte ranges.',
+    `Passed: ${schedule.duration.toFixed(2)}s embedded video decodes, plays, seeks, aligns all ${utterances.length} caption cues, and supports HTTP byte ranges.`,
   );
 } finally {
   await browser.close();

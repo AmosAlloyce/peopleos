@@ -1,0 +1,16 @@
+{
+  "title": "PeopleOS — an engineering walkthrough",
+  "delivery": "Helpful, composed product narration. Natural full sentences, one consistent synthetic voice, unhurried transitions. Preserve the speaker's pace and record visuals to the resulting chapter timeline.",
+  "chapters": [
+    {"id": "introduction", "title": "Meet PeopleOS", "text": "Meet People O S, a working people operations system built by Alloyce Amos. It brings migration checks, support workflows, and human approvals into one connected workspace."},
+    {"id": "overview", "title": "A connected workspace", "text": "Forty-eight fictional employees span thirteen countries. The directory, quality metrics, and country views all read from the same records, so the numbers stay connected as the data changes."},
+    {"id": "migration", "title": "Understand the exceptions", "text": "In the migration hub, every exception has a clear explanation. You can compare the original value with the proposed correction and see the rule that raised it."},
+    {"id": "csv-preview", "title": "Validate before importing", "text": "Before an import, the migration lab parses the C S V and validates its fields. It reports missing values, duplicate identifiers, and invalid references without changing an employee record."},
+    {"id": "agent-studio", "title": "Run the specialist tools", "text": "The agent studio makes the work visible. Specialist tools extract the source, map its fields, check the records, and reconcile the proposed result."},
+    {"id": "inspect-run", "title": "Inspect the evidence", "text": "Each step has an inspectable output. These are real, deterministic checks. Optional A I helps explain the findings, while the decision to apply a change stays with the reviewer."},
+    {"id": "approve", "title": "Approve a reviewed proposal", "text": "After reviewing the proposal, approve the sixteen corrections. The sample records update, the open issues clear, and the data-quality measure reaches one hundred percent."},
+    {"id": "service-desk", "title": "Coordinate people operations", "text": "The same approach extends to service requests. Teams review proposed assignments before they are applied. Onboarding and payroll readiness each have their own workflow and approval boundary."},
+    {"id": "copilot", "title": "Explain the system", "text": "The people copilot answers in English or French, with visible references and optional browser voice. It can explain a migration or guide a new starter using clearly labeled example policies."},
+    {"id": "audit", "title": "Follow the result", "text": "Finally, the audit trail connects the decision to its result. Explore the live demo, inspect a workflow, or open the source to see the engineering behind the interface."}
+  ]
+}

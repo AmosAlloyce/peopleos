@@ -11,6 +11,8 @@ playwright-report/
 .codex/
 *.log
 groq.txt
+eleven.txt
+:memory:.ses
 *.pem
 *.pem.*
 *.key
