@@ -2,8 +2,6 @@ import { useEffect, useRef, useState } from 'react';
 import {
   ArrowDown,
   ArrowUpRight,
-  Code2,
-  Database,
   GitBranch,
   Github,
   Layers3,
@@ -14,6 +12,7 @@ import {
 } from 'lucide-react';
 import './portfolio.css';
 import './finpulse-project.css';
+import { ProjectDesk, RecordTrace, ProjectClose } from './PortfolioCraft.jsx';
 
 const walkthroughs = {
   peopleos: {
@@ -94,7 +93,6 @@ function SystemVisual() {
     <div className="portfolio-system" aria-label="Explore the PeopleOS system architecture">
       <div className="portfolio-system-caption">
         <span>ANATOMY OF A USEFUL SYSTEM</span>
-        <span>FIG. 001</span>
       </div>
       <div className="portfolio-network">
         <svg
@@ -187,7 +185,6 @@ function SystemVisual() {
         </div>
       </div>
       <div className="portfolio-system-detail" aria-live="polite">
-        <span className="portfolio-detail-number">0{selected + 1}</span>
         <div>
           <strong>{active.label}</strong>
           <p>{active.detail}</p>
@@ -262,6 +259,7 @@ function VideoDialog({ project, onClose }) {
 
 export default function Portfolio() {
   const [videoProject, setVideoProject] = useState(null);
+  const [selectedProject, setSelectedProject] = useState('peopleos');
   const [menuOpen, setMenuOpen] = useState(false);
   return (
     <div className="portfolio">
@@ -274,7 +272,7 @@ export default function Portfolio() {
             aa<span>.</span>
           </span>
           <span className="portfolio-wordmark-name">
-            ALLOYCE AMOS<span>ENGINEER & BUILDER</span>
+            ALLOYCE AMOS<span>SOFTWARE & DATA ENGINEER</span>
           </span>
         </a>
         <button
@@ -311,47 +309,29 @@ export default function Portfolio() {
       </header>
 
       <main id="portfolio-main">
-        <section className="portfolio-hero" aria-labelledby="portfolio-hero-title">
+        <section
+          className="portfolio-hero"
+          data-sc-act="flow"
+          aria-labelledby="portfolio-hero-title"
+        >
           <div className="portfolio-hero-copy">
-            <p className="portfolio-eyebrow">
-              <span className="portfolio-live-dot" />
-              SOFTWARE ENGINEER & DATA ENGINEER
-            </p>
             <h1 id="portfolio-hero-title">
               Useful systems.
               <br />
               <em>Human impact.</em>
             </h1>
             <p className="portfolio-hero-description">
-              I’m Alloyce. I connect software, data, and AI to make complex work feel simple.
-              Thoughtfully built, from the first pipeline to the final pixel.
+              I’m Alloyce. I build software, data pipelines, and practical AI that turn complex work
+              into clear decisions.
             </p>
             <div className="portfolio-hero-actions">
               <a className="portfolio-button portfolio-button-dark" href="#work">
-                Explore my work <ArrowDown size={17} />
+                Explore the projects <ArrowUpRight size={17} />
               </a>
-              <a className="portfolio-text-link" href="/app">
-                Meet PeopleOS <ArrowUpRight size={17} />
-              </a>
-            </div>
-            <div className="portfolio-hero-footnote">
-              <span>BUILT WITH INTENTION.</span>
-              <span>DESIGNED FOR PEOPLE.</span>
             </div>
           </div>
-          <SystemVisual />
+          <ProjectDesk selected={selectedProject} onSelect={setSelectedProject} />
         </section>
-
-        <div className="portfolio-practice-strip" aria-label="Areas of practice">
-          <span>MY PRACTICE</span>
-          <p>
-            Software engineering <i />
-            Data systems <i />
-            Applied AI <i />
-            Thoughtful interfaces
-          </p>
-          <Code2 size={20} strokeWidth={1.4} aria-hidden="true" />
-        </div>
 
         <section
           className="portfolio-work portfolio-section"
@@ -360,7 +340,6 @@ export default function Portfolio() {
         >
           <div className="portfolio-section-heading">
             <div>
-              <p className="portfolio-eyebrow">01 / SELECTED WORK</p>
               <h2 id="portfolio-work-title">
                 Ideas, <em>made real.</em>
               </h2>
@@ -371,13 +350,13 @@ export default function Portfolio() {
               One considered approach.
             </p>
           </div>
-          <article className="portfolio-project">
+          <article className="portfolio-project" id="peopleos-project" data-sc-act="flow">
             <div className="portfolio-project-topline">
               <span>
                 <i />
                 FLAGSHIP PROJECT
               </span>
-              <span>01 / PEOPLE & OPERATIONS</span>
+              <span>PEOPLE & OPERATIONS</span>
             </div>
             <div className="portfolio-project-intro">
               <div>
@@ -398,7 +377,7 @@ export default function Portfolio() {
               <div className="portfolio-project-summary">
                 <p>
                   An AI-assisted HR workspace for the complexity of a multi-country team. Migration,
-                  people operations, and data quality—with humans in control.
+                  people operations, and data quality, with humans in control.
                 </p>
                 <div className="portfolio-project-tags">
                   <span>HR SYSTEMS</span>
@@ -466,31 +445,19 @@ export default function Portfolio() {
             </div>
           </article>
 
-          <div className="portfolio-case-notes">
-            <div>
-              <span className="portfolio-small-index">THE CHALLENGE</span>
-              <h3>
-                Complexity is inevitable.
-                <br />
-                Friction is a choice.
-              </h3>
-            </div>
-            <p>
-              Moving HR data across systems is more than a file transfer. Different country rules,
-              inconsistent records, and disconnected teams make every handoff matter. PeopleOS makes
-              those handoffs visible, testable, and easier to manage.
-            </p>
-            <a className="portfolio-text-link" href="/app/migration">
-              Explore the migration lab <ArrowUpRight size={17} />
-            </a>
-          </div>
+          <RecordTrace />
 
-          <article className="portfolio-finpulse" aria-labelledby="portfolio-finpulse-title">
+          <article
+            className="portfolio-finpulse"
+            id="finpulse-project"
+            data-sc-act="flow"
+            aria-labelledby="portfolio-finpulse-title"
+          >
             <div className="portfolio-finpulse-topline">
               <span>
                 <i /> FEATURED PROJECT
               </span>
-              <span>02 / CREDIT DATA ENGINEERING</span>
+              <span>CREDIT DATA ENGINEERING</span>
             </div>
             <div className="portfolio-finpulse-intro">
               <div>
@@ -605,7 +572,6 @@ export default function Portfolio() {
         >
           <div className="portfolio-section-heading">
             <div>
-              <p className="portfolio-eyebrow">02 / INSIDE PEOPLEOS</p>
               <h2 id="portfolio-approach-title">
                 Intelligence needs
                 <br />
@@ -619,70 +585,34 @@ export default function Portfolio() {
               <br />A person in the loop.
             </p>
           </div>
-          <div className="portfolio-architecture">
-            <div className="portfolio-architecture-header">
-              <span>
-                <GitBranch size={17} /> THE ORCHESTRATION MODEL
-              </span>
-              <span>
-                EXPLORE IT LIVE <ArrowDown size={14} />
-              </span>
-            </div>
-            <div className="portfolio-human">
-              <div className="portfolio-human-icon">
-                <ShieldCheck size={20} />
-              </div>
-              <div>
-                <strong>A human owns the decision.</strong>
-                <p>Agents propose. People approve. Every change leaves a trace.</p>
-              </div>
-              <span>HUMAN REVIEW</span>
-            </div>
-            <div className="portfolio-architecture-branches" aria-hidden="true">
-              <span />
-              <span />
-              <span />
-              <span />
-            </div>
-            <div className="portfolio-departments">
-              {departments.map((department, index) => {
-                const Icon = department.icon;
-                return (
-                  <a
-                    className="portfolio-department"
-                    key={department.id}
-                    href={`/app/${['workflows', 'migration', 'workflows', 'service-desk'][index]}`}
-                  >
-                    <span className="portfolio-department-number">
-                      0{index + 1}
-                      <ArrowUpRight size={15} />
-                    </span>
-                    <Icon className="portfolio-department-icon" size={25} strokeWidth={1.5} />
-                    <h3>{department.name}</h3>
-                    <p>{department.specialists}</p>
-                    <span className="portfolio-department-footer">
-                      <i />
-                      DEPARTMENT ORCHESTRATOR
-                    </span>
-                  </a>
-                );
-              })}
-            </div>
-            <div className="portfolio-shared-layer">
-              <span>
-                <Database size={15} />A SHARED FOUNDATION
-              </span>
+          <div className="portfolio-inside" data-sc-act="flow">
+            <SystemVisual />
+            <div className="portfolio-inside-notes">
+              <ShieldCheck size={28} strokeWidth={1.4} />
+              <h3>A human owns the decision.</h3>
               <p>
-                Validated data<span>/</span>Policy context<span>/</span>Audit history<span>/</span>
-                Session isolation
+                Four department orchestrators coordinate bounded specialist tools. Shared data,
+                policy context, and audit history keep the work connected.
               </p>
+              <ul>
+                {departments.map((department, index) => (
+                  <li key={department.id}>
+                    <a
+                      href={`/app/${['workflows', 'migration', 'workflows', 'service-desk'][index]}`}
+                    >
+                      <span>
+                        <strong>{department.name}</strong>
+                        <span>{department.specialists}</span>
+                      </span>
+                      <ArrowUpRight size={19} />
+                    </a>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
           <div className="portfolio-principles">
             <article>
-              <span className="portfolio-principle-index">
-                01 <span />
-              </span>
               <h3>Trust the data first.</h3>
               <p>
                 Validate, reconcile, and explain exceptions before they move downstream. A clear
@@ -690,9 +620,6 @@ export default function Portfolio() {
               </p>
             </article>
             <article>
-              <span className="portfolio-principle-index">
-                02 <span />
-              </span>
               <h3>Automate with intention.</h3>
               <p>
                 Let focused agents handle repeatable work. Make their work inspectable and their
@@ -700,9 +627,6 @@ export default function Portfolio() {
               </p>
             </article>
             <article>
-              <span className="portfolio-principle-index">
-                03 <span />
-              </span>
               <h3>Build for the person.</h3>
               <p>
                 Show what happened, why it matters, and what to do next. Useful software makes the
@@ -715,7 +639,6 @@ export default function Portfolio() {
         <section className="portfolio-demo-section" aria-labelledby="portfolio-demo-title">
           <div className="portfolio-demo-inner">
             <div className="portfolio-demo-copy">
-              <p className="portfolio-eyebrow">LESS SLIDES. MORE SOFTWARE.</p>
               <h2 id="portfolio-demo-title">
                 Take it
                 <br />
@@ -723,7 +646,7 @@ export default function Portfolio() {
               </h2>
               <p>
                 Follow a data migration from first check to final approval. Then try the workspace
-                yourself—including an assistant you can talk to.
+                yourself, including an assistant you can talk to.
               </p>
               <div className="portfolio-demo-actions">
                 <button
@@ -777,7 +700,6 @@ export default function Portfolio() {
           aria-labelledby="portfolio-about-title"
         >
           <div className="portfolio-about-heading">
-            <p className="portfolio-eyebrow">03 / THE PERSON BEHIND THE BUILD</p>
             <h2 id="portfolio-about-title">
               Curious by nature.
               <br />
@@ -818,24 +740,7 @@ export default function Portfolio() {
           </div>
         </section>
 
-        <section className="portfolio-contact">
-          <div>
-            <p className="portfolio-eyebrow">GOOD WORK STARTS WITH A CONVERSATION.</p>
-            <h2>
-              Let’s build something
-              <br />
-              <em>that matters.</em>
-            </h2>
-          </div>
-          <a
-            href="https://github.com/amosalloyce"
-            target="_blank"
-            rel="noreferrer"
-            aria-label="Connect with Alloyce Amos on GitHub"
-          >
-            <ArrowUpRight size={45} strokeWidth={1.3} />
-          </a>
-        </section>
+        <ProjectClose selected={selectedProject} onSelect={setSelectedProject} />
       </main>
       <footer className="portfolio-footer">
         <a className="portfolio-footer-name" href="#portfolio-main">

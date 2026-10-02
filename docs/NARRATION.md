@@ -1,6 +1,8 @@
 # Narration production
 
-The revised voiceovers use natural speech timing. The earlier Flite recording remains available in the original artifacts; the new pipeline does not overwrite the published video automatically.
+Current release: PeopleOS uses the later ElevenLabs Sarah narration described below (112.21 seconds). FinPulse uses the completed Groq Orpheus Troy narration (113.22 seconds). Both are disclosed as AI-generated voices. The Groq PeopleOS measurements below document the earlier recording; the active `peopleos-neural` files now contain the ElevenLabs version. The recorder and media check read the active timing JSON rather than assuming the older durations.
+
+The current PeopleOS voiceover uses **ElevenLabs Sarah**, with a measured duration of **112.2136 seconds**. FinPulse uses **Groq Orpheus Troy**, at **113.2187 seconds**. Both recordings follow natural speech timing. The earlier Flite and PeopleOS Orpheus recordings remain historical artifacts; do not overwrite the current PeopleOS audio when reproducing an earlier provider experiment.
 
 ## Skill discovery and use
 
@@ -10,7 +12,7 @@ The skill's bundled `text_to_speech.py` runner uses OpenAI's API and requires `O
 
 ## Groq access
 
-Groq lists `canopylabs/orpheus-v1-english` in the existing account's model catalogue. The first speech preview was rejected with HTTP 400 and `model_terms_required`; no speech was produced. After the account owner explicitly confirmed that Orpheus English was enabled, official speech requests succeeded. Both revised demos use the built-in **Troy** voice. Model visibility alone does not prove that its terms have been accepted.
+Groq lists `canopylabs/orpheus-v1-english` in the existing account's model catalogue. The first speech preview was rejected with HTTP 400 and `model_terms_required`; no speech was produced. After the account owner explicitly confirmed that Orpheus English was enabled, official speech requests succeeded. The initial neural versions used the built-in **Troy** voice; PeopleOS was subsequently upgraded to Sarah as described below. Model visibility alone does not prove that its terms have been accepted.
 
 The account owner can open [Orpheus in Groq Playground](https://console.groq.com/playground?model=canopylabs%2Forpheus-v1-english), sign into the organization/project associated with the configured key, and review the model terms shown there. Proceed only if the owner accepts them. That URL is the **Try it in Playground** link on the [official model card](https://console.groq.com/docs/model/canopylabs/orpheus-v1-english). No automated process accepts terms or retries around this gate.
 
@@ -23,6 +25,8 @@ The adapter reads `GROQ_API_KEY` from the process environment or the local `.env
 Groq publishes a price of **$22 per million input characters** for English Orpheus. The project limits the combined estimate for previews plus the PeopleOS and FinPulse narrations to **$0.25**, without creating an account, subscription, or paid upgrade. All runs share `output/speech/usage.json`; requests are reserved against the cap before being sent, including failed or uncertain requests. This is a conservative local estimate, not a provider invoice or account-wide spending control. [Orpheus documentation](https://console.groq.com/docs/text-to-speech/orpheus)
 
 The PeopleOS script contains 1,749 characters, approximately **$0.0385** for a fresh complete run at that rate. FinPulse contains 1,760 characters, approximately **$0.0387**. Together with the rejected 171-character preview, the conservative combined estimate is **$0.0810**. Cached passages are reused. Keep the ledger intact across both demos; the estimate is derived from the published rate, not a billing receipt.
+
+That ledger covers the Groq synthesis work only. It does not estimate the separate ElevenLabs production run, whose billing is not recorded in this ledger.
 
 ## Delivery and timing
 
@@ -38,19 +42,19 @@ The PeopleOS script contains 1,749 characters, approximately **$0.0385** for a f
 
 ```sh
 python3 scripts/generate-neural-narration.py \
-  docs/peopleos-neural-script.json output/speech/peopleos-neural --dry-run
+  docs/peopleos-neural-script.json output/speech/peopleos-orpheus --dry-run
 ```
 
-Omit `--dry-run` to synthesize with the enabled model. Run the second demo with `docs/finpulse-neural-script.json output/speech/finpulse-neural`. Use the same ledger and voice for both. Generated outputs remain under ignored `output/speech/` until the recorded video and final captions are explicitly updated.
+Omit `--dry-run` only when a new Orpheus synthesis is actually needed. Run the FinPulse demo with `docs/finpulse-neural-script.json output/speech/finpulse-neural`, retaining the same budget ledger. The current PeopleOS recording consumes the existing ElevenLabs files at `output/speech/peopleos-neural`; ordinary video re-recording requires no synthesis. Generated outputs remain under ignored `output/speech/` until the recorded video and final captions are explicitly updated.
 
-The completed Orpheus tracks are **118.0377 seconds for PeopleOS** and **113.2187 seconds for FinPulse**. Each prefix below has `.wav`, `.mp3`, `.json`, and `.vtt` outputs:
+The historical Orpheus tracks measured **118.0377 seconds for PeopleOS** and **113.2187 seconds for FinPulse**. The current recording prefixes below have `.wav`, `.mp3`, `.json`, and `.vtt` outputs; PeopleOS now contains the shorter ElevenLabs version:
 
 - `output/speech/peopleos-neural`
 - `output/speech/finpulse-neural`
 
-The capture schedule uses these measured chapter starts, in seconds. Within a chapter, actions use a fraction of that chapter's duration so the interface follows the speaker's pace.
+The table below records the original Orpheus chapter starts, in seconds. For current capture, the recorder reads the provider's actual JSON schedule; it never uses this historical table. Within a chapter, actions use a fraction of that chapter's duration so the interface follows the speaker's pace.
 
-| Chapter | PeopleOS start | FinPulse start |
+| Chapter | Earlier PeopleOS Orpheus start | FinPulse start |
 | --- | ---: | ---: |
 | Introduction | 0.5000 | 0.5000 |
 | Overview | 13.5542 | 12.1870 |
@@ -78,13 +82,13 @@ node scripts/check-media.mjs
 
 Start the app and Vite server first. The recorder requires the completed neural narration; it does not silently regenerate speech or fall back to the old voice. It captures actual interactions, muxes audio and captions, and refreshes the workspace screenshot and video poster. The media check compares playback duration and every caption boundary against the generated schedule, then verifies seeking and HTTP byte ranges.
 
-The revised PeopleOS recording passed that browser check: playback, seeking, all ten caption texts and boundaries, and HTTP 206 byte-range responses. FFprobe reports a 118.040-second H.264 video at 1440 × 1000, a 118.038-second mono AAC track at 48 kHz, and embedded English subtitles. The file is 9,875,664 bytes. `public/demo/poster.jpg` and `public/demo/workspace.jpg` were refreshed from the current interface. Both neural WAVs have no detected silence of 1.2 seconds or longer and peak near −1.5 dBFS; these are mechanical checks, not an audible quality assessment.
+The earlier Orpheus PeopleOS recording passed that browser check: playback, seeking, all ten caption texts and boundaries, and HTTP 206 byte-range responses. That historical file was 118.040 seconds at 1440 × 1000, with mono AAC at 48 kHz and embedded English subtitles. Both original Orpheus WAVs had no detected silence of 1.2 seconds or longer and peaked near −1.5 dBFS. These are mechanical checks, not an audible quality assessment; the subsequent ElevenLabs recording has its own duration and verification below.
 
 ## Offline neural alternative
 
 [Kokoro-82M](https://huggingface.co/hexgrad/Kokoro-82M) is a local neural speech model. Its model card specifies Apache-2.0, and the [kokoro-onnx runner](https://github.com/thewh1teagle/kokoro-onnx) uses MIT licensing. The runner publishes downloadable model/voice files and supports CPU inference; no hosted speech account is required. Dependencies and model files belong in an isolated local environment, not in the application image or public repository.
 
-The model author's [voice guide](https://huggingface.co/hexgrad/Kokoro-82M/blob/main/VOICES.md) warns that very short and very long utterances can reduce quality. Grouping coherent sentences and avoiding artificial time stretching is therefore useful for this option too. An isolated CPU preview was generated during the access investigation. Once Orpheus was enabled, both final tracks used Groq; the local model is optional and is not shipped with the web app.
+The model author's [voice guide](https://huggingface.co/hexgrad/Kokoro-82M/blob/main/VOICES.md) warns that very short and very long utterances can reduce quality. Grouping coherent sentences and avoiding artificial time stretching is therefore useful for this option too. An isolated CPU preview was generated during the access investigation. The local model is optional, was not used in either published recording, and is not shipped with the web app.
 
 ## ElevenLabs Voice AI production
 
@@ -98,9 +102,10 @@ The demo narration was upgraded using ElevenLabs Voice AI (`eleven_multilingual_
 - Verified with `scripts/check-media.mjs`: video decoding, seeking, all 10 caption cues aligned within 2ms, and HTTP 206 byte-range responses.
 - Deployed directly to the Oracle production server (`https://alloyce-amos.duckdns.org/demo/peopleos-demo.mp4`).
 
+The final portfolio hero was subsequently recaptured using that same Sarah WAV, without additional speech generation. The current local MP4 is **112.213 seconds**, **9,853,413 bytes**, with H.264 video at 1440 × 1000, mono AAC at 48 kHz, and embedded subtitles. All ten recorded interaction chapters and the browser media checks pass. Capture and verification logs are in `output/recording/peopleos-record-20261002.log` and `output/recording/peopleos-media-check-20261002.log`; the opening frame was visually reviewed against the final hero. The narration WAV remains SHA256 `2e2a70aa77ecc0a1465dff161624306b59fee5770dfdf2aca03cc2fb9e8564c7`.
+
 ## Review before publishing
 
 Listen for product/name pronunciation, abrupt joins, clipped consonants, inconsistent volume, and long unexplained gaps. Check the technical claims against the recorded interface. Confirm the WAV duration, chapter ordering, caption timing, and final video synchronization. Retain the AI-generated voice disclosure. A valid audio file or passing transcript comparison alone does not establish a natural-sounding delivery.
 
 The current tool environment can inspect audio files and measure their timing and levels, but does not support audible playback to the assistant. The recording work therefore includes file, waveform, caption, and browser checks; it does not claim a subjective listening review. The MP3 previews and final tracks are available for that review.
-

@@ -90,7 +90,7 @@ try {
   start = Date.now();
   await chapter(1, 'PeopleOS · An engineering case study');
   await at(sectionTime('introduction', 0.44), async () => {
-    await page.getByRole('button', { name: 'Explore People operations', exact: true }).click();
+    await page.getByRole('link', { name: 'Explore PeopleOS project', exact: true }).click();
   });
   await at(sectionTime('overview'), async () => {
     await page.goto(`${base}/app`, { waitUntil: 'domcontentloaded' });

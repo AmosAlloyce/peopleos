@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "checks": [
+    "Desktop: correct48-record matrix, keyboard selection, exception dialog, country scope, natural scroll without writes, rehearsal approval updates lens to48clear.",
+    "Width1024: no overflow, readable controls, reduced-motion layout; independent session retains16exceptions.",
+    "Width768: no overflow, readable controls, reduced-motion layout; independent session retains16exceptions.",
+    "Width390: no overflow, readable controls, reduced-motion layout; independent session retains16exceptions.",
+    "Width320: no overflow, readable controls, reduced-motion layout; independent session retains16exceptions."
+  ],
+  "browserErrors": []
+}

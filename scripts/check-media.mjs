@@ -1,7 +1,9 @@
 import assert from 'node:assert/strict';
 import { readFile, mkdir } from 'node:fs/promises';
 import { chromium, expect } from '@playwright/test';
-const base = process.env.BASE_URL || 'http://127.0.0.1:3001';
+const base = (process.env.BASE_URL || 'http://127.0.0.1:3001').replace(/\/$/, '');
+const mediaFile = process.env.MEDIA_FILE || 'peopleos-demo.mp4';
+const opener = process.env.VIDEO_BUTTON || 'Watch the walkthrough';
 const narration = process.env.NARRATION_PREFIX || 'output/speech/peopleos-neural';
 const schedule = JSON.parse(await readFile(`${narration}.json`, 'utf8'));
 const utterances = schedule.chapters.flatMap((chapter) => chapter.passages);
@@ -18,8 +20,8 @@ const browser = await chromium.launch({
 });
 const page = await browser.newPage({ viewport: { width: 1440, height: 1000 } });
 try {
-  await page.goto(base, { waitUntil: 'networkidle' });
-  await page.getByRole('button', { name: 'Watch the walkthrough', exact: true }).click();
+  await page.goto(`${base}/`, { waitUntil: 'domcontentloaded', timeout: 60000 });
+  await page.getByRole('button', { name: opener, exact: true }).click();
   const video = page.locator('video');
   await expect(video).toBeVisible();
   // Metadata preload need not download a frame until playback is requested.
@@ -48,7 +50,7 @@ try {
     Math.abs((await video.evaluate((v) => v.duration)) - schedule.duration) < 0.2,
     'Video matches the natural narration duration',
   );
-  await expect.poll(() => video.evaluate((v) => v.currentTime)).toBeGreaterThan(1);
+  await expect.poll(() => video.evaluate((v) => v.currentTime), { timeout: 20000 }).toBeGreaterThan(1);
   await video.evaluate((v, target) => {
     v.pause();
     v.currentTime = target;
@@ -77,8 +79,8 @@ try {
     assert.ok(Math.abs(cue.end - utterances[index].end) < 0.002, 'Caption ends align to speech');
     assert.equal(cue.text, utterances[index].text, 'Caption text matches the narrated script');
   }
-  await page.screenshot({ path: 'output/review/video-playback.png' });
-  const range = await page.request.get(`${base}/demo/peopleos-demo.mp4`, {
+  await page.screenshot({ path: `output/review/${mediaFile}-playback.png` });
+  const range = await page.request.get(`${base}/demo/${mediaFile}`, {
     headers: { Range: 'bytes=0-1023' },
   });
   assert.equal(range.status(), 206, 'Video supports byte ranges for seeking');

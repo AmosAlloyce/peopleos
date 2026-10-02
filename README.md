@@ -18,9 +18,12 @@ FinPulse processes synthetic GSM, mobile-money, and loan events across Kenya, Ug
 
 Running this repository alone starts the portfolio and PeopleOS. FinPulse needs its separate service and frontend; the shared host routes `/finpulse/` to that service.
 
-[![PeopleOS workflow studio showing migration checks and human review](public/demo/poster.jpg)](https://alloyce-amos.duckdns.org/demo/peopleos-demo.mp4)
+[![PeopleOS workflow studio showing migration checks and human review](public/demo/poster.jpg)](public/demo/peopleos-demo.mp4)
 
-[Watch the PeopleOS walkthrough](https://alloyce-amos.duckdns.org/demo/peopleos-demo.mp4), or explore the [live workspace](https://alloyce-amos.duckdns.org/app). The portfolio provides a separate walkthrough control for each project, with the corresponding video, poster, and captions. PeopleOS includes Docker/Caddy deployment and an n8n workflow export.
+- **PeopleOS Walkthrough:** [Watch in repository](public/demo/peopleos-demo.mp4) · [Stream on live site](https://alloyce-amos.duckdns.org/demo/peopleos-demo.mp4) · [Explore live workspace](https://alloyce-amos.duckdns.org/app)
+- **FinPulse Walkthrough:** [Watch in repository](public/demo/finpulse-demo.mp4) · [Stream on live site](https://alloyce-amos.duckdns.org/finpulse/demo/finpulse-demo.mp4) · [Explore live workspace](https://alloyce-amos.duckdns.org/finpulse/)
+
+The portfolio provides an interactive walkthrough modal for each project with chapter-synced captions. PeopleOS includes Docker/Caddy deployment and an n8n workflow export.
 
 ## Run locally
 

@@ -39,3 +39,9 @@ The back plane is a technical grid, the mid plane is an offset document edge, an
 ## Verification plan
 
 Desktop, 390px and compact 360px, intermediate natural scroll positions, reduced motion, keyboard stage selection and actual payload inspection. Re-run the existing integration suite after changes. Headless checks do not establish real iPhone behavior.
+
+## Observed result
+
+The completed review captured 24 scroll states at 1440×1000, 390×844, 360×640 and reduced motion. Contact sheets in `output/finpulse/web/output/scroll-review/` show a complete opening, visible document depth, stable text and useful content throughout the natural scroll. The compact layout stacks cleanly, the final screen resolves into a pipeline action, and reduced motion retains every control. Keyboard selection preserved the actual event ID across all three stages; opening the event showed its real envelope. No overflow or runtime errors occurred. The full integration suite also passed all four scenarios, correction replay, independent sessions, CSV export and five widths.
+
+The visual review follows the intended orientation → curiosity → clarity → confidence → agency sequence. This describes inspected hierarchy and interaction, not a claim to have measured human feelings. The event document is the dominant opening change; the earlier decorative orbital graphic was removed because it conveyed less evidence. No physical phone or subjective voice listening review was available.
