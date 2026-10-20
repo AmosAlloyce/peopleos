@@ -29,6 +29,13 @@ export const INITIAL_PIECES = [
     optimalScrollPct: 0.22,
     summary:
       'Engineered with 142 interlocking links that flex along two independent axes while maintaining zero visible gap between diamond girdles.',
+    media: {
+      studioImage: 'piece-01-bracelet.jpg',
+      studioCaption: '2K Studio Macro · 44 Matched Round Brilliants in Cryo-Forged Pt 950',
+      scaleImage: 'scale-wrist.jpg',
+      scaleCaption: 'Human Scale Reference · 165mm Articulated Wrist Drape against Silk Cuff',
+      scaleLabel: 'On-Wrist Scale',
+    },
   },
   {
     id: 'piece-02',
@@ -52,6 +59,13 @@ export const INITIAL_PIECES = [
     optimalScrollPct: 0.38,
     summary:
       'The center 3.50 ct D-Flawless brilliant is suspended by four tension-calibrated platinum claws that maximize 360-degree light entry into the pavilion.',
+    media: {
+      studioImage: 'piece-02-solitaire.jpg',
+      studioCaption: '2K Studio Macro · 3.50 ct Type IIa Center Solitaire & Micro-Pavé Bridge',
+      scaleImage: 'scale-hand.jpg',
+      scaleCaption: 'Human Scale Reference · 9.85mm Solitaire Stacked with Eternity Band on Hand',
+      scaleLabel: 'On-Hand Scale',
+    },
   },
   {
     id: 'piece-03',
@@ -75,6 +89,13 @@ export const INITIAL_PIECES = [
     optimalScrollPct: 0.52,
     summary:
       'V-shaped French cut channels expose the lower girdle facets of all 28 diamonds so light passes continuously from stone to stone.',
+    media: {
+      studioImage: 'piece-03-eternity.jpg',
+      studioCaption: '2K Studio Macro · 28 French-Set Diamonds in Continuous U-Cut Gallery',
+      scaleImage: 'scale-hand.jpg',
+      scaleCaption: 'Human Scale Reference · 2.85mm Orbital Band Paired with Cathedral Solitaire',
+      scaleLabel: 'On-Hand Scale',
+    },
   },
   {
     id: 'piece-04',
@@ -98,6 +119,13 @@ export const INITIAL_PIECES = [
     optimalScrollPct: 0.68,
     summary:
       'Acoustic-balanced drop articulation ensures each pear-cut terminal oscillates smoothly to catch ambient illumination with every movement.',
+    media: {
+      studioImage: 'piece-04-earrings.jpg',
+      studioCaption: '2K Studio Macro · Matched Pear-Cut Drops & Articulated Suspension Columns',
+      scaleImage: 'scale-portrait.jpg',
+      scaleCaption: 'Human Scale Reference · 38mm Vertical Drop & Neckline Proportion',
+      scaleLabel: 'On-Ear Scale',
+    },
   },
   {
     id: 'piece-05',
@@ -121,6 +149,13 @@ export const INITIAL_PIECES = [
     optimalScrollPct: 0.82,
     summary:
       'An orbital halo surrounds a tightly nested central cluster, creating the optical illusion of a single 4-carat icy aperture.',
+    media: {
+      studioImage: 'piece-05-medallion.jpg',
+      studioCaption: '2K Studio Macro · Orbital Diamond Halo & Cryo-Hardened Platinum Chain',
+      scaleImage: 'scale-portrait.jpg',
+      scaleCaption: 'Human Scale Reference · Collarbone Drape & Orbital Pendant Aperture',
+      scaleLabel: 'On-Neckline Scale',
+    },
   },
 ];
 
@@ -898,6 +933,7 @@ export function createIceTrayDatabase(options = {}) {
   }
 
   function mapPieceRow(row, lots = []) {
+    const seedPiece = INITIAL_PIECES.find((p) => p.slug === row.slug || p.id === row.id);
     return {
       id: row.id,
       slug: row.slug,
@@ -917,6 +953,13 @@ export function createIceTrayDatabase(options = {}) {
         act1: { x: row.hotspot_act1_x, y: row.hotspot_act1_y },
         act2: { x: row.hotspot_act2_x, y: row.hotspot_act2_y },
         optimalScrollPct: row.optimal_scroll_pct,
+      },
+      media: seedPiece?.media || {
+        studioImage: 'piece-01-bracelet.jpg',
+        studioCaption: '2K Studio Macro',
+        scaleImage: 'scale-wrist.jpg',
+        scaleCaption: 'Human Scale Reference',
+        scaleLabel: 'On-Skin Scale',
       },
       summary: row.summary,
       diamondLots: lots,
