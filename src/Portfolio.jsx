@@ -563,6 +563,108 @@ export default function Portfolio() {
               </div>
             </div>
           </article>
+
+          <article
+            className="portfolio-finpulse portfolio-icetray"
+            id="icetray-project"
+            data-sc-act="flow"
+            aria-labelledby="portfolio-icetray-title"
+          >
+            <div className="portfolio-finpulse-topline">
+              <span>
+                <i /> FEATURED PROJECT
+              </span>
+              <span>INTERACTIVE PRODUCT EXPERIENCE</span>
+            </div>
+            <div className="portfolio-finpulse-intro">
+              <div>
+                <div className="portfolio-finpulse-brand">
+                  <Sparkles size={26} strokeWidth={1.8} aria-hidden="true" />
+                  <h3 id="portfolio-icetray-title">Ice Tray Diamonds</h3>
+                </div>
+                <p>
+                  384 optical frames,
+                  <br />
+                  <em>driven by the scroll.</em>
+                </p>
+              </div>
+              <div className="portfolio-finpulse-description">
+                <p>
+                  A single-file luxury product showcase built without frameworks or a build step. A
+                  pinned full-screen retina canvas cover-fits and scrubs through two 8-second
+                  jewelry films as the warm studio grey background deepens into pitch black.
+                </p>
+                <div className="portfolio-finpulse-tags">
+                  <span>HTML5 CANVAS</span>
+                  <span>SCROLL FLIPBOOK</span>
+                  <span>ZERO FRAMEWORKS</span>
+                </div>
+              </div>
+            </div>
+            <a
+              className="portfolio-finpulse-preview"
+              href="/ice-tray-diamonds/"
+              aria-label="Open the interactive Ice Tray Diamonds scroll flipbook"
+            >
+              <div className="portfolio-finpulse-browser">
+                <span>
+                  <i />
+                  <i />
+                  <i />
+                </span>
+                <span>ice-tray-diamonds / 384-frame flipbook</span>
+                <span>INTERACTIVE CANVAS</span>
+              </div>
+              <img
+                src="/demo/icetray-workspace.jpg"
+                alt="Ice Tray Diamonds scroll-flipbook website showing deconstructed diamond jewelry over a warm studio grey background"
+                loading="lazy"
+                width="1440"
+                height="960"
+              />
+              <span className="portfolio-finpulse-enter">
+                Experience the flipbook <ArrowUpRight size={19} />
+              </span>
+            </a>
+            <ol
+              className="portfolio-finpulse-pipeline"
+              aria-label="Ice Tray Diamonds interactive architecture"
+            >
+              <li>
+                <span>01 / PRELOAD</span>
+                <strong>Load every frame first.</strong>
+                <p>Thin progress bar preloads all 384 frames before unlocking scroll.</p>
+              </li>
+              <li>
+                <span>02 / SCRUB</span>
+                <strong>Redraw on frame change.</strong>
+                <p>Pinned 400vh retina canvas cover-fits frames via requestAnimationFrame.</p>
+              </li>
+              <li>
+                <span>03 / REVEAL</span>
+                <strong>Timed story &amp; dossier.</strong>
+                <p>Copy fades in at 20%, 50%, and 80% scroll before the pitch-black specs vault.</p>
+              </li>
+            </ol>
+            <div className="portfolio-finpulse-bottom">
+              <p>
+                <i /> Single index.html · 384 frames · Retina cover-fit canvas
+              </p>
+              <div>
+                <a
+                  className="portfolio-finpulse-source"
+                  href="https://github.com/AmosAlloyce/ice-tray-diamonds"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Github size={16} /> View source <ArrowUpRight size={14} />
+                </a>
+                <a className="portfolio-finpulse-launch" href="/ice-tray-diamonds/">
+                  Launch Ice Tray Diamonds <ArrowUpRight size={18} />
+                </a>
+              </div>
+            </div>
+          </article>
         </section>
 
         <section

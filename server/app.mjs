@@ -468,6 +468,17 @@ export function createApp(options = {}) {
       .send(csv);
   });
   app.use('/api', (req, res) => errorResponse(res, 404, 'API endpoint not found.'));
+  app.get(['/jewl', '/jewl/'], (req, res) => res.redirect(308, '/ice-tray-diamonds/'));
+  app.get(['/ice-tray-diamonds', '/ice-tray-diamonds/'], (req, res) => {
+    if (!req.originalUrl.split('?')[0].endsWith('/')) {
+      return res.redirect(308, '/ice-tray-diamonds/');
+    }
+    const pagePath = existsSync(path.join(ROOT, 'dist/ice-tray-diamonds/index.html'))
+      ? path.join(ROOT, 'dist/ice-tray-diamonds/index.html')
+      : path.join(ROOT, 'public/ice-tray-diamonds/index.html');
+    if (!existsSync(pagePath)) return errorResponse(res, 404, 'Project page not found.');
+    res.set('Cache-Control', 'no-cache').sendFile(pagePath);
+  });
   app.use(express.static(path.join(ROOT, 'dist'), { index: false, maxAge: '1h' }));
   app.use(express.static(path.join(ROOT, 'public'), { index: false, maxAge: '1h' }));
   app.get(['/', '/app', '/app/{*section}'], (req, res) => {

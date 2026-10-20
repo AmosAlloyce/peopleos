@@ -20,6 +20,12 @@
   border-radius: 6px;
   overflow: hidden;
 }
+.portfolio-icetray {
+  --finpulse-blue: #232729;
+  --finpulse-ink: #141718;
+  background: #e9ebea;
+  border-color: #c8cecf;
+}
 .portfolio-finpulse-topline {
   display: flex;
   justify-content: space-between;

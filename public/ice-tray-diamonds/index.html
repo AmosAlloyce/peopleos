@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ICE TRAY DIAMONDS — Haute Joaillerie Archive</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-warm-grey: #2d3133;
+      --bg-current: #2d3133;
+      --text-primary: #f5f5f3;
+      --text-muted: rgba(245, 245, 243, 0.64);
+      --text-subtle: rgba(245, 245, 243, 0.38);
+      --accent-ice: #dce8ef;
+      --border-subtle: rgba(255, 255, 255, 0.12);
+      --serif: 'Cormorant Garamond', Didot, 'Bodoni MT', Georgia, serif;
+      --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: auto;
+      background-color: var(--bg-current);
+      color: var(--text-primary);
+      font-family: var(--sans);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      background-color: var(--bg-current);
+      color: var(--text-primary);
+      overflow-x: hidden;
+    }
+
+    body.loading {
+      overflow: hidden;
+      height: 100vh;
+    }
+
+    /* ─── PRELOADER & THIN LOADING BAR ─── */
+    #loader {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background-color: var(--bg-warm-grey);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.8s;
+    }
+
+    #loader.hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .loader-top-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: rgba(255, 255, 255, 0.08);
+      overflow: hidden;
+      z-index: 10000;
+    }
+
+    .loader-top-bar-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, rgba(220, 232, 239, 0.4), #ffffff);
+      transition: width 0.1s ease-out;
+    }
+
+    .loader-content {
+      text-align: center;
+      max-width: 360px;
+      width: 85%;
+    }
+
+    .loader-brand {
+      font-family: var(--serif);
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      font-weight: 300;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--text-primary);
+      margin-bottom: 1.75rem;
+    }
+
+    .loader-track {
+      width: 100%;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.14);
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 0.9rem;
+    }
+
+    .loader-fill {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 0%;
+      background-color: #ffffff;
+      box-shadow: 0 0 12px rgba(255, 255, 255, 0.8);
+      transition: width 0.08s linear;
+    }
+
+    .loader-meta {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.68rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* ─── TOP NAVIGATION ─── */
+    .site-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.6rem clamp(1.5rem, 4vw, 4rem);
+      pointer-events: none;
+      mix-blend-mode: difference;
+    }
+
+    .site-nav a,
+    .site-nav .nav-logo,
+    .site-nav .nav-cta {
+      pointer-events: auto;
+      text-decoration: none;
+      color: var(--text-primary);
+    }
+
+    .nav-logo {
+      font-family: var(--serif);
+      font-size: 0.95rem;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.2rem;
+      align-items: center;
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .nav-links a {
+      transition: color 0.25s ease;
+    }
+
+    .nav-links a:hover {
+      color: #ffffff;
+    }
+
+    /* ─── SCROLL FLIPBOOK SECTION (400vh) ─── */
+    .flipbook-section {
+      position: relative;
+      width: 100%;
+      height: 400vh;
+    }
+
+    .canvas-sticky {
+      position: sticky;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #flipbook-canvas {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* Edge blend vignette so canvas edges disappear into the page background */
+    .canvas-vignette {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(ellipse 85% 80% at 50% 50%, transparent 55%, var(--bg-current) 100%),
+        linear-gradient(to bottom, var(--bg-current) 0%, transparent 12%, transparent 86%, var(--bg-current) 100%);
+      opacity: 0.92;
+    }
+
+    /* ─── HERO HEADLINE OVERLAY ─── */
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      padding: 6.5rem clamp(1.5rem, 5vw, 5rem) 2.75rem;
+      pointer-events: none;
+      text-align: center;
+      z-index: 10;
+      will-change: opacity, transform;
+    }
+
+    .hero-header-group {
+      max-width: 980px;
+      margin-top: 0;
+      padding: 1.5rem 2.5rem;
+      background: radial-gradient(ellipse at center, rgba(15, 18, 20, 0.52) 0%, rgba(15, 18, 20, 0) 72%);
+    }
+
+    .hero-eyebrow {
+      font-size: 0.72rem;
+      letter-spacing: 0.36em;
+      text-transform: uppercase;
+      color: var(--accent-ice);
+      margin-bottom: 1rem;
+      font-weight: 400;
+      text-shadow: 0 2px 14px rgba(0, 0, 0, 0.9);
+    }
+
+    .hero-headline {
+      font-family: var(--serif);
+      font-size: clamp(3rem, 7.8vw, 7.2rem);
+      font-weight: 300;
+      line-height: 0.96;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #ffffff;
+      text-shadow: 0 10px 40px rgba(0, 0, 0, 0.85), 0 2px 12px rgba(0, 0, 0, 0.75);
+    }
+
+    .hero-sub {
+      margin-top: 1.15rem;
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: clamp(1.1rem, 1.8vw, 1.45rem);
+      color: rgba(245, 245, 243, 0.92);
+      letter-spacing: 0.04em;
+      text-shadow: 0 4px 18px rgba(0, 0, 0, 0.95);
+    }
+
+    .scroll-cue {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.65rem;
+      font-size: 0.66rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .scroll-cue-line {
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, rgba(255, 255, 255, 0.7), transparent);
+      animation: scrollPulse 2.2s infinite ease-in-out;
+    }
+
+    @keyframes scrollPulse {
+      0%, 100% { transform: scaleY(1); opacity: 0.75; }
+      50% { transform: scaleY(0.55); opacity: 0.3; }
+    }
+
+    /* ─── SCROLL CALLOUT LINES (20%, 50%, 80%) ─── */
+    .story-overlay {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 12;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding: 0 clamp(1.5rem, 6vw, 6rem) clamp(3.5rem, 8vh, 6rem);
+    }
+
+    .story-line {
+      position: absolute;
+      max-width: 680px;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(22px);
+      will-change: opacity, transform;
+      padding: 1.75rem 2.5rem;
+      background: radial-gradient(ellipse at center, rgba(8, 10, 12, 0.82) 0%, rgba(8, 10, 12, 0.48) 55%, rgba(8, 10, 12, 0) 78%);
+      border-radius: 8px;
+    }
+
+    .story-index {
+      display: block;
+      font-family: var(--sans);
+      font-size: 0.68rem;
+      letter-spacing: 0.34em;
+      text-transform: uppercase;
+      color: var(--accent-ice);
+      margin-bottom: 0.65rem;
+      text-shadow: 0 2px 12px rgba(0, 0, 0, 0.95);
+    }
+
+    .story-copy {
+      font-family: var(--serif);
+      font-size: clamp(1.55rem, 3.1vw, 2.55rem);
+      font-weight: 400;
+      line-height: 1.24;
+      letter-spacing: 0.02em;
+      color: #ffffff;
+      text-shadow: 0 6px 28px rgba(0, 0, 0, 0.85);
+    }
+
+    /* Subtle HUD frame progress indicator */
+    .scroll-hud {
+      position: absolute;
+      bottom: 2.2rem;
+      right: clamp(1.5rem, 4vw, 4rem);
+      z-index: 15;
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      font-size: 0.65rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.42);
+      font-variant-numeric: tabular-nums;
+      pointer-events: none;
+    }
+
+    .scroll-hud-bar {
+      width: 48px;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.16);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .scroll-hud-fill {
+      position: absolute;
+      inset: 0;
+      width: 0%;
+      background: rgba(255, 255, 255, 0.75);
+    }
+
+    /* ─── POST-ANIMATION: PITCH BLACK SPECS & BUY SECTION ─── */
+    .post-scroll-content {
+      position: relative;
+      z-index: 20;
+      background: linear-gradient(to bottom, transparent 0%, #000000 140px, #000000 100%);
+      padding: 8rem clamp(1.5rem, 6vw, 7rem) 6rem;
+    }
+
+    .specs-container {
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 5rem;
+    }
+
+    .section-eyebrow {
+      font-size: 0.72rem;
+      letter-spacing: 0.34em;
+      text-transform: uppercase;
+      color: var(--accent-ice);
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-family: var(--serif);
+      font-size: clamp(2.4rem, 5vw, 4.25rem);
+      font-weight: 300;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #ffffff;
+    }
+
+    .section-desc {
+      max-width: 580px;
+      margin: 1.25rem auto 0;
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: var(--text-muted);
+      font-weight: 300;
+    }
+
+    /* Key Metrics Row */
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+      margin-bottom: 5rem;
+    }
+
+    .metric-card {
+      padding: 2.75rem 1.75rem;
+      border-right: 1px solid var(--border-subtle);
+      text-align: center;
+    }
+
+    .metric-card:last-child {
+      border-right: none;
+    }
+
+    .metric-value {
+      font-family: var(--serif);
+      font-size: clamp(2.1rem, 3.6vw, 3.2rem);
+      font-weight: 300;
+      color: #ffffff;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.5rem;
+    }
+
+    .metric-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    /* Detailed Technical Specifications Table */
+    .specs-columns {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 4rem;
+      align-items: start;
+      margin-bottom: 5.5rem;
+    }
+
+    .specs-list-title {
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 1.75rem;
+      color: #ffffff;
+    }
+
+    .spec-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 1.15rem 0;
+      border-bottom: 1px solid var(--border-subtle);
+      gap: 1.5rem;
+    }
+
+    .spec-key {
+      font-size: 0.75rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .spec-val {
+      font-size: 0.92rem;
+      color: #ffffff;
+      text-align: right;
+      font-weight: 400;
+    }
+
+    /* Purchase Card */
+    .acquisition-card {
+      background: linear-gradient(160deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.01) 100%);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      padding: 3rem 2.75rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .acquisition-badge {
+      display: inline-block;
+      align-self: flex-start;
+      font-size: 0.65rem;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--accent-ice);
+      border: 1px solid rgba(220, 232, 239, 0.3);
+      padding: 0.35rem 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .acquisition-title {
+      font-family: var(--serif);
+      font-size: 2.1rem;
+      font-weight: 300;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+
+    .acquisition-subtitle {
+      font-size: 0.88rem;
+      line-height: 1.65;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+    }
+
+    .price-block {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      padding: 1.25rem 0;
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+      margin-bottom: 2rem;
+    }
+
+    .price-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .price-amount {
+      font-family: var(--serif);
+      font-size: 2.2rem;
+      font-weight: 400;
+      color: #ffffff;
+      letter-spacing: 0.03em;
+    }
+
+    .buy-button {
+      appearance: none;
+      width: 100%;
+      padding: 1.25rem 2rem;
+      background-color: #ffffff;
+      color: #000000;
+      border: 1px solid #ffffff;
+      font-family: var(--sans);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    }
+
+    .buy-button:hover {
+      background-color: transparent;
+      color: #ffffff;
+      box-shadow: 0 0 30px rgba(220, 232, 239, 0.22);
+    }
+
+    .buy-button:active {
+      transform: scale(0.99);
+    }
+
+    .acquisition-Guarantee {
+      margin-top: 1.25rem;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      color: var(--text-subtle);
+      text-align: center;
+    }
+
+    /* Footer */
+    .site-footer {
+      max-width: 1180px;
+      margin: 4rem auto 0;
+      padding-top: 2.5rem;
+      border-top: 1px solid var(--border-subtle);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-subtle);
+    }
+
+    /* Modal for Buy Button */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      background: rgba(0, 0, 0, 0.84);
+      backdrop-filter: blur(8px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.35s ease, visibility 0.35s ease;
+    }
+
+    .modal-backdrop.open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .modal-panel {
+      background: #08090a;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      max-width: 480px;
+      width: 100%;
+      padding: 2.75rem 2.5rem;
+      position: relative;
+      text-align: center;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 1.1rem;
+      right: 1.25rem;
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      font-size: 1.35rem;
+      cursor: pointer;
+    }
+
+    .modal-title {
+      font-family: var(--serif);
+      font-size: 1.85rem;
+      font-weight: 300;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+
+    .modal-text {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 1.75rem;
+    }
+
+    .modal-input {
+      width: 100%;
+      padding: 0.95rem 1rem;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border-subtle);
+      color: #ffffff;
+      font-family: var(--sans);
+      font-size: 0.85rem;
+      margin-bottom: 1rem;
+      outline: none;
+    }
+
+    .modal-input:focus {
+      border-color: var(--accent-ice);
+    }
+
+    @media (max-width: 900px) {
+      .metrics-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .metric-card:nth-child(2) {
+        border-right: none;
+      }
+      .metric-card:nth-child(1),
+      .metric-card:nth-child(2) {
+        border-bottom: 1px solid var(--border-subtle);
+      }
+      .specs-columns {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+      .nav-links {
+        display: none;
+      }
+      .site-footer {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body class="loading">
+
+  <!-- Thin Loading Bar + Full Frame Preloader -->
+  <div id="loader" role="status" aria-live="polite">
+    <div class="loader-top-bar">
+      <div class="loader-top-bar-fill" id="loader-top-fill"></div>
+    </div>
+    <div class="loader-content">
+      <div class="loader-brand">Ice Tray Diamonds</div>
+      <div class="loader-track">
+        <div class="loader-fill" id="loader-bar"></div>
+      </div>
+      <div class="loader-meta">
+        <span id="loader-status">Loading Optical Frames</span>
+        <span id="loader-percent">0%</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Fixed Minimal Header -->
+  <header class="site-nav">
+    <a href="#" class="nav-logo">Ice Tray Diamonds</a>
+    <nav class="nav-links">
+      <a href="#flipbook">Deconstruction</a>
+      <a href="#specifications">Specifications</a>
+      <a href="#acquire">Acquire</a>
+    </nav>
+  </header>
+
+  <!-- 400vh Flipbook Scroll Section -->
+  <section class="flipbook-section" id="flipbook">
+    <div class="canvas-sticky">
+      <canvas id="flipbook-canvas" aria-label="Interactive 3D exploded view of Ice Tray Diamonds collection"></canvas>
+      <div class="canvas-vignette"></div>
+
+      <!-- Large Serif Headline at top of scroll -->
+      <div class="hero-overlay" id="hero-overlay">
+        <div class="hero-header-group">
+          <p class="hero-eyebrow">Haute Joaillerie — Archive Edition N° 01</p>
+          <h1 class="hero-headline">Ice Tray Diamonds</h1>
+          <p class="hero-sub">Five architectural diamond silhouettes, deconstructed in motion.</p>
+        </div>
+        <div class="scroll-cue">
+          <span>Scroll to Deconstruct</span>
+          <div class="scroll-cue-line"></div>
+        </div>
+      </div>
+
+      <!-- Three Short Lines of Copy at 20%, 50%, and 80% of Scroll -->
+      <div class="story-overlay">
+        <div class="story-line" id="copy-20">
+          <span class="story-index">01 / 20% — Spectral Clarity</span>
+          <p class="story-copy">Type IIa D-flawless diamonds, custom-cut to bend light with sub-zero precision.</p>
+        </div>
+
+        <div class="story-line" id="copy-50">
+          <span class="story-index">02 / 50% — Suspended Architecture</span>
+          <p class="story-copy">Every prong, bezel, and pavé gallery milled from solid 950 platinum to tolerances of five microns.</p>
+        </div>
+
+        <div class="story-line" id="copy-80">
+          <span class="story-index">03 / 80% — Eternal Tension</span>
+          <p class="story-copy">384 interlocking components engineered to float seamlessly against the skin.</p>
+        </div>
+      </div>
+
+      <!-- Subtle Frame Counter HUD -->
+      <div class="scroll-hud">
+        <span id="hud-frame">FRAME 001 / 384</span>
+        <div class="scroll-hud-bar">
+          <div class="scroll-hud-fill" id="hud-fill"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pitch Black Specifications & Buy Section After Animation Ends -->
+  <main class="post-scroll-content" id="specifications">
+    <div class="specs-container">
+      <div class="section-header">
+        <p class="section-eyebrow">Technical Dossier</p>
+        <h2 class="section-title">Anatomical Specifications</h2>
+        <p class="section-desc">
+          The Ice Tray Parure unites five signature pieces—Tennis Bracelet, Cathedral Solitaire Ring, Eternity Band, Cascade Drop Earrings, and Halo Medallion Pendant—crafted as a single numbered suite.
+        </p>
+      </div>
+
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <div class="metric-value">24.80 ct</div>
+          <div class="metric-label">Total Diamond Weight</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-value">D / VVS1</div>
+          <div class="metric-label">Color &amp; Clarity Grade</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-value">Pt 950</div>
+          <div class="metric-label">Cryo-Forged Platinum</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-value">384</div>
+          <div class="metric-label">Micro-Milled Components</div>
+        </div>
+      </div>
+
+      <div class="specs-columns">
+        <div class="specs-table">
+          <h3 class="specs-list-title">Suite Breakdown &amp; Metallurgy</h3>
+          <div class="spec-row">
+            <span class="spec-key">01. Glacial Tennis Bracelet</span>
+            <span class="spec-val">44 Round Brilliants · 11.20 ct · Box-Lock Clasp</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-key">02. Cathedral Solitaire Ring</span>
+            <span class="spec-val">3.50 ct Center + Micro-Pavé Bridge · 4.65 ct Total</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-key">03. Full-Circle Eternity Band</span>
+            <span class="spec-val">28 French-Set Diamonds · 2.40 ct</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-key">04. Cascade Pear Drop Earrings</span>
+            <span class="spec-val">Matched Pear Drops &amp; Graduated Rounds · 3.85 ct</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-key">05. Articulated Halo Medallion</span>
+            <span class="spec-val">Cluster Core with Floating Bezel · 2.70 ct</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-key">Origin &amp; Certification</span>
+            <span class="spec-val">Individual GIA Dossiers · Laser-Inscribed Girdles</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-key">Surface Finish</span>
+            <span class="spec-val">Hand-Polished Mirror Rhodium &amp; Satin Interior</span>
+          </div>
+        </div>
+
+        <div class="acquisition-card" id="acquire">
+          <div>
+            <span class="acquisition-badge">Limited Edition of 10 Suites</span>
+            <h3 class="acquisition-title">The Complete Ice Tray Suite</h3>
+            <p class="acquisition-subtitle">
+              Delivered in a bespoke temperature-regulated obsidian vault with full GIA certification, white-glove armoured courier delivery, and lifetime atelier maintenance.
+            </p>
+          </div>
+          <div>
+            <div class="price-block">
+              <span class="price-label">Suite Valuation</span>
+              <span class="price-amount">$48,500 USD</span>
+            </div>
+            <button type="button" class="buy-button" id="buy-btn">
+              Buy Now — Acquire The Suite
+            </button>
+            <p class="acquisition-Guarantee">
+              Complimentary global insured shipping · Bespoke ring &amp; wrist sizing included
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <footer class="site-footer">
+        <span>© 2026 ICE TRAY DIAMONDS ATELIER</span>
+        <span>GENEVA · NEW YORK · TOKYO</span>
+      </footer>
+    </div>
+  </main>
+
+  <!-- Purchase / Private Concierge Modal -->
+  <div class="modal-backdrop" id="buy-modal" aria-hidden="true">
+    <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modal-heading">
+      <button class="modal-close" id="modal-close" aria-label="Close">×</button>
+      <p class="section-eyebrow">Private Acquisition</p>
+      <h3 class="modal-title" id="modal-heading">Ice Tray Diamonds Suite</h3>
+      <p class="modal-text" id="modal-desc">
+        Enter your details to lock allocation N° 04/10 and initiate insured dispatch with our Geneva concierge.
+      </p>
+      <form id="order-form">
+        <input type="text" class="modal-input" placeholder="Full Name" required />
+        <input type="email" class="modal-input" placeholder="Private Email Address" required />
+        <button type="submit" class="buy-button" id="confirm-buy-btn">Confirm Reservation — $48,500</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    (() => {
+      const TOTAL_FRAMES = 384;
+      const frames = new Array(TOTAL_FRAMES);
+      let loadedCount = 0;
+      let isReady = false;
+
+      const canvas = document.getElementById('flipbook-canvas');
+      const ctx = canvas.getContext('2d', { alpha: false });
+      const flipbookSection = document.getElementById('flipbook');
+
+      const loader = document.getElementById('loader');
+      const loaderBar = document.getElementById('loader-bar');
+      const loaderTopFill = document.getElementById('loader-top-fill');
+      const loaderPercent = document.getElementById('loader-percent');
+      const loaderStatus = document.getElementById('loader-status');
+
+      const heroOverlay = document.getElementById('hero-overlay');
+      const copy20 = document.getElementById('copy-20');
+      const copy50 = document.getElementById('copy-50');
+      const copy80 = document.getElementById('copy-80');
+      const hudFrame = document.getElementById('hud-frame');
+      const hudFill = document.getElementById('hud-fill');
+
+      // Warm grey RGB from the frames' studio background: rgb(45, 49, 51) -> #2d3133
+      const START_RGB = [45, 49, 51];
+
+      let currentFrameIndex = -1;
+      let targetFrameIndex = 0;
+      let currentScrollProgress = 0;
+      let rafPending = false;
+      let needsResize = true;
+
+      function pad3(n) {
+        return String(n).padStart(3, '0');
+      }
+
+      // Size canvas for retina screens
+      function updateCanvasSize() {
+        const dpr = window.devicePixelRatio || 1;
+        const width = Math.round(window.innerWidth * dpr);
+        const height = Math.round(window.innerHeight * dpr);
+        if (canvas.width !== width || canvas.height !== height) {
+          canvas.width = width;
+          canvas.height = height;
+        }
+        needsResize = false;
+      }
+
+      // Draw frame cover-fitted to the canvas
+      function drawFrame(index) {
+        const img = frames[index];
+        if (!img || !img.complete || !img.naturalWidth) return;
+
+        if (needsResize) {
+          updateCanvasSize();
+        }
+
+        const cw = canvas.width;
+        const ch = canvas.height;
+        const iw = img.naturalWidth;
+        const ih = img.naturalHeight;
+
+        const scale = Math.max(cw / iw, ch / ih);
+        const dw = iw * scale;
+        const dh = ih * scale;
+        const dx = (cw - dw) * 0.5;
+        const dy = (ch - dh) * 0.5;
+
+        ctx.drawImage(img, dx, dy, dw, dh);
+      }
+
+      // Calculate opacity & Y-offset for callouts at 20%, 50%, 80%
+      function updateCopyCallout(el, progress, center, halfWidth) {
+        const dist = Math.abs(progress - center);
+        if (dist >= halfWidth) {
+          el.style.opacity = '0';
+          el.style.transform = 'translateY(22px)';
+          return;
+        }
+        // Smooth cosine bell curve peak at center
+        const norm = dist / halfWidth;
+        const alpha = Math.cos(norm * Math.PI * 0.5);
+        const offsetY = (progress < center ? (1 - alpha) * 18 : -(1 - alpha) * 18);
+        el.style.opacity = alpha.toFixed(3);
+        el.style.transform = `translateY(${offsetY.toFixed(1)}px)`;
+      }
+
+      // Update background color from warm grey (#2d3133) to pitch black (#000000)
+      function updatePageTone(progress) {
+        // Darken smoothly as we scroll down, reaching pitch black at the bottom of the animation
+        const t = Math.min(1, Math.max(0, progress));
+        const r = Math.round(START_RGB[0] * (1 - t));
+        const g = Math.round(START_RGB[1] * (1 - t));
+        const b = Math.round(START_RGB[2] * (1 - t));
+        const color = `rgb(${r}, ${g}, ${b})`;
+        document.documentElement.style.setProperty('--bg-current', color);
+      }
+
+      function updateOverlays(progress) {
+        // Hero headline fades out between 0% and 12% of scroll
+        if (progress <= 0.12) {
+          const heroAlpha = 1 - (progress / 0.12);
+          heroOverlay.style.opacity = heroAlpha.toFixed(3);
+          heroOverlay.style.transform = `translateY(${(-progress * 180).toFixed(1)}px)`;
+        } else {
+          heroOverlay.style.opacity = '0';
+        }
+
+        // Three short lines of copy at 20%, 50%, and 80% of the scroll
+        updateCopyCallout(copy20, progress, 0.20, 0.11);
+        updateCopyCallout(copy50, progress, 0.50, 0.11);
+        updateCopyCallout(copy80, progress, 0.80, 0.11);
+
+        // HUD indicator
+        hudFrame.textContent = `FRAME ${pad3(targetFrameIndex + 1)} / ${TOTAL_FRAMES}`;
+        hudFill.style.width = `${(progress * 100).toFixed(1)}%`;
+
+        // Background color transition from warm grey to pitch black
+        updatePageTone(progress);
+      }
+
+      function computeScrollState() {
+        const rect = flipbookSection.getBoundingClientRect();
+        const maxScroll = Math.max(1, flipbookSection.offsetHeight - window.innerHeight);
+        const scrolled = -rect.top;
+        const progress = Math.min(1, Math.max(0, scrolled / maxScroll));
+
+        currentScrollProgress = progress;
+        targetFrameIndex = Math.min(
+          TOTAL_FRAMES - 1,
+          Math.max(0, Math.round(progress * (TOTAL_FRAMES - 1)))
+        );
+      }
+
+      function renderLoop() {
+        rafPending = false;
+        if (!isReady) return;
+
+        // Only redraw canvas when the frame index changes or window resized
+        if (targetFrameIndex !== currentFrameIndex || needsResize) {
+          drawFrame(targetFrameIndex);
+          currentFrameIndex = targetFrameIndex;
+        }
+
+        updateOverlays(currentScrollProgress);
+      }
+
+      function requestTick() {
+        computeScrollState();
+        updateOverlays(currentScrollProgress);
+        if ((targetFrameIndex !== currentFrameIndex || needsResize) && !rafPending) {
+          rafPending = true;
+          requestAnimationFrame(renderLoop);
+        }
+      }
+
+      // Preload all 384 frames before starting the animation
+      function preloadAllFrames() {
+        for (let i = 0; i < TOTAL_FRAMES; i++) {
+          const img = new Image();
+          img.decoding = 'async';
+          img.src = `frames/frame-${pad3(i + 1)}.jpg`;
+
+          const onFrameDone = () => {
+            loadedCount++;
+            const pct = Math.round((loadedCount / TOTAL_FRAMES) * 100);
+            loaderBar.style.width = `${pct}%`;
+            loaderTopFill.style.width = `${pct}%`;
+            loaderPercent.textContent = `${pct}%`;
+            loaderStatus.textContent = `Loading Optical Frames (${loadedCount}/${TOTAL_FRAMES})`;
+
+            // Draw first frame immediately once available so canvas is ready behind loader
+            if (i === 0) {
+              updateCanvasSize();
+              drawFrame(0);
+              currentFrameIndex = 0;
+            }
+
+            if (loadedCount === TOTAL_FRAMES) {
+              isReady = true;
+              document.body.classList.remove('loading');
+              loader.classList.add('hidden');
+              computeScrollState();
+              needsResize = true;
+              renderLoop();
+            }
+          };
+
+          img.onload = onFrameDone;
+          img.onerror = onFrameDone;
+          frames[i] = img;
+        }
+      }
+
+      window.addEventListener('scroll', requestTick, { passive: true });
+      window.addEventListener('resize', () => {
+        needsResize = true;
+        requestTick();
+      }, { passive: true });
+
+      // Buy Modal interaction
+      const buyBtn = document.getElementById('buy-btn');
+      const buyModal = document.getElementById('buy-modal');
+      const modalClose = document.getElementById('modal-close');
+      const orderForm = document.getElementById('order-form');
+      const modalDesc = document.getElementById('modal-desc');
+      const confirmBuyBtn = document.getElementById('confirm-buy-btn');
+
+      buyBtn.addEventListener('click', () => {
+        buyModal.classList.add('open');
+        buyModal.setAttribute('aria-hidden', 'false');
+      });
+
+      modalClose.addEventListener('click', () => {
+        buyModal.classList.remove('open');
+        buyModal.setAttribute('aria-hidden', 'true');
+      });
+
+      buyModal.addEventListener('click', (e) => {
+        if (e.target === buyModal) {
+          buyModal.classList.remove('open');
+          buyModal.setAttribute('aria-hidden', 'true');
+        }
+      });
+
+      orderForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        confirmBuyBtn.textContent = 'Allocation Reserved ✓';
+        modalDesc.textContent = 'Your private dossier and wire instructions have been dispatched by our Geneva salon.';
+        setTimeout(() => {
+          buyModal.classList.remove('open');
+          buyModal.setAttribute('aria-hidden', 'true');
+        }, 2000);
+      });
+
+      preloadAllFrames();
+    })();
+  </script>
+</body>
+</html>

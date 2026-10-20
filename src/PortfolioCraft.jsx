@@ -104,6 +104,17 @@ export function ProjectDesk({ selected, onSelect }) {
       <div className="portfolio-desk-axis" aria-hidden="true">
         <span /> <span />
       </div>
+      <figure className="portfolio-desk-window portfolio-desk-icetray">
+        <figcaption>
+          <span className="portfolio-desk-dot" /> Ice Tray Diamonds <span>Scroll flipbook</span>
+        </figcaption>
+        <img
+          src="/demo/icetray-workspace.jpg"
+          alt="Ice Tray Diamonds interactive scroll-flipbook product page showing deconstructed diamond jewelry"
+          width="1440"
+          height="960"
+        />
+      </figure>
       <figure className="portfolio-desk-window portfolio-desk-finpulse">
         <figcaption>
           <span className="portfolio-desk-dot" /> FinPulse <span>Credit data engineering</span>
@@ -134,9 +145,24 @@ export function ProjectDesk({ selected, onSelect }) {
         <button aria-pressed={selected === 'finpulse'} onClick={() => onSelect('finpulse')}>
           <span /> FinPulse
         </button>
+        <button aria-pressed={selected === 'icetray'} onClick={() => onSelect('icetray')}>
+          <span /> Ice Tray
+        </button>
         <a
-          href={selected === 'peopleos' ? '#peopleos-project' : '#finpulse-project'}
-          aria-label={`Explore ${selected === 'peopleos' ? 'PeopleOS' : 'FinPulse'} project`}
+          href={
+            selected === 'peopleos'
+              ? '#peopleos-project'
+              : selected === 'finpulse'
+                ? '#finpulse-project'
+                : '#icetray-project'
+          }
+          aria-label={`Explore ${
+            selected === 'peopleos'
+              ? 'PeopleOS'
+              : selected === 'finpulse'
+                ? 'FinPulse'
+                : 'Ice Tray Diamonds'
+          } project`}
         >
           <ArrowUpRight size={19} />
         </a>
@@ -293,7 +319,27 @@ export function RecordTrace() {
 }
 
 export function ProjectClose({ selected, onSelect }) {
-  const people = selected === 'peopleos';
+  const projectMeta = {
+    peopleos: {
+      name: 'PeopleOS',
+      desc: 'People operations, with human review built in.',
+      href: '/app',
+      repo: 'https://github.com/AmosAlloyce/peopleos',
+    },
+    finpulse: {
+      name: 'FinPulse',
+      desc: 'Credit data, with quality and lineage built in.',
+      href: '/finpulse/',
+      repo: 'https://github.com/AmosAlloyce/FinPulse',
+    },
+    icetray: {
+      name: 'Ice Tray Diamonds',
+      desc: '384-frame scroll-driven canvas flipbook in a single HTML file.',
+      href: '/ice-tray-diamonds/',
+      repo: 'https://github.com/AmosAlloyce/ice-tray-diamonds',
+    },
+  };
+  const current = projectMeta[selected] || projectMeta.peopleos;
   return (
     <section
       className="portfolio-project-close"
@@ -310,24 +356,23 @@ export function ProjectClose({ selected, onSelect }) {
       </div>
       <div className="portfolio-close-choice">
         <div role="group" aria-label="Choose a project to explore">
-          <button aria-pressed={people} onClick={() => onSelect('peopleos')}>
+          <button aria-pressed={selected === 'peopleos'} onClick={() => onSelect('peopleos')}>
             PeopleOS
           </button>
-          <button aria-pressed={!people} onClick={() => onSelect('finpulse')}>
+          <button aria-pressed={selected === 'finpulse'} onClick={() => onSelect('finpulse')}>
             FinPulse
           </button>
+          <button aria-pressed={selected === 'icetray'} onClick={() => onSelect('icetray')}>
+            Ice Tray
+          </button>
         </div>
-        <p>
-          {people
-            ? 'People operations, with human review built in.'
-            : 'Credit data, with quality and lineage built in.'}
-        </p>
-        <a className="portfolio-close-launch" href={people ? '/app' : '/finpulse/'}>
-          Launch {people ? 'PeopleOS' : 'FinPulse'} <ArrowUpRight size={20} />
+        <p>{current.desc}</p>
+        <a className="portfolio-close-launch" href={current.href}>
+          Launch {current.name} <ArrowUpRight size={20} />
         </a>
         <a
           className="portfolio-close-source"
-          href={`https://github.com/AmosAlloyce/${people ? 'peopleos' : 'FinPulse'}`}
+          href={current.repo}
           target="_blank"
           rel="noreferrer"
         >
