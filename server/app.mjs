@@ -8,6 +8,7 @@ import { SCENARIOS, executeWorkflow, decideRun } from './workflows.mjs';
 import { groundedReply, groqNarrative } from './assistant.mjs';
 import { previewImport } from './import.mjs';
 import { createSessionStore } from './store.mjs';
+import { createIceTrayRouter } from './icetray-api.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const COOKIE = 'peopleos_session';
@@ -74,8 +75,12 @@ export function createApp(options = {}) {
   }
   const app = express();
   const store = (options.storeFactory || createSessionStore)(config);
+  const iceTrayRouter = createIceTrayRouter({ dataDir: config.dataDir });
   const sessions = store.sessions;
-  app.locals.close = () => store.close();
+  app.locals.close = () => {
+    store.close();
+    iceTrayRouter.locals.store.close();
+  };
   const ips = new Map();
   const sessionLocks = new WeakMap();
   let activeProviders = 0;
@@ -104,6 +109,8 @@ export function createApp(options = {}) {
     });
     next();
   });
+  app.use('/api/ice-tray/v1', iceTrayRouter);
+  app.use('/ice-tray-diamonds/api/v1', iceTrayRouter);
   app.use('/api', (req, res, next) => {
     res.set('Cache-Control', 'no-store');
     next();

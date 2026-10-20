@@ -590,21 +590,22 @@ export default function Portfolio() {
               </div>
               <div className="portfolio-finpulse-description">
                 <p>
-                  A single-file luxury product showcase built without frameworks or a build step. A
-                  pinned full-screen retina canvas cover-fits and scrubs through two 8-second
-                  jewelry films as the warm studio grey background deepens into pitch black.
+                  A full-stack Haute Joaillerie digital atelier pairing a 60fps inertial scroll
+                  flipbook and interactive spatial canvas hotspots with an Express 5 REST API,
+                  SQLite WAL edition allocation locks, live bespoke pricing, and a cryptographic GIA
+                  provenance registry.
                 </p>
                 <div className="portfolio-finpulse-tags">
-                  <span>HTML5 CANVAS</span>
-                  <span>SCROLL FLIPBOOK</span>
-                  <span>ZERO FRAMEWORKS</span>
+                  <span>REACT 19 &amp; CANVAS</span>
+                  <span>EXPRESS 5 REST API</span>
+                  <span>SQLITE WAL LEDGER</span>
                 </div>
               </div>
             </div>
             <a
               className="portfolio-finpulse-preview"
               href="/ice-tray-diamonds/"
-              aria-label="Open the interactive Ice Tray Diamonds scroll flipbook"
+              aria-label="Open the interactive Ice Tray Diamonds digital atelier"
             >
               <div className="portfolio-finpulse-browser">
                 <span>
@@ -612,8 +613,8 @@ export default function Portfolio() {
                   <i />
                   <i />
                 </span>
-                <span>ice-tray-diamonds / 384-frame flipbook</span>
-                <span>INTERACTIVE CANVAS</span>
+                <span>ice-tray-diamonds / digital atelier</span>
+                <span>FULL-STACK LIVE</span>
               </div>
               <img
                 src="/demo/icetray-workspace.jpg"
@@ -623,32 +624,32 @@ export default function Portfolio() {
                 height="960"
               />
               <span className="portfolio-finpulse-enter">
-                Experience the flipbook <ArrowUpRight size={19} />
+                Enter the Digital Atelier <ArrowUpRight size={19} />
               </span>
             </a>
             <ol
               className="portfolio-finpulse-pipeline"
-              aria-label="Ice Tray Diamonds interactive architecture"
+              aria-label="Ice Tray Diamonds full-stack architecture"
             >
               <li>
-                <span>01 / PRELOAD</span>
-                <strong>Load every frame first.</strong>
-                <p>Thin progress bar preloads all 384 frames before unlocking scroll.</p>
+                <span>01 / SPATIAL CANVAS</span>
+                <strong>60fps inertial flipbook.</strong>
+                <p>Spring-damped 384-frame scroll with interactive piece hotspots &amp; audio.</p>
               </li>
               <li>
-                <span>02 / SCRUB</span>
-                <strong>Redraw on frame change.</strong>
-                <p>Pinned 400vh retina canvas cover-fits frames via requestAnimationFrame.</p>
+                <span>02 / BESPOKE API</span>
+                <strong>Live valuation &amp; holds.</strong>
+                <p>REST API calculates alloy/Type IIa pricing &amp; locks 15-min edition holds.</p>
               </li>
               <li>
-                <span>03 / REVEAL</span>
-                <strong>Timed story &amp; dossier.</strong>
-                <p>Copy fades in at 20%, 50%, and 80% scroll before the pitch-black specs vault.</p>
+                <span>03 / GIA VAULT LEDGER</span>
+                <strong>SQLite WAL provenance.</strong>
+                <p>Verifies SHA-256 GIA dossiers, issues Vault Passes &amp; powers Atelier OS.</p>
               </li>
             </ol>
             <div className="portfolio-finpulse-bottom">
               <p>
-                <i /> Single index.html · 384 frames · Retina cover-fit canvas
+                <i /> React 19 · Express 5 REST API · SQLite WAL · 384-frame 60fps canvas
               </p>
               <div>
                 <a
