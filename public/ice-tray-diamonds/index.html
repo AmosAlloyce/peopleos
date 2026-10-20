@@ -2,18 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>ICE TRAY DIAMONDS — Haute Joaillerie Archive</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-warm-grey: #2d3133;
-      --bg-current: #2d3133;
+      --bg-warm-grey: #232729;
+      --bg-current: #232729;
       --text-primary: #f5f5f3;
-      --text-muted: rgba(245, 245, 243, 0.64);
-      --text-subtle: rgba(245, 245, 243, 0.38);
+      --text-muted: rgba(245, 245, 243, 0.68);
+      --text-subtle: rgba(245, 245, 243, 0.42);
       --accent-ice: #dce8ef;
       --border-subtle: rgba(255, 255, 255, 0.12);
       --serif: 'Cormorant Garamond', Didot, 'Bodoni MT', Georgia, serif;
@@ -33,6 +33,8 @@
       font-family: var(--sans);
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
+      text-size-adjust: 100%;
+      -webkit-text-size-adjust: 100%;
     }
 
     body {
@@ -44,6 +46,7 @@
     body.loading {
       overflow: hidden;
       height: 100vh;
+      height: 100dvh;
     }
 
     /* ─── PRELOADER & THIN LOADING BAR ─── */
@@ -56,7 +59,7 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.8s;
+      transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.75s;
     }
 
     #loader.hidden {
@@ -80,7 +83,7 @@
       height: 100%;
       width: 0%;
       background: linear-gradient(90deg, rgba(220, 232, 239, 0.4), #ffffff);
-      transition: width 0.1s ease-out;
+      transition: width 0.08s ease-out;
     }
 
     .loader-content {
@@ -91,7 +94,7 @@
 
     .loader-brand {
       font-family: var(--serif);
-      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      font-size: clamp(1.4rem, 3.5vw, 2.2rem);
       font-weight: 300;
       letter-spacing: 0.28em;
       text-transform: uppercase;
@@ -123,7 +126,7 @@
       display: flex;
       justify-content: space-between;
       font-size: 0.68rem;
-      letter-spacing: 0.22em;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
       color: var(--text-muted);
       font-variant-numeric: tabular-nums;
@@ -139,14 +142,13 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1.6rem clamp(1.5rem, 4vw, 4rem);
+      padding: 1.4rem clamp(1.25rem, 4vw, 4rem);
       pointer-events: none;
-      mix-blend-mode: difference;
+      background: linear-gradient(to bottom, rgba(10, 12, 14, 0.45) 0%, rgba(10, 12, 14, 0) 100%);
     }
 
     .site-nav a,
-    .site-nav .nav-logo,
-    .site-nav .nav-cta {
+    .site-nav .nav-logo {
       pointer-events: auto;
       text-decoration: none;
       color: var(--text-primary);
@@ -154,8 +156,8 @@
 
     .nav-logo {
       font-family: var(--serif);
-      font-size: 0.95rem;
-      letter-spacing: 0.32em;
+      font-size: clamp(0.82rem, 2vw, 0.95rem);
+      letter-spacing: 0.3em;
       text-transform: uppercase;
       font-weight: 500;
     }
@@ -178,11 +180,11 @@
       color: #ffffff;
     }
 
-    /* ─── SCROLL FLIPBOOK SECTION (400vh) ─── */
+    /* ─── SCROLL FLIPBOOK SECTION (450vh for longer, luxuriously paced scroll) ─── */
     .flipbook-section {
       position: relative;
       width: 100%;
-      height: 400vh;
+      height: 450vh;
     }
 
     .canvas-sticky {
@@ -191,6 +193,7 @@
       left: 0;
       width: 100%;
       height: 100vh;
+      height: 100dvh;
       overflow: hidden;
       display: flex;
       align-items: center;
@@ -209,9 +212,8 @@
       inset: 0;
       pointer-events: none;
       background:
-        radial-gradient(ellipse 85% 80% at 50% 50%, transparent 55%, var(--bg-current) 100%),
-        linear-gradient(to bottom, var(--bg-current) 0%, transparent 12%, transparent 86%, var(--bg-current) 100%);
-      opacity: 0.92;
+        radial-gradient(ellipse 90% 85% at 50% 50%, transparent 58%, var(--bg-current) 100%),
+        linear-gradient(to bottom, rgba(15, 17, 18, 0.35) 0%, transparent 14%, transparent 84%, var(--bg-current) 100%);
     }
 
     /* ─── HERO HEADLINE OVERLAY ─── */
@@ -222,7 +224,7 @@
       flex-direction: column;
       justify-content: space-between;
       align-items: center;
-      padding: 6.5rem clamp(1.5rem, 5vw, 5rem) 2.75rem;
+      padding: clamp(4.25rem, 8vh, 6.5rem) clamp(1.25rem, 5vw, 5rem) clamp(2rem, 5vh, 2.75rem);
       pointer-events: none;
       text-align: center;
       z-index: 10;
@@ -231,24 +233,23 @@
 
     .hero-header-group {
       max-width: 980px;
-      margin-top: 0;
-      padding: 1.5rem 2.5rem;
-      background: radial-gradient(ellipse at center, rgba(15, 18, 20, 0.52) 0%, rgba(15, 18, 20, 0) 72%);
+      padding: 1rem 1.75rem;
+      background: radial-gradient(ellipse at center, rgba(14, 17, 19, 0.56) 0%, rgba(14, 17, 19, 0) 74%);
     }
 
     .hero-eyebrow {
-      font-size: 0.72rem;
-      letter-spacing: 0.36em;
+      font-size: clamp(0.6rem, 1.6vw, 0.72rem);
+      letter-spacing: 0.34em;
       text-transform: uppercase;
       color: var(--accent-ice);
-      margin-bottom: 1rem;
+      margin-bottom: 0.75rem;
       font-weight: 400;
       text-shadow: 0 2px 14px rgba(0, 0, 0, 0.9);
     }
 
     .hero-headline {
       font-family: var(--serif);
-      font-size: clamp(3rem, 7.8vw, 7.2rem);
+      font-size: clamp(2.35rem, 7.6vw, 7rem);
       font-weight: 300;
       line-height: 0.96;
       letter-spacing: 0.08em;
@@ -258,12 +259,12 @@
     }
 
     .hero-sub {
-      margin-top: 1.15rem;
+      margin-top: 0.9rem;
       font-family: var(--serif);
       font-style: italic;
-      font-size: clamp(1.1rem, 1.8vw, 1.45rem);
+      font-size: clamp(1rem, 2.2vw, 1.42rem);
       color: rgba(245, 245, 243, 0.92);
-      letter-spacing: 0.04em;
+      letter-spacing: 0.03em;
       text-shadow: 0 4px 18px rgba(0, 0, 0, 0.95);
     }
 
@@ -271,8 +272,8 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 0.65rem;
-      font-size: 0.66rem;
+      gap: 0.55rem;
+      font-size: 0.62rem;
       letter-spacing: 0.28em;
       text-transform: uppercase;
       color: var(--text-muted);
@@ -280,8 +281,8 @@
 
     .scroll-cue-line {
       width: 1px;
-      height: 40px;
-      background: linear-gradient(to bottom, rgba(255, 255, 255, 0.7), transparent);
+      height: 34px;
+      background: linear-gradient(to bottom, rgba(255, 255, 255, 0.75), transparent);
       animation: scrollPulse 2.2s infinite ease-in-out;
     }
 
@@ -299,55 +300,56 @@
       display: flex;
       align-items: flex-end;
       justify-content: center;
-      padding: 0 clamp(1.5rem, 6vw, 6rem) clamp(3.5rem, 8vh, 6rem);
+      padding: 0 clamp(1rem, 5vw, 6rem) clamp(3.25rem, 7vh, 5.5rem);
     }
 
     .story-line {
       position: absolute;
       max-width: 680px;
+      width: calc(100% - 2rem);
       text-align: center;
       opacity: 0;
-      transform: translateY(22px);
+      transform: translateY(20px);
       will-change: opacity, transform;
-      padding: 1.75rem 2.5rem;
-      background: radial-gradient(ellipse at center, rgba(8, 10, 12, 0.82) 0%, rgba(8, 10, 12, 0.48) 55%, rgba(8, 10, 12, 0) 78%);
+      padding: 1.35rem 1.75rem;
+      background: radial-gradient(ellipse at center, rgba(8, 10, 12, 0.84) 0%, rgba(8, 10, 12, 0.5) 58%, rgba(8, 10, 12, 0) 82%);
       border-radius: 8px;
     }
 
     .story-index {
       display: block;
       font-family: var(--sans);
-      font-size: 0.68rem;
-      letter-spacing: 0.34em;
+      font-size: clamp(0.6rem, 1.5vw, 0.68rem);
+      letter-spacing: 0.32em;
       text-transform: uppercase;
       color: var(--accent-ice);
-      margin-bottom: 0.65rem;
+      margin-bottom: 0.55rem;
       text-shadow: 0 2px 12px rgba(0, 0, 0, 0.95);
     }
 
     .story-copy {
       font-family: var(--serif);
-      font-size: clamp(1.55rem, 3.1vw, 2.55rem);
+      font-size: clamp(1.35rem, 3.1vw, 2.5rem);
       font-weight: 400;
       line-height: 1.24;
       letter-spacing: 0.02em;
       color: #ffffff;
-      text-shadow: 0 6px 28px rgba(0, 0, 0, 0.85);
+      text-shadow: 0 6px 28px rgba(0, 0, 0, 0.9);
     }
 
     /* Subtle HUD frame progress indicator */
     .scroll-hud {
       position: absolute;
-      bottom: 2.2rem;
-      right: clamp(1.5rem, 4vw, 4rem);
+      bottom: 1.4rem;
+      right: clamp(1.25rem, 4vw, 4rem);
       z-index: 15;
       display: flex;
       align-items: center;
-      gap: 0.85rem;
-      font-size: 0.65rem;
-      letter-spacing: 0.22em;
+      gap: 0.75rem;
+      font-size: 0.62rem;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: rgba(255, 255, 255, 0.42);
+      color: rgba(255, 255, 255, 0.46);
       font-variant-numeric: tabular-nums;
       pointer-events: none;
     }
@@ -355,7 +357,7 @@
     .scroll-hud-bar {
       width: 48px;
       height: 1px;
-      background: rgba(255, 255, 255, 0.16);
+      background: rgba(255, 255, 255, 0.18);
       position: relative;
       overflow: hidden;
     }
@@ -364,15 +366,15 @@
       position: absolute;
       inset: 0;
       width: 0%;
-      background: rgba(255, 255, 255, 0.75);
+      background: rgba(255, 255, 255, 0.8);
     }
 
     /* ─── POST-ANIMATION: PITCH BLACK SPECS & BUY SECTION ─── */
     .post-scroll-content {
       position: relative;
       z-index: 20;
-      background: linear-gradient(to bottom, transparent 0%, #000000 140px, #000000 100%);
-      padding: 8rem clamp(1.5rem, 6vw, 7rem) 6rem;
+      background: linear-gradient(to bottom, transparent 0%, #000000 120px, #000000 100%);
+      padding: clamp(4.5rem, 10vh, 8rem) clamp(1.25rem, 6vw, 7rem) clamp(4rem, 8vh, 6rem);
     }
 
     .specs-container {
@@ -382,20 +384,20 @@
 
     .section-header {
       text-align: center;
-      margin-bottom: 5rem;
+      margin-bottom: clamp(3rem, 6vh, 5rem);
     }
 
     .section-eyebrow {
-      font-size: 0.72rem;
-      letter-spacing: 0.34em;
+      font-size: 0.68rem;
+      letter-spacing: 0.32em;
       text-transform: uppercase;
       color: var(--accent-ice);
-      margin-bottom: 1rem;
+      margin-bottom: 0.9rem;
     }
 
     .section-title {
       font-family: var(--serif);
-      font-size: clamp(2.4rem, 5vw, 4.25rem);
+      font-size: clamp(2rem, 5vw, 4.25rem);
       font-weight: 300;
       letter-spacing: 0.06em;
       text-transform: uppercase;
@@ -404,8 +406,8 @@
 
     .section-desc {
       max-width: 580px;
-      margin: 1.25rem auto 0;
-      font-size: 0.95rem;
+      margin: 1.1rem auto 0;
+      font-size: clamp(0.88rem, 2vw, 0.95rem);
       line-height: 1.7;
       color: var(--text-muted);
       font-weight: 300;
@@ -417,11 +419,11 @@
       grid-template-columns: repeat(4, 1fr);
       border-top: 1px solid var(--border-subtle);
       border-bottom: 1px solid var(--border-subtle);
-      margin-bottom: 5rem;
+      margin-bottom: clamp(3rem, 6vh, 5rem);
     }
 
     .metric-card {
-      padding: 2.75rem 1.75rem;
+      padding: clamp(1.75rem, 3.5vw, 2.75rem) 1.25rem;
       border-right: 1px solid var(--border-subtle);
       text-align: center;
     }
@@ -432,16 +434,16 @@
 
     .metric-value {
       font-family: var(--serif);
-      font-size: clamp(2.1rem, 3.6vw, 3.2rem);
+      font-size: clamp(1.75rem, 3.6vw, 3.2rem);
       font-weight: 300;
       color: #ffffff;
       letter-spacing: 0.04em;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.4rem;
     }
 
     .metric-label {
-      font-size: 0.7rem;
-      letter-spacing: 0.24em;
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
       color: var(--text-muted);
     }
@@ -450,18 +452,18 @@
     .specs-columns {
       display: grid;
       grid-template-columns: 1.1fr 0.9fr;
-      gap: 4rem;
+      gap: clamp(2.5rem, 5vw, 4rem);
       align-items: start;
-      margin-bottom: 5.5rem;
+      margin-bottom: 4.5rem;
     }
 
     .specs-list-title {
       font-family: var(--serif);
-      font-size: 1.5rem;
+      font-size: clamp(1.3rem, 2.5vw, 1.5rem);
       font-weight: 400;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      margin-bottom: 1.75rem;
+      margin-bottom: 1.5rem;
       color: #ffffff;
     }
 
@@ -469,20 +471,21 @@
       display: flex;
       justify-content: space-between;
       align-items: baseline;
-      padding: 1.15rem 0;
+      padding: 1.05rem 0;
       border-bottom: 1px solid var(--border-subtle);
-      gap: 1.5rem;
+      gap: 1.25rem;
     }
 
     .spec-key {
-      font-size: 0.75rem;
-      letter-spacing: 0.18em;
+      font-size: 0.72rem;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
       color: var(--text-muted);
+      flex-shrink: 0;
     }
 
     .spec-val {
-      font-size: 0.92rem;
+      font-size: 0.9rem;
       color: #ffffff;
       text-align: right;
       font-weight: 400;
@@ -492,7 +495,7 @@
     .acquisition-card {
       background: linear-gradient(160deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.01) 100%);
       border: 1px solid rgba(255, 255, 255, 0.15);
-      padding: 3rem 2.75rem;
+      padding: clamp(1.85rem, 4vw, 3rem) clamp(1.5rem, 3.5vw, 2.75rem);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -501,18 +504,18 @@
     .acquisition-badge {
       display: inline-block;
       align-self: flex-start;
-      font-size: 0.65rem;
-      letter-spacing: 0.26em;
+      font-size: 0.62rem;
+      letter-spacing: 0.24em;
       text-transform: uppercase;
       color: var(--accent-ice);
       border: 1px solid rgba(220, 232, 239, 0.3);
       padding: 0.35rem 0.75rem;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.35rem;
     }
 
     .acquisition-title {
       font-family: var(--serif);
-      font-size: 2.1rem;
+      font-size: clamp(1.65rem, 3vw, 2.1rem);
       font-weight: 300;
       letter-spacing: 0.05em;
       text-transform: uppercase;
@@ -523,29 +526,29 @@
       font-size: 0.88rem;
       line-height: 1.65;
       color: var(--text-muted);
-      margin-bottom: 2rem;
+      margin-bottom: 1.75rem;
     }
 
     .price-block {
       display: flex;
       align-items: baseline;
       justify-content: space-between;
-      padding: 1.25rem 0;
+      padding: 1.15rem 0;
       border-top: 1px solid var(--border-subtle);
       border-bottom: 1px solid var(--border-subtle);
-      margin-bottom: 2rem;
+      margin-bottom: 1.75rem;
     }
 
     .price-label {
-      font-size: 0.72rem;
-      letter-spacing: 0.22em;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
       color: var(--text-muted);
     }
 
     .price-amount {
       font-family: var(--serif);
-      font-size: 2.2rem;
+      font-size: clamp(1.8rem, 3vw, 2.2rem);
       font-weight: 400;
       color: #ffffff;
       letter-spacing: 0.03em;
@@ -554,14 +557,14 @@
     .buy-button {
       appearance: none;
       width: 100%;
-      padding: 1.25rem 2rem;
+      padding: 1.2rem 1.5rem;
       background-color: #ffffff;
       color: #000000;
       border: 1px solid #ffffff;
       font-family: var(--sans);
-      font-size: 0.78rem;
+      font-size: 0.75rem;
       font-weight: 600;
-      letter-spacing: 0.28em;
+      letter-spacing: 0.24em;
       text-transform: uppercase;
       cursor: pointer;
       transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
@@ -578,23 +581,24 @@
     }
 
     .acquisition-Guarantee {
-      margin-top: 1.25rem;
-      font-size: 0.72rem;
-      letter-spacing: 0.12em;
+      margin-top: 1.15rem;
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
       color: var(--text-subtle);
       text-align: center;
+      line-height: 1.5;
     }
 
     /* Footer */
     .site-footer {
       max-width: 1180px;
-      margin: 4rem auto 0;
-      padding-top: 2.5rem;
+      margin: 3.5rem auto 0;
+      padding-top: 2rem;
       border-top: 1px solid var(--border-subtle);
       display: flex;
       justify-content: space-between;
       align-items: center;
-      font-size: 0.72rem;
+      font-size: 0.68rem;
       letter-spacing: 0.18em;
       text-transform: uppercase;
       color: var(--text-subtle);
@@ -610,7 +614,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 1.5rem;
+      padding: 1.25rem;
       opacity: 0;
       visibility: hidden;
       transition: opacity 0.35s ease, visibility 0.35s ease;
@@ -626,15 +630,15 @@
       border: 1px solid rgba(255, 255, 255, 0.2);
       max-width: 480px;
       width: 100%;
-      padding: 2.75rem 2.5rem;
+      padding: 2.5rem 2rem;
       position: relative;
       text-align: center;
     }
 
     .modal-close {
       position: absolute;
-      top: 1.1rem;
-      right: 1.25rem;
+      top: 1rem;
+      right: 1.2rem;
       background: none;
       border: none;
       color: var(--text-muted);
@@ -644,7 +648,7 @@
 
     .modal-title {
       font-family: var(--serif);
-      font-size: 1.85rem;
+      font-size: 1.75rem;
       font-weight: 300;
       letter-spacing: 0.08em;
       text-transform: uppercase;
@@ -652,21 +656,21 @@
     }
 
     .modal-text {
-      font-size: 0.88rem;
+      font-size: 0.86rem;
       color: var(--text-muted);
       line-height: 1.6;
-      margin-bottom: 1.75rem;
+      margin-bottom: 1.5rem;
     }
 
     .modal-input {
       width: 100%;
-      padding: 0.95rem 1rem;
+      padding: 0.9rem 1rem;
       background: rgba(255, 255, 255, 0.04);
       border: 1px solid var(--border-subtle);
       color: #ffffff;
       font-family: var(--sans);
       font-size: 0.85rem;
-      margin-bottom: 1rem;
+      margin-bottom: 0.9rem;
       outline: none;
     }
 
@@ -674,6 +678,7 @@
       border-color: var(--accent-ice);
     }
 
+    /* ─── MOBILE & TABLET RESPONSIVE DESIGN ─── */
     @media (max-width: 900px) {
       .metrics-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -687,15 +692,68 @@
       }
       .specs-columns {
         grid-template-columns: 1fr;
-        gap: 3rem;
       }
       .nav-links {
-        display: none;
+        gap: 1.15rem;
+        font-size: 0.62rem;
+        letter-spacing: 0.14em;
       }
       .site-footer {
         flex-direction: column;
-        gap: 1rem;
+        gap: 0.85rem;
         text-align: center;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .nav-links a:not(:last-child) {
+        display: none;
+      }
+      .hero-overlay {
+        padding: 4.5rem 1rem 1.75rem;
+      }
+      .hero-header-group {
+        padding: 0.5rem 0.75rem;
+      }
+      .hero-eyebrow {
+        letter-spacing: 0.24em;
+        margin-bottom: 0.5rem;
+      }
+      .hero-headline {
+        font-size: clamp(2.15rem, 10vw, 3.1rem);
+        letter-spacing: 0.06em;
+      }
+      .hero-sub {
+        font-size: 0.98rem;
+        margin-top: 0.65rem;
+      }
+      .story-overlay {
+        padding: 0 1rem 3.5rem;
+      }
+      .story-line {
+        padding: 1rem 1.15rem;
+        width: calc(100% - 1.5rem);
+      }
+      .story-copy {
+        font-size: clamp(1.25rem, 5.4vw, 1.65rem);
+        line-height: 1.28;
+      }
+      .scroll-hud {
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+        bottom: 1rem;
+      }
+      .spec-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.35rem;
+        padding: 0.95rem 0;
+      }
+      .spec-val {
+        text-align: left;
+        font-size: 0.88rem;
+        color: rgba(245, 245, 243, 0.9);
       }
     }
   </style>
@@ -729,7 +787,7 @@
     </nav>
   </header>
 
-  <!-- 400vh Flipbook Scroll Section -->
+  <!-- Flipbook Scroll Section -->
   <section class="flipbook-section" id="flipbook">
     <div class="canvas-sticky">
       <canvas id="flipbook-canvas" aria-label="Interactive 3D exploded view of Ice Tray Diamonds collection"></canvas>
@@ -910,52 +968,168 @@
       const hudFrame = document.getElementById('hud-frame');
       const hudFill = document.getElementById('hud-fill');
 
-      // Warm grey RGB from the frames' studio background: rgb(45, 49, 51) -> #2d3133
-      const START_RGB = [45, 49, 51];
+      // Warm grey RGB from the frames' studio background: rgb(35, 39, 41) -> #232729
+      const START_RGB = [35, 39, 41];
 
-      let currentFrameIndex = -1;
-      let targetFrameIndex = 0;
-      let currentScrollProgress = 0;
-      let rafPending = false;
+      // Inertial scroll state: targetProgress comes from scroll position,
+      // smoothProgress glides continuously via requestAnimationFrame so each scroll
+      // impulse produces a smooth, prolonged expansion instead of discrete jumps.
+      let targetProgress = 0;
+      let smoothProgress = 0;
+      let lastDrawnProgress = -1;
+      let rafId = 0;
       let needsResize = true;
 
       function pad3(n) {
         return String(n).padStart(3, '0');
       }
 
-      // Size canvas for retina screens
+      function lerp(a, b, t) {
+        return a + (b - a) * t;
+      }
+
+      // Size canvas for retina & mobile high-DPI screens
       function updateCanvasSize() {
-        const dpr = window.devicePixelRatio || 1;
+        const dpr = Math.min(window.devicePixelRatio || 1, 3);
         const width = Math.round(window.innerWidth * dpr);
         const height = Math.round(window.innerHeight * dpr);
         if (canvas.width !== width || canvas.height !== height) {
           canvas.width = width;
           canvas.height = height;
         }
+        ctx.imageSmoothingEnabled = true;
+        ctx.imageSmoothingQuality = 'high';
         needsResize = false;
       }
 
-      // Draw frame cover-fitted to the canvas
-      function drawFrame(index) {
-        const img = frames[index];
-        if (!img || !img.complete || !img.naturalWidth) return;
+      /**
+       * Map normalized scroll progress [0..1] to the active expansion regions of
+       * Video 1 (frames 1..192) and Video 2 (frames 193..384), bypassing the
+       * static frozen plateaus so every scroll impulse produces continuous,
+       * uninterrupted expansion from first frame to last at full 1080p sharpness.
+       */
+      function getFrameState(progress) {
+        const p = Math.min(1, Math.max(0, progress));
+        if (p <= 0.001) {
+          return { primary: 0, sceneMix: 0 };
+        }
+        if (p >= 0.999) {
+          return { primary: TOTAL_FRAMES - 1, sceneMix: 1 };
+        }
 
+        // Act I (0.00 -> 0.50): Continuous expansion through Video 1 (Frame 1 -> 22..148)
+        // Act II (0.50 -> 1.00): Continuous expansion through Video 2 (Frame 220..384)
+        if (p < 0.50) {
+          const t = p / 0.50;
+          const f = t < 0.07
+            ? lerp(0, 22, t / 0.07)
+            : lerp(22, 148, (t - 0.07) / 0.93);
+          const idx = Math.min(191, Math.max(0, Math.round(f)));
+          return {
+            primary: idx,
+            sceneMix: 0,
+          };
+        } else {
+          const t = (p - 0.50) / 0.50;
+          const f = lerp(220, 383, t);
+          const idx = Math.min(383, Math.max(192, Math.round(f)));
+          return {
+            primary: idx,
+            sceneMix: 1,
+          };
+        }
+      }
+
+      /**
+       * Compute responsive drawing geometry:
+       * - On desktop/landscape: cover-fit so canvas fills viewport seamlessly.
+       * - On mobile/portrait: fit the full 16:9 jewelry suite in crisp 1080p HD
+       *   without cropping off the outer pieces, and seamlessly extend the studio
+       *   backdrop above and below the frame.
+       */
+      function computeDrawRect(cw, ch, iw, ih) {
+        const viewportAspect = cw / ch;
+
+        let scale;
+        if (viewportAspect >= 1.05) {
+          // Desktop / landscape tablet: full cover-fit
+          scale = Math.max(cw / iw, ch / ih);
+        } else {
+          // Mobile / portrait: keep full jewelry suite visible & razor-sharp HD
+          const containScale = cw / iw;
+          const coverScale = ch / ih;
+          const portraitFactor = Math.max(0, Math.min(1, (viewportAspect - 0.42) / 0.63));
+          scale = lerp(containScale * 1.08, coverScale, portraitFactor * 0.32);
+        }
+
+        const dw = iw * scale;
+        const dh = ih * scale;
+        const dx = (cw - dw) * 0.5;
+        const dy = (ch - dh) * 0.46; // Centered slightly high on mobile to frame headline & story copy
+        return { dx, dy, dw, dh, isLetterboxed: dy > 2 || (dy + dh) < (ch - 2) };
+      }
+
+      function renderCompositeFrame(progress) {
         if (needsResize) {
           updateCanvasSize();
         }
 
+        const state = getFrameState(progress);
+        const imgA = frames[state.primary];
+        if (!imgA || !imgA.complete || !imgA.naturalWidth) return;
+
         const cw = canvas.width;
         const ch = canvas.height;
-        const iw = img.naturalWidth;
-        const ih = img.naturalHeight;
+        const iw = imgA.naturalWidth;
+        const ih = imgA.naturalHeight;
+        const rect = computeDrawRect(cw, ch, iw, ih);
 
-        const scale = Math.max(cw / iw, ch / ih);
-        const dw = iw * scale;
-        const dh = ih * scale;
-        const dx = (cw - dw) * 0.5;
-        const dy = (ch - dh) * 0.5;
+        if (rect.isLetterboxed) {
+          // Seamlessly extend the exact top and bottom studio strips of the frame
+          // so there is zero horizontal seam or color mismatch across the width
+          if (rect.dy > 0) {
+            ctx.drawImage(imgA, 0, 0, iw, 4, rect.dx, 0, rect.dw, rect.dy + 2);
+          }
+          const botStart = rect.dy + rect.dh;
+          if (botStart < ch) {
+            ctx.drawImage(imgA, 0, ih - 4, iw, 4, rect.dx, botStart - 2, rect.dw, ch - botStart + 2);
+          }
+        }
 
-        ctx.drawImage(img, dx, dy, dw, dh);
+        // Draw crisp 1080p primary frame with zero ghosting blur
+        ctx.globalAlpha = 1;
+        ctx.drawImage(imgA, rect.dx, rect.dy, rect.dw, rect.dh);
+
+        // Smooth studio atmosphere vignette that darkens toward pitch black at bottom of scroll
+        if (rect.isLetterboxed) {
+          const t = Math.min(1, Math.max(0, progress));
+          const bgR = Math.round(START_RGB[0] * (1 - t));
+          const bgG = Math.round(START_RGB[1] * (1 - t));
+          const bgB = Math.round(START_RGB[2] * (1 - t));
+          const pageTone = `rgb(${bgR}, ${bgG}, ${bgB})`;
+
+          const topGrad = ctx.createLinearGradient(0, 0, 0, rect.dy + rect.dh * 0.18);
+          topGrad.addColorStop(0, pageTone);
+          topGrad.addColorStop(1, `rgba(${bgR}, ${bgG}, ${bgB}, 0)`);
+          ctx.fillStyle = topGrad;
+          ctx.fillRect(0, 0, cw, rect.dy + rect.dh * 0.18);
+
+          const botFadeStart = rect.dy + rect.dh * 0.78;
+          const botGrad = ctx.createLinearGradient(0, botFadeStart, 0, ch);
+          botGrad.addColorStop(0, `rgba(${bgR}, ${bgG}, ${bgB}, 0)`);
+          botGrad.addColorStop(0.55, `rgba(${bgR}, ${bgG}, ${bgB}, 0.82)`);
+          botGrad.addColorStop(1, pageTone);
+          ctx.fillStyle = botGrad;
+          ctx.fillRect(0, botFadeStart, cw, ch - botFadeStart);
+        }
+
+        // Update HUD frame display
+        const displayedFrame = Math.min(
+          TOTAL_FRAMES,
+          Math.max(1, Math.round(lerp(1, TOTAL_FRAMES, progress)))
+        );
+        hudFrame.textContent = `FRAME ${pad3(displayedFrame)} / ${TOTAL_FRAMES}`;
+        hudFill.style.width = `${(progress * 100).toFixed(1)}%`;
       }
 
       // Calculate opacity & Y-offset for callouts at 20%, 50%, 80%
@@ -963,85 +1137,91 @@
         const dist = Math.abs(progress - center);
         if (dist >= halfWidth) {
           el.style.opacity = '0';
-          el.style.transform = 'translateY(22px)';
+          el.style.transform = 'translateY(20px)';
           return;
         }
-        // Smooth cosine bell curve peak at center
         const norm = dist / halfWidth;
         const alpha = Math.cos(norm * Math.PI * 0.5);
-        const offsetY = (progress < center ? (1 - alpha) * 18 : -(1 - alpha) * 18);
+        const offsetY = (progress < center ? (1 - alpha) * 16 : -(1 - alpha) * 16);
         el.style.opacity = alpha.toFixed(3);
         el.style.transform = `translateY(${offsetY.toFixed(1)}px)`;
       }
 
-      // Update background color from warm grey (#2d3133) to pitch black (#000000)
+      // Update background color from warm grey (#232729) to pitch black (#000000)
       function updatePageTone(progress) {
-        // Darken smoothly as we scroll down, reaching pitch black at the bottom of the animation
         const t = Math.min(1, Math.max(0, progress));
         const r = Math.round(START_RGB[0] * (1 - t));
         const g = Math.round(START_RGB[1] * (1 - t));
         const b = Math.round(START_RGB[2] * (1 - t));
-        const color = `rgb(${r}, ${g}, ${b})`;
-        document.documentElement.style.setProperty('--bg-current', color);
+        document.documentElement.style.setProperty('--bg-current', `rgb(${r}, ${g}, ${b})`);
       }
 
       function updateOverlays(progress) {
-        // Hero headline fades out between 0% and 12% of scroll
-        if (progress <= 0.12) {
-          const heroAlpha = 1 - (progress / 0.12);
+        if (progress <= 0.11) {
+          const heroAlpha = 1 - (progress / 0.11);
           heroOverlay.style.opacity = heroAlpha.toFixed(3);
-          heroOverlay.style.transform = `translateY(${(-progress * 180).toFixed(1)}px)`;
+          heroOverlay.style.transform = `translateY(${(-progress * 140).toFixed(1)}px)`;
         } else {
           heroOverlay.style.opacity = '0';
         }
 
-        // Three short lines of copy at 20%, 50%, and 80% of the scroll
         updateCopyCallout(copy20, progress, 0.20, 0.11);
         updateCopyCallout(copy50, progress, 0.50, 0.11);
         updateCopyCallout(copy80, progress, 0.80, 0.11);
-
-        // HUD indicator
-        hudFrame.textContent = `FRAME ${pad3(targetFrameIndex + 1)} / ${TOTAL_FRAMES}`;
-        hudFill.style.width = `${(progress * 100).toFixed(1)}%`;
-
-        // Background color transition from warm grey to pitch black
         updatePageTone(progress);
       }
 
-      function computeScrollState() {
+      function readScrollTarget() {
         const rect = flipbookSection.getBoundingClientRect();
         const maxScroll = Math.max(1, flipbookSection.offsetHeight - window.innerHeight);
         const scrolled = -rect.top;
-        const progress = Math.min(1, Math.max(0, scrolled / maxScroll));
-
-        currentScrollProgress = progress;
-        targetFrameIndex = Math.min(
-          TOTAL_FRAMES - 1,
-          Math.max(0, Math.round(progress * (TOTAL_FRAMES - 1)))
-        );
+        targetProgress = Math.min(1, Math.max(0, scrolled / maxScroll));
       }
 
-      function renderLoop() {
-        rafPending = false;
+      // Continuous requestAnimationFrame damping loop:
+      // Each scroll gesture smoothly glides smoothProgress toward targetProgress
+      // with a velocity cap so the jewelry expands smoothly over time rather than jumping.
+      function tick() {
+        rafId = 0;
         if (!isReady) return;
 
-        // Only redraw canvas when the frame index changes or window resized
-        if (targetFrameIndex !== currentFrameIndex || needsResize) {
-          drawFrame(targetFrameIndex);
-          currentFrameIndex = targetFrameIndex;
+        const diff = targetProgress - smoothProgress;
+        const absDiff = Math.abs(diff);
+
+        if (absDiff > 0.00015) {
+          // Velocity-capped spring glide: plays smoothly through the expansion after each scroll impulse
+          const step = Math.sign(diff) * Math.min(absDiff * 0.085, 0.014);
+          smoothProgress += step;
+        } else {
+          smoothProgress = targetProgress;
         }
 
-        updateOverlays(currentScrollProgress);
-      }
+        if (Math.abs(smoothProgress - lastDrawnProgress) > 0.00005 || needsResize) {
+          renderCompositeFrame(smoothProgress);
+          updateOverlays(smoothProgress);
+          lastDrawnProgress = smoothProgress;
+        }
 
-      function requestTick() {
-        computeScrollState();
-        updateOverlays(currentScrollProgress);
-        if ((targetFrameIndex !== currentFrameIndex || needsResize) && !rafPending) {
-          rafPending = true;
-          requestAnimationFrame(renderLoop);
+        if (Math.abs(targetProgress - smoothProgress) > 0.00015 || needsResize) {
+          rafId = requestAnimationFrame(tick);
         }
       }
+
+      function scheduleTick() {
+        readScrollTarget();
+        if (!rafId) {
+          rafId = requestAnimationFrame(tick);
+        }
+      }
+
+      // Expose a helper for instant jump only if needed by automated tests
+      window.__syncFlipbookNow = () => {
+        readScrollTarget();
+        smoothProgress = targetProgress;
+        renderCompositeFrame(smoothProgress);
+        updateOverlays(smoothProgress);
+        lastDrawnProgress = smoothProgress;
+      };
 
       // Preload all 384 frames before starting the animation
       function preloadAllFrames() {
@@ -1058,20 +1238,19 @@
             loaderPercent.textContent = `${pct}%`;
             loaderStatus.textContent = `Loading Optical Frames (${loadedCount}/${TOTAL_FRAMES})`;
 
-            // Draw first frame immediately once available so canvas is ready behind loader
             if (i === 0) {
               updateCanvasSize();
-              drawFrame(0);
-              currentFrameIndex = 0;
+              renderCompositeFrame(0);
             }
 
             if (loadedCount === TOTAL_FRAMES) {
               isReady = true;
               document.body.classList.remove('loading');
               loader.classList.add('hidden');
-              computeScrollState();
+              readScrollTarget();
+              smoothProgress = targetProgress;
               needsResize = true;
-              renderLoop();
+              scheduleTick();
             }
           };
 
@@ -1081,10 +1260,10 @@
         }
       }
 
-      window.addEventListener('scroll', requestTick, { passive: true });
+      window.addEventListener('scroll', scheduleTick, { passive: true });
       window.addEventListener('resize', () => {
         needsResize = true;
-        requestTick();
+        scheduleTick();
       }, { passive: true });
 
       // Buy Modal interaction
