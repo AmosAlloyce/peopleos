@@ -62,6 +62,7 @@ import VoiceAssistant from './components/VoiceAssistant.jsx';
 import WorkflowStudio from './components/WorkflowStudio.jsx';
 import ImportPreview from './components/ImportPreview.jsx';
 import ReadinessLens from './components/ReadinessLens.jsx';
+import { ScrollFilmStage } from './components/PeopleScrollStage.jsx';
 
 const navigation = [
   ['overview', 'Overview', LayoutDashboard],
@@ -393,6 +394,50 @@ export default function HrApp() {
                     onRehearse={() => runScenario('migration')}
                     onMigration={() => navigate('migration')}
                   />
+                  <ScrollFilmStage
+                    id="overview-desk-stage"
+                    eyebrow="TACTILE SYSTEM ARCHITECTURE"
+                    title="Archival records, in scroll motion"
+                    subtitle="Scroll to scrub across frosted glass schemas, forest-green records, and brass approval seals."
+                    src="/peopleos-media/desk-architecture.mp4"
+                    poster="/peopleos-media/desk-poster.jpg"
+                    durationHint={7.4}
+                    anchorTop={true}
+                    metricLabel="Session readiness"
+                    metricValue={`${quality}%`}
+                    actionLabel="Open migration studio"
+                    onAction={() => navigate('migration')}
+                    beats={[
+                      {
+                        code: '01',
+                        label: 'Source Ledger',
+                        title: `${scoped.length} employee records in focus`,
+                        detail:
+                          'Every directory row, country view, and quality measure reads from the same live session state.',
+                      },
+                      {
+                        code: '02',
+                        label: 'Glass Schema',
+                        title: '240 deterministic field checks',
+                        detail:
+                          'Frosted index plates expose raw source values alongside explicit validation rules.',
+                      },
+                      {
+                        code: '03',
+                        label: 'Review Gate',
+                        title: `${openIssues.length} open exceptions surfaced`,
+                        detail:
+                          'Proposed corrections pause at the review boundary—no silent background writes.',
+                      },
+                      {
+                        code: '04',
+                        label: 'Brass Seal',
+                        title: 'Auditable human sign-off',
+                        detail:
+                          'Approving a run updates records, clears exceptions, and logs the decision trail together.',
+                      },
+                    ]}
+                  />
                   <div className="stats-grid">
                     <Stat
                       label="People in your workspace"
@@ -562,6 +607,50 @@ export default function HrApp() {
                       </button>
                     </Panel>
                   </div>
+                  <ScrollFilmStage
+                    id="overview-footprint-stage"
+                    eyebrow="DISTRIBUTED WORKFORCE TOPOGRAPHY"
+                    title="Thirteen countries, connected by design"
+                    subtitle="Scroll to glide from European remote hubs across West and East African operating markets."
+                    src="/peopleos-media/topographic-footprint.mp4"
+                    poster="/peopleos-media/map-poster.jpg"
+                    durationHint={10.0}
+                    compact={true}
+                    metricLabel="Connected markets"
+                    metricValue={`${countries.length} countries`}
+                    actionLabel="Browse 13-country roster"
+                    onAction={() => navigate('people')}
+                    beats={[
+                      {
+                        code: '01',
+                        label: 'Corridor',
+                        title: 'Europe to West Africa',
+                        detail:
+                          'Copper and forest-green silk threads trace cross-border reporting lines from London, Madrid, and Paris.',
+                      },
+                      {
+                        code: '02',
+                        label: 'UEMOA Hub',
+                        title: 'Senegal · Côte d’Ivoire · Mali · Burkina Faso',
+                        detail:
+                          'Francophone operating markets share localized onboarding checklists and bilingual policy support.',
+                      },
+                      {
+                        code: '03',
+                        label: 'East & West Coast',
+                        title: 'Kenya · Uganda · Ghana · The Gambia',
+                        detail:
+                          'Regional mobile-money and field operations teams stay synchronized in one directory.',
+                      },
+                      {
+                        code: '04',
+                        label: 'Single Schema',
+                        title: 'Local rules, unified auditability',
+                        detail:
+                          'Country-specific payroll and identity checks reconcile into a single verifiable readiness score.',
+                      },
+                    ]}
+                  />
                   <div className="overview-bottom">
                     <Panel
                       title="The engine behind the everyday"
@@ -830,6 +919,50 @@ export default function HrApp() {
                       </div>
                     </div>
                   </div>
+                  <ScrollFilmStage
+                    id="migration-tile-stage"
+                    eyebrow="MECHANICAL RECONCILIATION"
+                    title="Isolate the exception. Reconcile the grid."
+                    subtitle="Scroll to scrub the extraction of a flagged terracotta exception and placement of a validated sage record."
+                    src="/peopleos-media/tile-reconciliation.mp4"
+                    poster="/peopleos-media/tiles-poster.jpg"
+                    durationHint={10.0}
+                    anchorTop={true}
+                    metricLabel="Open exceptions"
+                    metricValue={openIssues.length}
+                    actionLabel="Launch reconciliation run"
+                    onAction={() => runScenario('migration')}
+                    beats={[
+                      {
+                        code: '01',
+                        label: 'Detect',
+                        title: 'Flagged terracotta record',
+                        detail:
+                          'Deterministic schema checks highlight invalid emails, missing bank codes, and date mismatches.',
+                      },
+                      {
+                        code: '02',
+                        label: 'Isolate',
+                        title: 'Precision extraction',
+                        detail:
+                          'The affected record is lifted cleanly for inspection without altering surrounding clean employee rows.',
+                      },
+                      {
+                        code: '03',
+                        label: 'Stage',
+                        title: 'Proposed sage replacement',
+                        detail:
+                          'Specialist tools align the source value with the proposed target correction for reviewer comparison.',
+                      },
+                      {
+                        code: '04',
+                        label: 'Reconcile',
+                        title: 'Flush 100% readiness grid',
+                        detail:
+                          'Upon human approval, the validated tile settles into place and updates workspace quality.',
+                      },
+                    ]}
+                  />
                   <Panel
                     title="Exception review"
                     subtitle="Every flag has a rule, a source value, and a proposed next step."
@@ -972,6 +1105,51 @@ export default function HrApp() {
                       </div>
                     ))}
                   </div>
+                  <ScrollFilmStage
+                    id="service-review-stage"
+                    eyebrow="HUMAN-CENTERED OPERATIONS"
+                    title="Automated triage, composed human sign-off"
+                    subtitle="Scroll to scrub the final review handoff—agents prepare policy context so people leads can focus on people."
+                    src="/peopleos-media/editorial-review.mp4"
+                    poster="/peopleos-media/review-poster.jpg"
+                    durationHint={3.5}
+                    anchorTop={true}
+                    compact={true}
+                    metricLabel="Active inbox"
+                    metricValue={`${tickets.filter((t) => t.status !== 'resolved').length} open`}
+                    actionLabel="Launch service rehearsal"
+                    onAction={() => runScenario('service-desk')}
+                    beats={[
+                      {
+                        code: '01',
+                        label: 'Intake',
+                        title: 'Structured support context',
+                        detail:
+                          'Every request arrives linked to country rules, onboarding stage, and category metadata.',
+                      },
+                      {
+                        code: '02',
+                        label: 'Guidance',
+                        title: 'Handbook-grounded drafts',
+                        detail:
+                          'The service specialist retrieves sample policy clauses in English or French before proposing a route.',
+                      },
+                      {
+                        code: '03',
+                        label: 'Review',
+                        title: 'Considered human judgment',
+                        detail:
+                          'People operations leads review the proposed owner and response before any assignment takes effect.',
+                      },
+                      {
+                        code: '04',
+                        label: 'Closure',
+                        title: 'Calm, traceable resolution',
+                        detail:
+                          'Approved assignments update the support queue and record an immutable entry in the audit trail.',
+                      },
+                    ]}
+                  />
                   <div className="section-toolbar">
                     <span className="eyebrow">YOUR SUPPORT INBOX</span>
                     <label className="search-field">

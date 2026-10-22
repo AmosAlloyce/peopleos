@@ -27,6 +27,7 @@ import {
 } from 'lucide-react';
 import { api } from '../lib/api.js';
 import { Badge, Busy, Empty, Modal, Panel, formatStatus, timeAgo } from './UI.jsx';
+import { ScrollFilmStage } from './PeopleScrollStage.jsx';
 const scenarios = [
   {
     id: 'migration',
@@ -568,6 +569,49 @@ export default function WorkflowStudio({ workspace, scenario, setScenario, refre
           </span>
         </div>
       )}
+      <ScrollFilmStage
+        id="workflow-optical-stage"
+        eyebrow="OPTICAL SPECIALIST PIPELINE"
+        title="Four lenses. One human approval seal."
+        subtitle="Scroll to follow a single request refracting through four deterministic specialist stages onto the brass review seal."
+        src="/peopleos-media/optical-orchestration.mp4"
+        poster="/peopleos-media/lenses-poster.jpg"
+        durationHint={10.0}
+        metricLabel="Registered tools"
+        metricValue={`${workspace.agents.length} agents`}
+        actionLabel={run ? 'View agent registry' : 'Execute specialist rehearsal'}
+        onAction={() => (run ? setRegistry(true) : execute())}
+        beats={[
+          {
+            code: '01',
+            label: 'Lens I · Extract',
+            title: `${config.orchestrator} orchestrator scopes the request`,
+            detail:
+              'The beam enters the first optical stage, reading a clean snapshot of session records without mutating state.',
+          },
+          {
+            code: '02',
+            label: 'Lens II · Validate',
+            title: '240 deterministic schema & policy checks',
+            detail:
+              'Second optical element narrows the beam—every rule is explicit, reproducible, and inspectable.',
+          },
+          {
+            code: '03',
+            label: 'Lens III–IV · Synthesize',
+            title: 'Forest-green specialist housings align diffs',
+            detail:
+              'Field mappings, country checks, and handbook references converge into a structured proposal.',
+          },
+          {
+            code: '04',
+            label: 'Brass Seal · Approve',
+            title: 'Human review remains the final gate',
+            detail:
+              'The focused beam lands on the embossed brass seal—changes apply only when you approve the proposal.',
+          },
+        ]}
+      />
       {selected && (
         <Modal
           title={activeStep?.label || activeAgent?.name || 'Workflow step'}
