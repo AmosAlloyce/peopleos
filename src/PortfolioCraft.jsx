@@ -94,17 +94,36 @@ function useDeskDepth(ref) {
 export function ProjectDesk({ selected, onSelect }) {
   const ref = useRef(null);
   useDeskDepth(ref);
+  const activeHref =
+    selected === 'canvasly'
+      ? '#canvasly-project'
+      : selected === 'peopleos'
+        ? '#peopleos-project'
+        : selected === 'finpulse'
+          ? '#finpulse-project'
+          : '#icetray-project';
+  const activeLabel =
+    selected === 'canvasly'
+      ? 'Canvasly'
+      : selected === 'peopleos'
+        ? 'PeopleOS'
+        : selected === 'finpulse'
+          ? 'FinPulse'
+          : 'Ice Tray Diamonds';
   return (
     <div
       ref={ref}
       className={`portfolio-desk is-${selected}`}
-      aria-label="Two working project previews"
+      aria-label="Four live engineering system previews"
     >
       <div className="portfolio-desk-grid" aria-hidden="true" />
       <div className="portfolio-desk-axis" aria-hidden="true">
         <span /> <span />
       </div>
-      <figure className="portfolio-desk-window portfolio-desk-icetray">
+      <figure
+        className="portfolio-desk-window portfolio-desk-icetray"
+        onClick={() => onSelect('icetray')}
+      >
         <figcaption>
           <span className="portfolio-desk-dot" /> Ice Tray Diamonds <span>Scroll flipbook</span>
         </figcaption>
@@ -115,7 +134,10 @@ export function ProjectDesk({ selected, onSelect }) {
           height="960"
         />
       </figure>
-      <figure className="portfolio-desk-window portfolio-desk-finpulse">
+      <figure
+        className="portfolio-desk-window portfolio-desk-finpulse"
+        onClick={() => onSelect('finpulse')}
+      >
         <figcaption>
           <span className="portfolio-desk-dot" /> FinPulse <span>Credit data engineering</span>
         </figcaption>
@@ -126,7 +148,10 @@ export function ProjectDesk({ selected, onSelect }) {
           height="960"
         />
       </figure>
-      <figure className="portfolio-desk-window portfolio-desk-peopleos">
+      <figure
+        className="portfolio-desk-window portfolio-desk-peopleos"
+        onClick={() => onSelect('peopleos')}
+      >
         <figcaption>
           <span className="portfolio-desk-dot" /> PeopleOS <span>People operations</span>
         </figcaption>
@@ -135,10 +160,27 @@ export function ProjectDesk({ selected, onSelect }) {
           alt="Actual PeopleOS workspace, with workforce data and migration quality checks"
           width="1440"
           height="960"
+        />
+      </figure>
+      <figure
+        className="portfolio-desk-window portfolio-desk-canvasly"
+        onClick={() => onSelect('canvasly')}
+      >
+        <figcaption>
+          <span className="portfolio-desk-dot" /> Canvasly <span>Spatial SaaS &amp; AI TechOps</span>
+        </figcaption>
+        <img
+          src="/demo/canvasly-workspace.jpg"
+          alt="Canvasly B2B visual workspace with interactive 3D capability globe and open-source AI TechOps engine"
+          width="1440"
+          height="960"
           fetchPriority="high"
         />
       </figure>
       <div className="portfolio-desk-index" aria-label="Bring a project into focus">
+        <button aria-pressed={selected === 'canvasly'} onClick={() => onSelect('canvasly')}>
+          <span /> Canvasly
+        </button>
         <button aria-pressed={selected === 'peopleos'} onClick={() => onSelect('peopleos')}>
           <span /> PeopleOS
         </button>
@@ -148,22 +190,7 @@ export function ProjectDesk({ selected, onSelect }) {
         <button aria-pressed={selected === 'icetray'} onClick={() => onSelect('icetray')}>
           <span /> Ice Tray
         </button>
-        <a
-          href={
-            selected === 'peopleos'
-              ? '#peopleos-project'
-              : selected === 'finpulse'
-                ? '#finpulse-project'
-                : '#icetray-project'
-          }
-          aria-label={`Explore ${
-            selected === 'peopleos'
-              ? 'PeopleOS'
-              : selected === 'finpulse'
-                ? 'FinPulse'
-                : 'Ice Tray Diamonds'
-          } project`}
-        >
+        <a href={activeHref} aria-label={`Explore ${activeLabel} project`}>
           <ArrowUpRight size={19} />
         </a>
       </div>
@@ -320,26 +347,32 @@ export function RecordTrace() {
 
 export function ProjectClose({ selected, onSelect }) {
   const projectMeta = {
+    canvasly: {
+      name: 'Canvasly',
+      desc: 'Enterprise visual workspace & zero-cost AI TechOps engine with self-hosted n8n and Groq LPU RAG.',
+      href: '/canvasly/',
+      repo: 'https://github.com/AmosAlloyce/canvasly-techops',
+    },
     peopleos: {
       name: 'PeopleOS',
-      desc: 'People operations, with human review built in.',
+      desc: 'People operations, with deterministic data checks and human review built in.',
       href: '/app',
       repo: 'https://github.com/AmosAlloyce/peopleos',
     },
     finpulse: {
       name: 'FinPulse',
-      desc: 'Credit data, with quality and lineage built in.',
+      desc: 'Credit data engineering, with Bronze-Silver-Gold quality and lineage built in.',
       href: '/finpulse/',
       repo: 'https://github.com/AmosAlloyce/FinPulse',
     },
     icetray: {
       name: 'Ice Tray Diamonds',
-      desc: '384-frame scroll-driven canvas flipbook in a single HTML file.',
+      desc: '384-frame 60fps scroll-driven digital atelier with an Express 5 REST API and SQLite WAL provenance ledger.',
       href: '/ice-tray-diamonds/',
       repo: 'https://github.com/AmosAlloyce/ice-tray-diamonds',
     },
   };
-  const current = projectMeta[selected] || projectMeta.peopleos;
+  const current = projectMeta[selected] || projectMeta.canvasly;
   return (
     <section
       className="portfolio-project-close"
@@ -352,10 +385,13 @@ export function ProjectClose({ selected, onSelect }) {
           <br />
           <em>Take a closer look.</em>
         </h2>
-        <p>Explore the system, follow the decisions, or read the code.</p>
+        <p>Explore the live system, follow the architecture, or inspect the source code.</p>
       </div>
       <div className="portfolio-close-choice">
         <div role="group" aria-label="Choose a project to explore">
+          <button aria-pressed={selected === 'canvasly'} onClick={() => onSelect('canvasly')}>
+            Canvasly
+          </button>
           <button aria-pressed={selected === 'peopleos'} onClick={() => onSelect('peopleos')}>
             PeopleOS
           </button>

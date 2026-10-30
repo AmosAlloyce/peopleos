@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
 import {
-  ArrowDown,
   ArrowUpRight,
   GitBranch,
   Github,
+  Globe,
   Layers3,
   Play,
   ShieldCheck,
@@ -32,6 +32,15 @@ const walkthroughs = {
     description:
       'Follow synthetic events through validation, quarantine, and a traceable credit data pipeline.',
     demo: '/finpulse/',
+  },
+  icetray: {
+    title: 'Ice Tray Diamonds, in motion.',
+    source: '/demo/icetray-demo.mp4',
+    captions: '/demo/icetray-demo.vtt',
+    poster: '/demo/icetray-workspace.jpg',
+    description:
+      'Experience the 384-frame 60fps scroll flipbook, 2K optical inspection stage, SQLite WAL edition holds, bespoke configurator, and cryptographic GIA provenance ledger.',
+    demo: '/ice-tray-diamonds/',
   },
 };
 
@@ -259,7 +268,7 @@ function VideoDialog({ project, onClose }) {
 
 export default function Portfolio() {
   const [videoProject, setVideoProject] = useState(null);
-  const [selectedProject, setSelectedProject] = useState('peopleos');
+  const [selectedProject, setSelectedProject] = useState('canvasly');
   const [menuOpen, setMenuOpen] = useState(false);
   return (
     <div className="portfolio">
@@ -292,7 +301,7 @@ export default function Portfolio() {
             Selected work
           </a>
           <a href="#approach" onClick={() => setMenuOpen(false)}>
-            Approach
+            Architecture
           </a>
           <a href="#about" onClick={() => setMenuOpen(false)}>
             About
@@ -322,11 +331,41 @@ export default function Portfolio() {
             </h1>
             <p className="portfolio-hero-description">
               I’m Alloyce. I build software, data pipelines, and practical AI that turn complex work
-              into clear decisions.
+              into clear, inspectable decisions.
             </p>
             <div className="portfolio-hero-actions">
               <a className="portfolio-button portfolio-button-dark" href="#work">
-                Explore the projects <ArrowUpRight size={17} />
+                Explore the systems <ArrowUpRight size={17} />
+              </a>
+            </div>
+            <div className="portfolio-hero-systems" aria-label="Jump to a featured system">
+              <a
+                href="#canvasly-project"
+                onMouseEnter={() => setSelectedProject('canvasly')}
+                className={selectedProject === 'canvasly' ? 'is-active' : ''}
+              >
+                <span>01</span> Canvasly
+              </a>
+              <a
+                href="#peopleos-project"
+                onMouseEnter={() => setSelectedProject('peopleos')}
+                className={selectedProject === 'peopleos' ? 'is-active' : ''}
+              >
+                <span>02</span> PeopleOS
+              </a>
+              <a
+                href="#finpulse-project"
+                onMouseEnter={() => setSelectedProject('finpulse')}
+                className={selectedProject === 'finpulse' ? 'is-active' : ''}
+              >
+                <span>03</span> FinPulse
+              </a>
+              <a
+                href="#icetray-project"
+                onMouseEnter={() => setSelectedProject('icetray')}
+                className={selectedProject === 'icetray' ? 'is-active' : ''}
+              >
+                <span>04</span> Ice Tray
               </a>
             </div>
           </div>
@@ -345,18 +384,130 @@ export default function Portfolio() {
               </h2>
             </div>
             <p>
-              Different challenges.
+              Four live systems.
               <br />
-              One considered approach.
+              One considered engineering standard.
             </p>
           </div>
+
+          <article
+            className="portfolio-finpulse portfolio-canvasly"
+            id="canvasly-project"
+            data-sc-act="flow"
+            aria-labelledby="portfolio-canvasly-title"
+          >
+            <div className="portfolio-finpulse-topline">
+              <span>
+                <i /> 01 / FLAGSHIP SYSTEM
+              </span>
+              <span>SPATIAL WORKSPACE &amp; AI TECHOPS</span>
+            </div>
+            <div className="portfolio-finpulse-intro">
+              <div>
+                <div className="portfolio-finpulse-brand">
+                  <Globe size={26} strokeWidth={1.8} aria-hidden="true" />
+                  <h3 id="portfolio-canvasly-title">Canvasly</h3>
+                </div>
+                <p>
+                  Spatial collaboration,
+                  <br />
+                  <em>autonomous TechOps.</em>
+                </p>
+              </div>
+              <div className="portfolio-finpulse-description">
+                <p>
+                  An enterprise visual workspace paired with a 100% open-source AI TechOps &amp;
+                  RevOps engine. Combines an interactive 3D capability globe and multiplayer
+                  infinite canvas with 5 self-hosted n8n Redis BullMQ workflows, Groq LPU RAG
+                  triage, a 0-tab support console, and Datadog APM flame graphs.
+                </p>
+                <div className="portfolio-finpulse-tags">
+                  <span>REACT 19 &amp; 3D GLOBE</span>
+                  <span>N8N + REDIS BULLMQ</span>
+                  <span>GROQ LPU &amp; PGVECTOR</span>
+                </div>
+              </div>
+            </div>
+            <a
+              className="portfolio-finpulse-preview"
+              href="/canvasly/"
+              aria-label="Open the interactive Canvasly B2B SaaS and AI TechOps platform"
+            >
+              <div className="portfolio-finpulse-browser">
+                <span>
+                  <i />
+                  <i />
+                  <i />
+                </span>
+                <span>canvasly / enterprise workspace &amp; techops</span>
+                <span>LIVE ON ORACLE ARM64</span>
+              </div>
+              <img
+                src="/demo/canvasly-workspace.jpg"
+                alt="Canvasly B2B SaaS homepage featuring an interactive 3D capability globe, infinite multiplayer canvas, and open-source AI TechOps architecture"
+                loading="lazy"
+                width="1440"
+                height="960"
+              />
+              <span className="portfolio-finpulse-enter">
+                Enter Canvasly Platform <ArrowUpRight size={19} />
+              </span>
+            </a>
+            <ol
+              className="portfolio-finpulse-pipeline"
+              aria-label="Canvasly full-stack architecture"
+            >
+              <li>
+                <span>01 / SPATIAL SaaS &amp; 3D GLOBE</span>
+                <strong>Interactive capability globe.</strong>
+                <p>
+                  1,150-dot Fibonacci 3D sphere, multiplayer canvas, and Magic Import™ schema
+                  rescue.
+                </p>
+              </li>
+              <li>
+                <span>02 / N8N QUEUE &amp; GROQ RAG</span>
+                <strong>Zero-cost autonomous triage.</strong>
+                <p>
+                  5 self-hosted n8n workflows on Redis 7 BullMQ with pgvector semantic routing.
+                </p>
+              </li>
+              <li>
+                <span>03 / 0-TAB CONSOLE &amp; APM</span>
+                <strong>Unified support &amp; telemetry.</strong>
+                <p>
+                  Plain/Linear command bar (Cmd+K), 1-click Stripe refunds, and Datadog flame
+                  graphs.
+                </p>
+              </li>
+            </ol>
+            <div className="portfolio-finpulse-bottom">
+              <p>
+                <i /> OCI Always Free ARM64 · Self-Hosted n8n · Groq LPU · PostgreSQL 16 pgvector
+              </p>
+              <div>
+                <a
+                  className="portfolio-finpulse-source"
+                  href="https://github.com/AmosAlloyce/canvasly-techops"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Github size={16} /> View source <ArrowUpRight size={14} />
+                </a>
+                <a className="portfolio-finpulse-launch" href="/canvasly/">
+                  Launch Canvasly <ArrowUpRight size={18} />
+                </a>
+              </div>
+            </div>
+          </article>
+
           <article className="portfolio-project" id="peopleos-project" data-sc-act="flow">
             <div className="portfolio-project-topline">
               <span>
                 <i />
-                FLAGSHIP PROJECT
+                02 / FLAGSHIP SYSTEM
               </span>
-              <span>PEOPLE & OPERATIONS</span>
+              <span>PEOPLE &amp; OPERATIONS</span>
             </div>
             <div className="portfolio-project-intro">
               <div>
@@ -417,6 +568,26 @@ export default function Portfolio() {
                 Enter the workspace <ArrowUpRight size={20} />
               </span>
             </a>
+            <ol
+              className="portfolio-project-pipeline"
+              aria-label="PeopleOS architecture pillars"
+            >
+              <li>
+                <span>01 / MULTI-COUNTRY HRIS</span>
+                <strong>Unified workforce record.</strong>
+                <p>Country-aware profiles, policy context, and role-based access across regions.</p>
+              </li>
+              <li>
+                <span>02 / SCHEMA &amp; MIGRATION</span>
+                <strong>Deterministic quality checks.</strong>
+                <p>Validates CSV imports, flags field-level anomalies, and stages clean proposals.</p>
+              </li>
+              <li>
+                <span>03 / HUMAN IN THE LOOP</span>
+                <strong>Bounded orchestration.</strong>
+                <p>Four specialist orchestrators draft actions while humans own every approval.</p>
+              </li>
+            </ol>
             <div className="portfolio-project-bottom">
               <p>
                 <span className="portfolio-live-dot" />
@@ -445,8 +616,6 @@ export default function Portfolio() {
             </div>
           </article>
 
-          <RecordTrace />
-
           <article
             className="portfolio-finpulse"
             id="finpulse-project"
@@ -455,7 +624,7 @@ export default function Portfolio() {
           >
             <div className="portfolio-finpulse-topline">
               <span>
-                <i /> FEATURED PROJECT
+                <i /> 03 / FEATURED SYSTEM
               </span>
               <span>CREDIT DATA ENGINEERING</span>
             </div>
@@ -486,7 +655,7 @@ export default function Portfolio() {
                   its source.
                 </p>
                 <div className="portfolio-finpulse-tags">
-                  <span>PYTHON & FASTAPI</span>
+                  <span>PYTHON &amp; FASTAPI</span>
                   <span>DATA QUALITY</span>
                   <span>LINEAGE</span>
                 </div>
@@ -524,17 +693,17 @@ export default function Portfolio() {
               <li>
                 <span>01 / BRONZE</span>
                 <strong>Keep the source.</strong>
-                <p>Ingest synthetic events.</p>
+                <p>Ingest synthetic events with immutable raw payload lineage.</p>
               </li>
               <li>
                 <span>02 / SILVER</span>
                 <strong>Make quality visible.</strong>
-                <p>Validate. Normalize. Quarantine.</p>
+                <p>Validate schemas, normalize currencies, and quarantine bad rows.</p>
               </li>
               <li>
                 <span>03 / GOLD</span>
                 <strong>Build a trusted view.</strong>
-                <p>Aggregate with traceable lineage.</p>
+                <p>Aggregate credit risk signals with traceable record-level lineage.</p>
               </li>
             </ol>
             <div className="portfolio-finpulse-bottom">
@@ -572,7 +741,7 @@ export default function Portfolio() {
           >
             <div className="portfolio-finpulse-topline">
               <span>
-                <i /> FEATURED PROJECT
+                <i /> 04 / FEATURED SYSTEM
               </span>
               <span>INTERACTIVE PRODUCT EXPERIENCE</span>
             </div>
@@ -660,6 +829,13 @@ export default function Portfolio() {
                 >
                   <Github size={16} /> View source <ArrowUpRight size={14} />
                 </a>
+                <button
+                  className="portfolio-finpulse-watch"
+                  onClick={() => setVideoProject('icetray')}
+                >
+                  <Play size={14} fill="currentColor" />
+                  Watch Ice Tray walkthrough
+                </button>
                 <a className="portfolio-finpulse-launch" href="/ice-tray-diamonds/">
                   Launch Ice Tray Diamonds <ArrowUpRight size={18} />
                 </a>
@@ -694,8 +870,9 @@ export default function Portfolio() {
               <ShieldCheck size={28} strokeWidth={1.4} />
               <h3>A human owns the decision.</h3>
               <p>
-                Four department orchestrators coordinate bounded specialist tools. Shared data,
-                policy context, and audit history keep the work connected.
+                Across Canvasly, PeopleOS, and FinPulse, bounded specialist workflows handle
+                ingestion, schema healing, and retrieval while keeping high-stakes approvals and
+                audit history firmly in human hands.
               </p>
               <ul>
                 {departments.map((department, index) => (
@@ -737,64 +914,8 @@ export default function Portfolio() {
               </p>
             </article>
           </div>
-        </section>
 
-        <section className="portfolio-demo-section" aria-labelledby="portfolio-demo-title">
-          <div className="portfolio-demo-inner">
-            <div className="portfolio-demo-copy">
-              <h2 id="portfolio-demo-title">
-                Take it
-                <br />
-                <em>for a spin.</em>
-              </h2>
-              <p>
-                Follow a data migration from first check to final approval. Then try the workspace
-                yourself, including an assistant you can talk to.
-              </p>
-              <div className="portfolio-demo-actions">
-                <button
-                  className="portfolio-button portfolio-button-dark"
-                  onClick={() => setVideoProject('peopleos')}
-                >
-                  <Play size={14} fill="currentColor" />
-                  Play the walkthrough
-                </button>
-                <a className="portfolio-text-link" href="/app">
-                  Open live demo <ArrowUpRight size={16} />
-                </a>
-              </div>
-              <span className="portfolio-demo-caption">RECORDED WALKTHROUGH · SYNTHETIC DATA</span>
-            </div>
-            <button
-              className="portfolio-film"
-              onClick={() => setVideoProject('peopleos')}
-              aria-label="Play the PeopleOS recorded walkthrough"
-            >
-              <img
-                src="/demo/poster.jpg"
-                alt="Preview of the PeopleOS recorded product walkthrough"
-                loading="lazy"
-                width="1440"
-                height="900"
-              />
-              <span className="portfolio-film-shade" />
-              <span className="portfolio-film-topline">
-                <span>PEOPLEOS / IN MOTION</span>
-                <span>PRODUCT WALKTHROUGH</span>
-              </span>
-              <span className="portfolio-film-play">
-                <Play size={26} fill="currentColor" />
-              </span>
-              <span className="portfolio-film-bottom">
-                <span>
-                  From messy data.
-                  <br />
-                  <em>To a confident decision.</em>
-                </span>
-                <ArrowUpRight size={24} />
-              </span>
-            </button>
-          </div>
+          <RecordTrace />
         </section>
 
         <section
@@ -814,17 +935,18 @@ export default function Portfolio() {
           </div>
           <div className="portfolio-about-copy">
             <p className="portfolio-about-lead">
-              I like the space where a real problem meets a well-built system.
+              I like the space where a real operational problem meets a well-architected system.
             </p>
             <p>
               I’m Alloyce Amos, a software engineer and data engineer. My work brings together the
-              parts that are often treated separately: reliable data, practical automation, and an
-              interface that makes sense to the person using it.
+              parts that are often treated separately: resilient data pipelines, practical AI
+              orchestration, and interfaces designed around the person making the decision.
             </p>
             <p>
-              PeopleOS and FinPulse are independent explorations of that approach: one connects
-              people operations, the other makes credit data easier to trust. Both use synthetic
-              data to demonstrate how I think, design, and build.
+              From Canvasly’s zero-cost AI TechOps &amp; infinite workspace to PeopleOS’s
+              multi-country HR orchestration, FinPulse’s Bronze-Silver-Gold credit lineage, and Ice
+              Tray’s 60fps spatial commerce engine, each system is built end-to-end and deployed
+              live to demonstrate how I design, engineer, and ship.
             </p>
             <a
               className="portfolio-text-link"
@@ -838,7 +960,7 @@ export default function Portfolio() {
             <div className="portfolio-about-details">
               <span>SOFTWARE ENGINEERING</span>
               <span>DATA ENGINEERING</span>
-              <span>APPLIED AI</span>
+              <span>APPLIED AI &amp; TECHOPS</span>
             </div>
           </div>
         </section>
@@ -850,9 +972,9 @@ export default function Portfolio() {
           Alloyce Amos<span>SOFTWARE ENGINEER & DATA ENGINEER</span>
         </a>
         <p>
-          Independent portfolio. Project demos use synthetic data.
+          Independent engineering portfolio · 4 live production demos.
           <br />
-          Not affiliated with Wave or any HRIS vendor.
+          Built with React, Node.js, Python, PostgreSQL, SQLite &amp; self-hosted open-source AI.
         </p>
         <a className="portfolio-footer-top" href="#portfolio-main">
           Back to top <ArrowUpRight size={15} />
